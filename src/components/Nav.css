@@ -1,0 +1,21 @@
+#Nav {
+    background-color: rgb(var(--biodiDarkGrey));
+    height: 100%;
+    min-width: 180px;
+    max-width: 250px;
+}
+
+#Nav .NavEntry i {
+    width: 30px;
+    color: rgb(var(--biodiPastel));
+}
+
+#Nav .NavEntry span {
+    color: rgb(var(--biodiPastel));
+    font-family: BebasNeue, sans-serif;
+    font-size: large;
+}
+
+#Nav .NavEntry:hover {
+    background-color: rgba(var(--biodiLightGrey), 0.1);
+}

@@ -68,20 +68,20 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <div className='App'>
+                <div id='App'>
                     <Switch>
                         <Route path='/dashboard' component={Navigation}/>
                     </Switch>
-                    <section>
+                    <section className='d-inline-block'>
                         <div className='container'>
                             <Switch>
                                 <Route exact path='/' component={publicRoutes.Home}/>
                                 <Route exact path='/login' component={publicRoutes.Login}/>
-                                <PrivateRoute exact path='/dashboard/balcons' component={privateRoutes.Balconies}/>
-                                <PrivateRoute exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
-                                <PrivateRoute exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
-                                <PrivateRoute exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
-                                <PrivateRoute exact path='/dashboard/profil' component={privateRoutes.Account}/>
+                                <Route exact path='/dashboard' component={privateRoutes.Balconies}/>
+                                <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
+                                <Route exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
+                                <Route exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
+                                <Route exact path='/dashboard/profil' component={privateRoutes.Account}/>
                             </Switch>
                         </div>
                     </section>

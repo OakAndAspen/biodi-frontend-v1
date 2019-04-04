@@ -1,33 +1,34 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import "./Nav.css";
 
 export default class Nav extends React.Component {
 
     entries = [
         {
-            'url': '/dashboard/balcons',
+            'url': '/dashboard',
             'title': 'Mes balcons',
-            'icon': 'fas fa-search'
+            'icon': 'fas fa-leaf'
         },
         {
             'url': '/dashboard/lausanne',
             'title': 'Lausanne',
-            'icon': 'fas fa-copy'
+            'icon': 'fas fa-map-marker-alt'
         },
         {
             'url': '/dashboard/biodi-vers-city',
             'title': 'Biodi-vers-City',
-            'icon': 'fas fa-chart-pie'
+            'icon': 'fas fa-info'
         },
         {
             'url': '/dashboard/birdlife',
             'title': 'BirdLife',
-            'icon': 'fas fa-boxes'
+            'icon': 'fas fa-info'
         },
         {
             'url': '/dashboard/profil',
             'title': 'Mon compte',
-            'icon': 'fas fa-dollar-sign'
+            'icon': 'fas fa-user'
         },
         {
             'url': '/deconnexion',
@@ -45,7 +46,10 @@ export default class Nav extends React.Component {
 
     render() {
         return (
-            <nav id='Nav'>
+            <nav id='Nav' className='w-25 d-inline-block'>
+                <div className="p-4">
+                <img src="images/biodi-vert.png" alt="Biodi-vers-City" className="img-fluid"/>
+                </div>
                 <ul className='nav flex-column'>
                     {this.state.entries.map(function (t) {
                         return <NavEntry key={t.url} title={t.title} icon={t.icon} url={t.url}/>;
@@ -56,12 +60,12 @@ export default class Nav extends React.Component {
     }
 }
 
-const NavEntry = ({title, icon, url, onClick}) => {
+const NavEntry = ({title, icon, url}) => {
     return (
         <li className='NavEntry nav-item pointer w-100'>
-            <Link to={url} className='nav-link' onClick={onClick}>
+            <Link to={url} className='nav-link'>
                 <i className={'text-center mr-2 ' + icon}/>
-                <span className="text-light">{title}</span>
+                <span>{title}</span>
             </Link>
         </li>
     );

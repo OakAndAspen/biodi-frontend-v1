@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './private.css';
 
 export default class BirdLife extends React.Component {
 
