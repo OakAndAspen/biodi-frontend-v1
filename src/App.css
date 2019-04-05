@@ -1,16 +1,66 @@
 #App {
-  width: 100vw;
-  max-width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
-  overflow: hidden;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 h1, h2, h3 {
-  font-family: "BebasNeue", sans-serif;
-  color: rgb(var(--biodiDarkGrey));
+    font-family: "BebasNeue", sans-serif;
+    color: rgb(var(--biodiDarkGrey));
 }
 
-/*.btn-primary, .alert-primary, .text-primary, .bg-primary, .btn-outline-primary, .badge-primary {
+.btn {
+    font-family: BebasNeue, sans-serif;
+    padding: 8px 9px 5px 9px;
+    border-width: 0;
+}
 
-}*/
+/* --- Primary --- */
+.btn-primary, .bg-primary, .badge-primary {background-color: rgb(var(--birdLifeBlue)) !important;}
+.alert-primary, .btn-outline-primary:hover {background-color: rgba(var(--birdLifeBlue), 0.2) !important;}
+.border-primary, .btn-outline-primary, .alert-primary {border: 1px solid rgb(var(--birdLifeBlue)) !important;}
+.btn-outline-primary, .text-primary {color: rgb(var(--birdLifeBlue)) !important;}
+
+/* --- Secondary --- */
+.btn-secondary, .bg-secondary, .badge-secondary {background-color: rgb(var(--biodiLightGrey)) !important;}
+.alert-secondary, .btn-outline-secondary:hover {background-color: rgba(var(--biodiLightGrey), 0.2) !important;}
+.border-secondary, .btn-outline-secondary, .alert-secondary {border: 1px solid rgb(var(--biodiLightGrey)) !important;}
+.btn-outline-secondary, .text-secondary {color: rgb(var(--biodiLightGrey)) !important;}
+
+/* --- Info --- */
+.btn-info, .bg-info, .badge-info {background-color: rgb(var(--biodiPastel)) !important;}
+.alert-info, .btn-outline-info:hover {background-color: rgba(var(--biodiPastel), 0.2) !important;}
+.border-info, .btn-outline-info, .alert-info {border: 1px solid rgb(var(--biodiPastel)) !important;}
+.btn-outline-info, .text-info {color: rgb(var(--biodiPastel)) !important;}
+
+/* --- Success --- */
+.btn-success, .bg-success, .badge-success {background-color: rgba(var(--birdLifeGreen), 0.7) !important;}
+.alert-success, .btn-outline-success:hover {background-color: rgba(var(--birdLifeGreen), 0.2) !important;}
+.border-success, .btn-outline-success, .alert-success {border: 1px solid rgb(var(--birdLifeGreen)) !important;}
+.btn-outline-success, .text-success {color: rgb(var(--birdLifeGreen)) !important;}
+
+/* --- Warning --- */
+.btn-warning, .bg-warning, .badge-warning {background-color: rgba(var(--customOrange), 0.7) !important;}
+.alert-warning, .btn-outline-warning:hover {background-color: rgba(var(--customOrange), 0.2) !important;}
+.border-warning, .btn-outline-warning, .alert-warning {border: 1px solid rgb(var(--customOrange)) !important;}
+.btn-outline-warning, .text-warning {color: rgb(var(--customOrange)) !important;}
+
+/* --- Danger --- */
+.btn-danger, .bg-danger, .badge-danger {background-color: rgba(var(--customRed), 0.8) !important;}
+.alert-danger, .btn-outline-danger:hover {background-color: rgba(var(--customRed), 0.2) !important;}
+.border-danger, .btn-outline-danger, .alert-danger {border: 1px solid rgb(var(--customRed)) !important;}
+.btn-outline-danger, .text-danger {color: rgb(var(--customRed)) !important;}
+
+/* --- Light --- */
+.btn-light, .bg-light, .badge-light {background-color: rgba(255,255,255, 0.9) !important;}
+.alert-light, .btn-outline-light:hover {background-color: rgba(255,255,255, 0.2) !important;}
+.border-light, .btn-outline-light, .alert-light {border: 1px solid rgb(255,255,255) !important;}
+.btn-outline-light, .text-light {color: rgb(255,255,255) !important;}
+
+/* --- Dark --- */
+.btn-dark, .bg-dark, .badge-dark {background-color: rgba(var(--biodiDarkGrey), 0.9) !important;}
+.alert-dark, .btn-outline-dark:hover {background-color: rgba(var(--biodiDarkGrey), 0.2) !important;}
+.border-dark, .btn-outline-dark, .alert-dark {border: 1px solid rgb(var(--biodiDarkGrey)) !important;}
+.btn-outline-dark, .text-dark {color: rgb(var(--biodiDarkGrey)) !important;}

@@ -77,12 +77,12 @@ class App extends Component {
 
                     {/* --- Pages without nav --- */}
                     <div className="row h-100">
-                        <div className="col-3">
+                        <div className="col-3 h-100">
                             <Switch>
                                 <Route path='/dashboard' component={Navigation}/>
                             </Switch>
                         </div>
-                        <div className="col-9">
+                        <div className="col-9 h-100">
                             <Switch>
                                 <Route exact path='/dashboard' component={privateRoutes.Balconies}/>
                                 <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
