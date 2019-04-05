@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import "./Nav.css";
+import Config from "../Config";
 
 export default class Nav extends React.Component {
 
@@ -46,12 +47,17 @@ export default class Nav extends React.Component {
 
     render() {
         return (
-            <nav id='Nav' className='w-25 d-inline-block'>
-                <div className="p-4">
-                <img src="images/biodi-vert.png" alt="Biodi-vers-City" className="img-fluid"/>
+            <nav id='Nav' className="h-100">
+                <div className="p-2 p-md-4">
+                    <Link to="/dashboard">
+                        <img src={Config.imgFolder + "/biodi-clair.png"} alt="Biodi-vers-City"
+                             className="img-fluid d-none d-md-block"/>
+                        <img src={Config.imgFolder + "/biodi-logo-clair.png"} alt="Biodi-vers-City"
+                             className="img-fluid d-md-none"/>
+                    </Link>
                 </div>
                 <ul className='nav flex-column'>
-                    {this.state.entries.map(function (t) {
+                    {this.state.entries.map(t => {
                         return <NavEntry key={t.url} title={t.title} icon={t.icon} url={t.url}/>;
                     }, this)}
                 </ul>
@@ -62,10 +68,10 @@ export default class Nav extends React.Component {
 
 const NavEntry = ({title, icon, url}) => {
     return (
-        <li className='NavEntry nav-item pointer w-100'>
-            <Link to={url} className='nav-link'>
-                <i className={'text-center mr-2 ' + icon}/>
-                <span>{title}</span>
+        <li className='NavEntry nav-item pointer w-100' title={title}>
+            <Link to={url} className='nav-link w-100 text-center text-md-left'>
+                <i className={'text-center w-25 mr-2 ' + icon}/>
+                <span className="d-none d-md-inline-block">{title}</span>
             </Link>
         </li>
     );

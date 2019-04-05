@@ -69,14 +69,21 @@ class App extends Component {
         return (
             <Router>
                 <div id='App'>
+                    {/* --- Pages without nav --- */}
                     <Switch>
-                        <Route path='/dashboard' component={Navigation}/>
+                        <Route exact path='/' component={publicRoutes.Home}/>
+                        <Route exact path='/login' component={publicRoutes.Login}/>
                     </Switch>
-                    <section className='d-inline-block'>
-                        <div className='container'>
+
+                    {/* --- Pages without nav --- */}
+                    <div className="row h-100">
+                        <div className="col-3">
                             <Switch>
-                                <Route exact path='/' component={publicRoutes.Home}/>
-                                <Route exact path='/login' component={publicRoutes.Login}/>
+                                <Route path='/dashboard' component={Navigation}/>
+                            </Switch>
+                        </div>
+                        <div className="col-9">
+                            <Switch>
                                 <Route exact path='/dashboard' component={privateRoutes.Balconies}/>
                                 <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
                                 <Route exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
@@ -84,7 +91,7 @@ class App extends Component {
                                 <Route exact path='/dashboard/profil' component={privateRoutes.Account}/>
                             </Switch>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </Router>
         );
