@@ -23,12 +23,12 @@ export default class Home extends React.Component {
                 <SignUp show={this.state.popupOn} onClose={() => this.setState({popupOn:false})}/>
                 <div className="container">
                     {/* Logo Biodi */}
-                    <div className="row my-3">
+                    <div className="row">
                         <div className="col-12 text-center">
                             <img src={Config.imgFolder + "/biodi-clair.png"} alt="Biodi-vers-City"
-                                 className="img-fluid mr-4" style={logoStyle}/>
+                                 className="img-fluid mr-4 my-3" style={logoStyle}/>
                             <img src={Config.imgFolder + "/birdlife.png"} alt="BirdLife"
-                                 className="img-fluid" style={logoStyle}/>
+                                 className="img-fluid my-3" style={logoStyle}/>
                         </div>
                     </div>
                     {/* Quartiers */}

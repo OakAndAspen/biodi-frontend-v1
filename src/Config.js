@@ -1,5 +1,5 @@
 export default {
-    apiUrl: 'https://api.biodi-vers-city.ch',
+    apiUrl: 'https://forum.biodi-vers-city.ch/wp/v2',
     imgFolder: 'http://localhost:3000/images',
     //imgFolder: 'https://images.biodi-vers-city.ch',
     colors: {
