@@ -17,6 +17,14 @@ h1, h2, h3 {
     border-width: 0;
 }
 
+a {
+    color: rgb(var(--birdLifeGreen));
+}
+
+a:hover {
+    color: rgb(var(--birdLifeGreen));
+}
+
 /* --- Primary --- */
 .btn-primary, .bg-primary, .badge-primary {background-color: rgb(var(--birdLifeBlue)) !important;}
 .alert-primary, .btn-outline-primary:hover {background-color: rgba(var(--birdLifeBlue), 0.2) !important;}

@@ -1,0 +1,11 @@
+.zone {
+    fill: rgb(var(--biodiLightGrey));
+    stroke: rgb(var(--biodiDarkBlue));
+    stroke-width: 3px;
+    transition: 0.1s;
+}
+
+.zone:hover {
+    fill: rgb(var(--birdLifeGreen));
+    transition: 0.1s;
+}
