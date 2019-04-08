@@ -1,7 +1,6 @@
 import React from 'react';
-import './dashboard.css';
 
-export default class Lausanne extends React.Component {
+export default class Param extends React.Component {
 
     constructor(props) {
         super(props);
@@ -9,6 +8,6 @@ export default class Lausanne extends React.Component {
     }
 
     render() {
-        return <h1>Lausanne</h1>;
+        return <h1>Param for balcony n°{this.props.match.params.id}</h1>;
     }
 }

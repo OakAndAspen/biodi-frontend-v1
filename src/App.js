@@ -61,6 +61,14 @@ const privateRoutes = {
     Account: Loadable({
         loader: () => import('./routes/dashboard/Account'),
         loading: Loading,
+    }),
+    Param: Loadable({
+        loader: () => import('./routes/balcony/Param'),
+        loading: Loading,
+    }),
+    Visualization: Loadable({
+        loader: () => import('./routes/balcony/Visualization'),
+        loading: Loading,
     })
 };
 
@@ -73,6 +81,8 @@ class App extends Component {
                     <Switch>
                         <Route exact path='/' component={publicRoutes.Home}/>
                         <Route exact path='/login' component={publicRoutes.Login}/>
+                        <Route exact path='/balcony/:id/param' component={privateRoutes.Param}/>
+                        <Route exact path='/balcony/:id' component={privateRoutes.Visualization}/>
                     </Switch>
 
                     {/* --- Pages without nav --- */}

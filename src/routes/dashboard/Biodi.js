@@ -1,5 +1,5 @@
 import React from 'react';
-import './private.css';
+import './dashboard.css';
 import Config from "../../Config";
 
 export default class Biodi extends React.Component {
