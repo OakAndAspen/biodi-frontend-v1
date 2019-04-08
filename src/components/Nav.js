@@ -27,12 +27,12 @@ export default class Nav extends React.Component {
             'icon': 'fas fa-info'
         },
         {
-            'url': '/dashboard/profil',
+            'url': '/dashboard/account',
             'title': 'Mon compte',
             'icon': 'fas fa-user'
         },
         {
-            'url': '/deconnexion',
+            'url': '/logout',
             'title': 'Déconnexion',
             'icon': 'fas fa-sign-out-alt'
         }

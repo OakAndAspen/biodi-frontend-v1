@@ -1,5 +1,4 @@
 import React from 'react';
-import './public.css';
 import Map from '../../components/Map';
 import Config from "../../Config";
 import {Link} from "react-router-dom";

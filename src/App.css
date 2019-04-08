@@ -4,6 +4,11 @@
     height: 100vh;
     max-height: 100vh;
     overflow: hidden;
+    background-color: rgb(var(--biodiDarkBlue));
+}
+
+#NavWrapper {
+    background-color: rgba(var(--biodiPastel), 0.5);
 }
 
 h1, h2, h3 {
@@ -19,6 +24,7 @@ h1, h2, h3 {
 
 a {
     color: rgb(var(--birdLifeGreen));
+    outline: 0;
 }
 
 a:hover {

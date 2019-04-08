@@ -62,6 +62,10 @@ const privateRoutes = {
         loader: () => import('./routes/dashboard/Account'),
         loading: Loading,
     }),
+    Logout: Loadable({
+        loader: () => import('./routes/dashboard/Logout'),
+        loading: Loading,
+    }),
     Param: Loadable({
         loader: () => import('./routes/balcony/Param'),
         loading: Loading,
@@ -81,25 +85,28 @@ class App extends Component {
                     <Switch>
                         <Route exact path='/' component={publicRoutes.Home}/>
                         <Route exact path='/login' component={publicRoutes.Login}/>
+                        <Route exact path='/logout' component={privateRoutes.Logout}/>
                         <Route exact path='/balcony/:id/param' component={privateRoutes.Param}/>
                         <Route exact path='/balcony/:id' component={privateRoutes.Visualization}/>
                     </Switch>
 
                     {/* --- Pages without nav --- */}
-                    <div className="row h-100">
-                        <div className="col-3 h-100">
-                            <Switch>
-                                <Route path='/dashboard' component={Navigation}/>
-                            </Switch>
-                        </div>
-                        <div className="col-9 h-100">
-                            <Switch>
-                                <Route exact path='/dashboard' component={privateRoutes.Balconies}/>
-                                <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
-                                <Route exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
-                                <Route exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
-                                <Route exact path='/dashboard/profil' component={privateRoutes.Account}/>
-                            </Switch>
+                    <div className="h-100 bg-light">
+                        <div className="row h-100" id="NavWrapper">
+                            <div className="col-3 h-100">
+                                <Switch>
+                                    <Route path='/dashboard' component={Navigation}/>
+                                </Switch>
+                            </div>
+                            <div className="col-9 h-100">
+                                <Switch>
+                                    <Route exact path='/dashboard' component={privateRoutes.Balconies}/>
+                                    <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
+                                    <Route exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
+                                    <Route exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
+                                    <Route exact path='/dashboard/profil' component={privateRoutes.Account}/>
+                                </Switch>
+                            </div>
                         </div>
                     </div>
                 </div>

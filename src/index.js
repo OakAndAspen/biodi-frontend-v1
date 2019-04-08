@@ -13,15 +13,11 @@ $.ajaxSetup({
         request.setRequestHeader('Authorization', 'Bearer ' + localStorage.authKey);
     },
     error: function (jqXHR) {
-        if (jqXHR.status === 403) {
-            localStorage.clear();
-        } else {
-            alert('An error occured (' + jqXHR.status + ' ' + jqXHR.statusText + ')');
-        }
+        console.log('An error occured (' + jqXHR.status + ' ' + jqXHR.statusText + ')');
     }
 });
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

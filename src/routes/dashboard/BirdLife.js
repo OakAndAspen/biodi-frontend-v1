@@ -1,5 +1,4 @@
 import React from 'react';
-import './dashboard.css';
 import Config from "../../Config";
 
 export default class BirdLife extends React.Component {
