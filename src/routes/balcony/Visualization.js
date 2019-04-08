@@ -1,4 +1,6 @@
 import React from 'react';
+import "./Visualization.css";
+import Config from "../../Config";
 
 export default class Visualization extends React.Component {
 
@@ -7,7 +9,26 @@ export default class Visualization extends React.Component {
         this.state = {};
     }
 
+   
     render() {
-        return <h1>Visualization for balcony n°{this.props.match.params.id}</h1>;
+        return (
+            <div className="w-100 h-100 container overflow-auto onePage">
+               {/* <h1>
+                    Visualization for balcony n°{this.props.match.params.id}
+                </h1>*/}
+         
+                <div id="balcony" >
+                    <div className="pots">
+                    </div>    
+                    <div className="pots">
+                    </div> 
+                    <div className="pots">
+                    </div> 
+                    <div className="pots">
+                    </div> 
+                </div>
+            </div>
+                
+        );
     }
 }

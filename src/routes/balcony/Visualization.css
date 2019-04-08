@@ -1,0 +1,17 @@
+#balcony{
+    background-image: url(img/balconyXL.svg);
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+.pots{
+    background-image: url(img/pot.svg);
+    width: 12%;
+    height: 25vh;
+    background-repeat: no-repeat;
+}
+.onePage{
+    margin: 0;
+    padding:0;
+    max-width: 100%;
+    background-color: rgb(var(--biodiDarkBlue));
+}
