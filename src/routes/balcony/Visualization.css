@@ -1,17 +1,65 @@
-#balcony{
-    background-image: url(img/balconyXL.svg);
-    height: 100vh;
-    background-repeat: no-repeat;
-}
-.pots{
-    background-image: url(img/pot.svg);
-    width: 12%;
-    height: 25vh;
-    background-repeat: no-repeat;
-}
+
 .onePage{
     margin: 0;
     padding:0;
     max-width: 100%;
     background-color: rgb(var(--biodiDarkBlue));
+}
+#balcony{
+    background-image: url(img/balconyXL.svg);
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.hidden{
+    visibility: hidden;
+}
+.pots{
+    background-image: url(img/pot.svg);
+    width: 11%;
+    height: 15%;
+    background-repeat: no-repeat;
+}
+#pot1{
+    position: absolute;
+    top:72%;
+    left:25%;
+}
+#pot2{
+    position: absolute;
+    top:72%;
+    left: 62%;
+}
+#pot3{
+    position: absolute;
+    top: 72%;
+    left: 73%;
+}
+#pot4{
+    position: absolute;
+    top:78.5%;
+    left: 80%;
+}
+#pot5{
+    position: absolute;
+    top:85%;
+    left: 87%;
+}
+#suspendedpot{
+    background-image: url(img/suspendedpot.svg);
+    width: 11%;
+    height: 50%;
+    position: absolute;
+    top: -3%;
+    left: 74%;
+    background-repeat: no-repeat;
+}
+#climbingtrail{
+    background-image: url(img/climbingtrail.svg);
+    width: 12%;
+    height: 55%;;
+    position: absolute;
+    top: 13%;
+    left: 0.5%;
+    background-repeat:no-repeat;
 }

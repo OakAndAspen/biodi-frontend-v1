@@ -18,13 +18,20 @@ export default class Visualization extends React.Component {
                 </h1>*/}
          
                 <div id="balcony" >
-                    <div className="pots">
+            <img src={Config.imgFolder + "/balconyXL.svg"} className="hidden" alt="Balcony" />
+                    <div className="pots" id="pot1">
                     </div>    
-                    <div className="pots">
+                    <div className="pots" id="pot2">
                     </div> 
-                    <div className="pots">
+                    <div className="pots" id="pot3">
                     </div> 
-                    <div className="pots">
+                    <div className="pots" id="pot4">
+                    </div> 
+                    <div className="pots" id="pot5">
+                    </div> 
+                    <div id="suspendedpot">
+                    </div> 
+                    <div id="climbingtrail">
                     </div> 
                 </div>
             </div>
