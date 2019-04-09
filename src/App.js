@@ -104,7 +104,7 @@ class App extends Component {
                                     <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
                                     <Route exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
                                     <Route exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
-                                    <Route exact path='/dashboard/profil' component={privateRoutes.Account}/>
+                                    <Route exact path='/dashboard/account' component={privateRoutes.Account}/>
                                 </Switch>
                             </div>
                         </div>

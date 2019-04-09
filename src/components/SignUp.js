@@ -13,7 +13,13 @@ export default class SignUp extends React.Component {
             email: "",
             userName: "",
             password1: "",
-            password2: ""
+            password2: "",
+            error: null
+        };
+
+        this.messages = {
+            emptyField: "Tous les champs sont obligatoires.",
+            passwordsDontMatch: "Les mots de passe ne correspondent pas."
         };
 
         this.send = this.send.bind(this);
@@ -21,14 +27,33 @@ export default class SignUp extends React.Component {
 
     send() {
         let data = this.state;
-        $.ajax({
-            method: "POST",
+        delete data.success;
+        delete data.error;
+
+        if (!data.firstName || !data.lastName || !data.email || !data.userName || !data.password1 || !data.password2) {
+            this.setState({error: this.messages.emptyField});
+            return null;
+        }
+
+        if (data.password1 !== data.password2) {
+            this.setState({error: this.messages.passwordsDontMatch});
+            return null;
+        }
+
+        this.setState({error: null});
+
+        console.log("Sending: ", data);
+
+        /*$.ajax({
+            method: "PATCH",
             url: Config.apiUrl + '/users',
             context: this,
             data: data
         }).done((data) => {
             console.log(data);
-        });
+        });*/
+
+        this.setState({success: this.messages.updatedInfo});
     }
 
     render() {
@@ -83,6 +108,13 @@ export default class SignUp extends React.Component {
                                        onChange={e => this.setState({password2: e.target.value})}/>
                             </div>
                         </div>
+                        {this.state.error && (
+                            <div className="row py-2">
+                                <div className="col-12">
+                                    <div className="alert alert-danger w-100">{this.state.error}</div>
+                                </div>
+                            </div>
+                        )}
                         <div className="row mt-2">
                             <div className="col-12">
                                 <button type="button" className="btn btn-success w-100" onClick={this.send}>
