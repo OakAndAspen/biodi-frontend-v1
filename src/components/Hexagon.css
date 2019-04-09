@@ -1,0 +1,9 @@
+.Hexagon {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+}
+
+.Hexagon svg polygon {
+    background-image: url(http://localhost:3000/images/photo-balcon.png);
+}

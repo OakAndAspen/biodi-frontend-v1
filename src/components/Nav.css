@@ -4,13 +4,13 @@
 
 #Nav .NavEntry i {
     color: rgb(var(--biodiPastel));
-    font-size: 20px;
+    font-size: 1.3em;
 }
 
 #Nav .NavEntry span {
     color: rgb(var(--biodiPastel));
     font-family: BebasNeue, sans-serif;
-    font-size: 20px;
+    font-size: 1.3em;
 }
 
 #Nav .NavEntry:hover {
