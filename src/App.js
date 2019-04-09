@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Link, Redirect, Route, Switch} from 'react-router-dom';
 import Loadable from 'react-loadable';
 import './App.css';
 import $ from 'jquery';
@@ -79,14 +79,14 @@ const privateRoutes = {
 class App extends Component {
     render() {
         return (
-            <Router>
+            <BrowserRouter>
                 <div id='App'>
                     {/* --- Pages without nav --- */}
                     <Switch>
                         <Route exact path='/' component={publicRoutes.Home}/>
                         <Route exact path='/login' component={publicRoutes.Login}/>
                         <Route exact path='/logout' component={privateRoutes.Logout}/>
-                        <Route exact path='/balcony/:id/param' component={privateRoutes.Param}/>
+                        <Route exact path='/balcony/new' component={privateRoutes.Param}/>
                         <Route exact path='/balcony/:id' component={privateRoutes.Visualization}/>
                     </Switch>
 
@@ -110,7 +110,7 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
-            </Router>
+            </BrowserRouter>
         );
     }
 }
