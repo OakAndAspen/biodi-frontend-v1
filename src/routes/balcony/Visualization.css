@@ -14,6 +14,30 @@
 .hidden{
     visibility: hidden;
 }
+#iconswrap{
+  width:20%;
+    position: absolute;
+    left:79%;
+    top:2%;
+    z-index: 100;
+ 
+}
+#balcony img.icons{
+    width:20%; 
+    margin-right: 5%;
+    height: 5vh;
+    opacity: 0.6;
+    transition: 0.1s;
+}
+#balcony .icons:hover{ 
+    opacity: 1;
+    transition: 0.1s;
+    cursor: pointer;
+}
+.hiddenIco{
+    display: none;
+}
+
 .pots{
     background-image: url(img/pot.svg);
     width: 11%;
@@ -57,9 +81,42 @@
 #climbingtrail{
     background-image: url(img/climbingtrail.svg);
     width: 12%;
-    height: 55%;;
+    height: 55%;
     position: absolute;
     top: 13%;
     left: 0.5%;
     background-repeat:no-repeat;
+}
+.construction{
+    background-image: url(img/construction.svg);
+    width: 10%;
+    height: 30%;
+    position: absolute;
+    background-repeat: no-repeat;
+    
+}
+#construction1{
+    top:70%;
+    left: 4%;
+}
+#construction2 {
+	top:60%;
+    left:14%;
+}
+.helper{
+    background-image: linear-gradient(#4e4e4d, rgb(42,66,99));
+    height: 40vh;
+    border-top: solid 1px #353535;
+}
+.balconyelement{
+    opacity:0.5;
+    transition: 0.2s;
+}
+.balconyelement:hover {
+	opacity: 1;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.full{
+    opacity: 1;
 }
