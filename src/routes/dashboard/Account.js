@@ -1,6 +1,4 @@
 import React from 'react';
-import $ from "jquery";
-import Config from "../../Config";
 import DashboardLayout from "../../DashboardLayout";
 
 export default class Account extends React.Component {

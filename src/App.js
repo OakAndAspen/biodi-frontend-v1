@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Link, Redirect, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import Loadable from 'react-loadable';
 import './App.css';
-import $ from 'jquery';
-import Config from './Config';
 import NoMatch from "./routes/NoMatch";
 
 const Loading = () => <div>Loading...</div>;

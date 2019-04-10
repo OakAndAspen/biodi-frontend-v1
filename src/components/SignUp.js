@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Map.css";
 import Config from "../Config";
-import $ from "jquery";
 
 export default class SignUp extends React.Component {
 

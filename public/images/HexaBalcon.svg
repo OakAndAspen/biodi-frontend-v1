@@ -1,0 +1,14 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1204.63 804.05">
+    <defs>
+        <style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}</style>
+        <clipPath id="clip-path" transform="translate(102.32 -97.98)">
+            <polygon class="cls-1"
+                     points="732.11 97.98 964.22 500 732.11 902.02 267.89 902.02 35.78 500 267.89 97.98 732.11 97.98"/>
+        </clipPath>
+    </defs>
+    <title>HexaBalcon</title>
+    <g class="cls-2">
+        <image width="1254" height="837" transform="scale(0.96)" xlink:href="Biodi/photo-balcon.png"/>
+    </g>
+</svg>

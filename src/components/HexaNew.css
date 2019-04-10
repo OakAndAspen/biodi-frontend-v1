@@ -1,0 +1,27 @@
+.HexaNew:hover {
+    cursor: pointer;
+}
+
+.HexaNew .cls-1 {
+    fill: #bdbdbd;
+}
+
+.HexaNew .cls-2, .cls-3 {
+    fill: none;
+    stroke: #525c62;
+    stroke-miterlimit: 10;
+    stroke-width: 5px;
+}
+
+.HexaNew .cls-3 {
+    stroke-dasharray: 20.68 10.34;
+}
+
+.HexaNew .cls-4, .HexaNew .cls-5 {
+    fill: #525c62;
+}
+
+.HexaNew .cls-5 {
+    font-size: 60px;
+    font-family: "BebasNeue-Regular", "Bebas Neue", "BebasNeue", sans-serif;
+}

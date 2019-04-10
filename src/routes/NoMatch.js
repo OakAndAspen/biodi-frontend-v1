@@ -4,10 +4,6 @@ import Config from "../Config";
 
 export default class NoMatch extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="p-4 h-100 w-100 overflow-auto text-center">
