@@ -23,28 +23,52 @@ export default class Visualization extends React.Component {
                         
                         <img src={Config.imgFolder + "/icon/information.svg"} alt="plus d'informations" className="icons" />
                         <img src={Config.imgFolder + "/icon/share.svg"} alt="partager" className="icons" />
-                        <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className="icons hiddenIco" />
+                        <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className="icons hiddenIco" /> {/* ${this.isOpen() ? 'open' : 'closed'} pour toggle */}
                         <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !" className="icons" />
                          <img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer" className="icons" />
                     </div>
-                    <div className="pots balconyelement" id="pot1">
-                    </div>    
-                    <div className="pots balconyelement" id="pot2">
+                    <div className="balconyelement" id="bac">
+                        <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
+                        <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
+                        <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
+                        <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
+                    </div>
+                        <div className="places" id="place1">
+                        </div>
+                    <div className="places hiddenPlaces" id="place2">
+                    </div>
+                    <div className="places hiddenPlaces" id="place3">
+                    </div>
+                    <div className="places hiddenPlaces" id="place4">
+                    </div>
+                    <div className="pots balconyelement" id="pot3"> <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div> 
-                    <div className="pots balconyelement" id="pot3">
+                    <div className="places hiddenPlaces" id="place5">
+                    </div>
+                    <div className="pots balconyelement" id="pot4"> <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div> 
-                    <div className="pots balconyelement" id="pot4">
+                    <div className="places hiddenPlaces" id="place6">
+                    </div>
+                    <div className="pots balconyelement" id="pot5"><img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" /> 
                     </div> 
-                    <div className="pots balconyelement" id="pot5">
+                    <div className="places hiddenPlaces" id="place7">
+                    </div>
+                    <div className="balconyelement" id="suspendedpot"> <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
+                    </div>
+                    <div className="places hiddenPlaces" id="place8">
+                    </div>
+                    <div className="balconyelement" id="climbingtrail"><img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
+                    </div>
+                    <div className="places hiddenPlaces" id="place9">
+                    </div>
+                    <div className="construction balconyelement" id="construction1"><img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div> 
-                    <div className="balconyelement" id="suspendedpot">
+                    <div className="places hiddenPlaces" id="place10">
+                    </div>
+                    <div className="construction balconyelement" id="construction2"><img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div> 
-                    <div className="balconyelement" id="climbingtrail">
-                    </div> 
-                    <div className="construction balconyelement" id="construction1">
-                    </div> 
-                    <div className="construction balconyelement" id="construction2">
-                    </div> 
+                    <div className="places hiddenPlaces" id="place11">
+                    </div>
                 </div>
                 <div className="helper w-100">
                 </div>

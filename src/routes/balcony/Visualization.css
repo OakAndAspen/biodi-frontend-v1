@@ -14,6 +14,8 @@
 .hidden{
     visibility: hidden;
 }
+
+/* -------- PLACEMENT ICONES UP --------*/
 #iconswrap{
   width:20%;
     position: absolute;
@@ -23,8 +25,8 @@
  
 }
 #balcony img.icons{
-    width:20%; 
-    margin-right: 5%;
+    width:19%; 
+    margin-right: 3%;
     height: 5vh;
     opacity: 0.6;
     transition: 0.1s;
@@ -38,21 +40,40 @@
     display: none;
 }
 
+/* -------- PLACEMENT IMAGES MOBILIER--------*/
 .pots{
     background-image: url(img/pot.svg);
     width: 11%;
     height: 15%;
     background-repeat: no-repeat;
 }
-#pot1{
+#bac{
     position: absolute;
-    top:72%;
-    left:25%;
+    top:69%;
+    left:30%;
+    background-image: url(img/BAC.svg);
+    width: 32%;
+    height: 23%;
+    background-repeat: no-repeat;
 }
-#pot2{
-    position: absolute;
-    top:72%;
-    left: 62%;
+#bac:hover{
+    opacity: 0.6;
+    cursor:auto;
+}
+#bac:hover img{
+    display: block;
+}
+#bac img:hover{
+    opacity: 1;
+    transition: 0.2s;
+}
+#bac img{
+    width: 20%;
+    position: relative;
+    float: left;
+    margin-left: 3%;
+    margin-top: 4%;
+    transition: 0.2s;
 }
 #pot3{
     position: absolute;
@@ -116,7 +137,99 @@
 	opacity: 1;
     transition: 0.2s;
     cursor: pointer;
+} 
+
+/* -------- PLACEMENT PLUS SUR MOBILIER--------*/
+.balconyelement img {
+	color: white;
+    display: block;
+    width: 90%;
+    opacity: 0.6;
+    position: absolute;
+    left: 5%;
+    top:-30%;
 }
+.balconyelement:hover img{
+	display: none;
+}
+.construction img {
+    top: 0%;
+}
+#suspendedpot img {
+    top: 50%;
+}
+#climbingtrail img {
+    top: 20%;
+}
+
+/* -------- PLACEMENT PLANTES ETIQUETTES--------*/
 .full{
     opacity: 1;
+}
+.places {
+    width: 8%;
+    height: auto;
+    padding-top: 8%;
+    position: absolute;
+    border-radius: 50%; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hiddenPlaces{
+    display: none !important;
+}
+#place1 {
+    top:54%;
+    left: 32%;
+    background-image: url(img/fleurs.jpg);
+}
+#place2{
+    top:80%;
+    left: 37.5%;
+    background-image: url(img/fleurs.jpg);
+}
+#place3{
+    top:54%;
+    left: 47%;
+    background-image: url(img/fleurs.jpg);
+}
+#place4{
+    top:80%;
+    left: 52%;
+    background-image: url(img/fleurs.jpg);
+}
+#place5{
+    top:54%;
+    left: 74%;
+    background-image: url(img/fleurs.jpg);
+}
+#place6{
+    top:60.5%;
+    left: 81.5%;
+    background-image: url(img/fleurs.jpg);
+}
+#place7{
+    top:67%;
+    left: 89%;
+    background-image: url(img/fleurs.jpg);
+}
+#place8{
+    top:25%;
+    left: 65%;
+    background-image: url(img/fleurs.jpg);
+}
+#place9{
+    top:33%;
+    left: 15%;
+    background-image: url(img/fleurs.jpg);
+}
+#place10{
+    top:75%;
+    left: 5%;
+    background-image: url(img/fleurs.jpg);
+}
+#place11{
+    top:65%;
+    left: 15%;
+    background-image: url(img/fleurs.jpg);
 }
