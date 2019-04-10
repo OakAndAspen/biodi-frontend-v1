@@ -4,6 +4,7 @@ import Loadable from 'react-loadable';
 import './App.css';
 import $ from 'jquery';
 import Config from './Config';
+import NoMatch from "./routes/NoMatch";
 
 const Loading = () => <div>Loading...</div>;
 
@@ -24,11 +25,6 @@ const PrivateRoute = ({component: Component, ...rest}) => (
         }
     />
 );
-
-const Navigation = Loadable({
-    loader: () => import('./components/Nav'),
-    loading: Loading,
-});
 
 const publicRoutes = {
     Home: Loadable({
@@ -81,109 +77,22 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div id='App'>
-                    {/* --- Pages without nav --- */}
                     <Switch>
                         <Route exact path='/' component={publicRoutes.Home}/>
                         <Route exact path='/login' component={publicRoutes.Login}/>
                         <Route exact path='/logout' component={privateRoutes.Logout}/>
+                        <Route exact path='/dashboard' component={privateRoutes.Balconies}/>
+                        <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
+                        <Route exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
+                        <Route exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
+                        <Route exact path='/dashboard/account' component={privateRoutes.Account}/>
                         <Route exact path='/balcony/new' component={privateRoutes.Param}/>
                         <Route exact path='/balcony/:id' component={privateRoutes.Visualization}/>
+                        <Route path='*' component={NoMatch}/>
                     </Switch>
-
-                    {/* --- Pages without nav --- */}
-                    <div className="h-100 bg-light">
-                        <div className="row h-100" id="NavWrapper">
-                            <div className="col-3 h-100">
-                                <Switch>
-                                    <Route path='/dashboard' component={Navigation}/>
-                                </Switch>
-                            </div>
-                            <div className="col-9 h-100">
-                                <Switch>
-                                    <Route exact path='/dashboard' component={privateRoutes.Balconies}/>
-                                    <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
-                                    <Route exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
-                                    <Route exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
-                                    <Route exact path='/dashboard/account' component={privateRoutes.Account}/>
-                                </Switch>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </BrowserRouter>
         );
-    }
-}
-
-class Login extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            authKey: localStorage.authKey,
-            loginError: null
-        };
-        this.render();
-        this.keyDown = this.keyDown.bind(this);
-        this.login = this.login.bind(this);
-    }
-
-    keyDown(e) {
-        if (e.keyCode === 13) this.login();
-    }
-
-    login() {
-        let email = $('#email').val();
-        let password = $('#password').val();
-
-        $.ajax({
-            method: 'POST',
-            url: Config.apiUrl + '/login',
-            data: {email: email, password: password},
-            context: this
-        }).done((data) => {
-            if (data.error) this.setState({loginError: data.error});
-            else {
-                localStorage.authKey = data.authKey;
-                this.setState({authKey: data.authKey});
-            }
-        });
-    }
-
-    render() {
-        if (this.state.authKey) {
-            return <Redirect to='/app/advanced-search'/>;
-        }
-
-        let style = {textAlign: 'center'};
-
-        return (
-            <div className='row'>
-                <form className='col-12 col-md-6 m-auto'>
-                    <img src={Config.imgFolder + '/logo.png'} className='img-fluid mt-3 mb-5' alt='MtgManager'/>
-                    <input type='text' id='email' className='form-control' placeholder='Email'
-                           onKeyDown={this.keyDown} style={style}/>
-                    <input type='password' id='password' className='form-control my-2' placeholder='Password'
-                           onKeyDown={this.keyDown} style={style}/>
-                    <button type='button' className='btn btn-info w-100' id='logIn' onClick={this.login}>
-                        Log in
-                    </button>
-                    <p className="text-muted my-2">No account yet? <Link to="/signup">Sign up!</Link></p>
-                    {this.state.loginError ?
-                        <div className='alert alert-warning mt-3' role='alert'>
-                            {this.state.loginError}
-                        </div>
-                        : null}
-                </form>
-            </div>
-        );
-    }
-}
-
-class Logout extends React.Component {
-    render() {
-        localStorage.clear();
-        return <Redirect to='/'/>
     }
 }
 

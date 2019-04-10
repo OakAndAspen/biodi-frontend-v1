@@ -1,4 +1,5 @@
 import React from 'react';
+import DashboardLayout from "../../DashboardLayout";
 
 export default class Lausanne extends React.Component {
 
@@ -8,6 +9,10 @@ export default class Lausanne extends React.Component {
     }
 
     render() {
-        return <h1>Lausanne</h1>;
+        return (
+            <DashboardLayout>
+                <h1>Lausanne</h1>
+            </DashboardLayout>
+        );
     }
 }
