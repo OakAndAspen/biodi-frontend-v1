@@ -3,6 +3,7 @@ import style from './ModalStyle.js';
 import "./Modal.css";
 
 import PlantCard from "./PlantCard";
+import DetailsPlant from "./DetailsPlant";
 
 export default class Modal extends Component {
     constructor(props) {
@@ -74,8 +75,13 @@ export default class Modal extends Component {
                 <div style={this.state.visible ? this.state.style.container : this.state.style.containerHidden}>
                     <div style={this.state.visible ? {...this.state.style.panel} : this.state.style.panelHidden} className="modalWhite" >
                         {this.props.children}
-            {this.props.plants.map(plant => <PlantCard id={plant.id} name={plant.name} onClick={() => this.setState({plant:plant.id})}/>)}
-                        
+            
+                {this.state.plantId==null &&
+                    this.props.plants.map(plant => <PlantCard key={plant.id} name={plant.name} onClick={() => this.setState({plantId:plant.id})}/>)
+                }
+                {this.state.plantId!=null &&
+                    <DetailsPlant id={this.state.plantId}/>
+                }
                     </div>
                     <div style={this.state.visible ? this.state.style.mask : this.state.style.maskHidden} onClick={this.props.onClickAway ? this.props.onClickAway : null} />
                 </div>

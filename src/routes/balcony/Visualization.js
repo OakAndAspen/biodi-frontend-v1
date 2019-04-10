@@ -26,7 +26,7 @@ export default class Visualization extends React.Component {
             {id: "place9"},
             {id: "place10"},
             {id: "place11"},
-        ]
+        ],
         };
         
         console.log(this.state.plantStickers);
@@ -79,7 +79,7 @@ export default class Visualization extends React.Component {
                         <img src={Config.imgFolder + "/icon/share.svg"} alt="partager" className="icons" />
                         <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className="icons hiddenIco" /> {/* ${this.isOpen() ? 'open' : 'closed'} pour toggle */}
                         <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !" className="icons" />
-                         <img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer" className="icons" />
+                         <a href="../balconies" ><img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer" className="icons" /></a>
                     </div>
                     <div className="balconyelement" id="bac">
                         <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal()}/>

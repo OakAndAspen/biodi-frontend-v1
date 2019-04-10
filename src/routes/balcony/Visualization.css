@@ -61,7 +61,7 @@
     cursor:auto;
 }
 #bac:hover img{
-    display: block;
+    visibility: visible;
 }
 #bac img:hover{
     opacity: 1;
@@ -150,7 +150,7 @@
     top:-30%;
 }
 .balconyelement:hover img{
-	display: none;
+	visibility: hidden;
 }
 .construction img {
     top: 0%;
