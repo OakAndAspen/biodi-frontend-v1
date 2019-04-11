@@ -132,7 +132,7 @@ renderHelper(){
             <p>Cliquez sur l'élément du balcon que vous souhaitez remplir : les planches représentent des constructeions (nichoirs, hôtels à insectes, etc.), le treillis vous permettra d'ajouter une plante grimpante, alors que les pots et bacs, suspendus ou non, vous laisseront les remplir de plantes.</p>
             <h3>Deuxième étape</h3>
             <p>Un pop-up va s'ouvrir, vous proposant alors un assortiment de plantes ou constructions les plus adaptés aux paramètres du balcon précédemment remplis. Il vous suffit de cliquer sur votre préférée.</p>
-        <h3>Troisème étape</h3>
+        <h3>Troisième étape</h3>
             <p>Ainsi, les détails de la plante choisie s'affichent, vous permettant ainsi de tout savoir sur son entretien, ce qu'elle attire, etc. Si la plante ne vous convient finalement pas, revenez en arrière grâce au bouton en haut à gauche. Sinon, pressez le bouton validé, et voilà, votre plante est ajoutée à votre balcon ! Un rond proche de l'emplacement rempli devrait vous indiquer quelle plante est dans cet emplacement, si les étapes ont été remplies correctement.</p>
         <p>Procédez ainsi jusqu'à ce que le balcon vous convienne ! La sauvegarde est automatique, donc vous pouvez sans problème quitter et retrouver votre balcon dans l'état dans lequel vous le laissez à n'importe quel moment.'</p>
         <h3>Un doute ?</h3>

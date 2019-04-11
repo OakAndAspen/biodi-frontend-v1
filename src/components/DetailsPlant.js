@@ -20,6 +20,7 @@ export default class DetailsPlant extends React.Component {
     render() {
         return (
             <div className="wrapDetails">
+            <a href="#">Retour</a>
             {/*<p>{this.props.id}</p>*/}
                 <h2>Nom de la plante </h2>
                 <div className="imgPlant">
