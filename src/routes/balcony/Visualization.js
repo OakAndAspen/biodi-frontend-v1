@@ -75,8 +75,8 @@ export default class Visualization extends React.Component {
     }
     
     renderBalcony(){
-        return
-        (<div id="balcony">
+        return (
+            <div id="balcony">
                     <img src={Config.imgFolder + "/balconyXL.svg"} className="hidden" alt="Balcony" />
                     <div id="iconswrap">
                         
@@ -115,8 +115,34 @@ export default class Visualization extends React.Component {
                     </div>
                     {this.state.plantStickers.map(sticker => 
                                                   <PlantStickers id={sticker.id} etat={sticker.clicked}/>
-                                                 )})
+                                                 )}
+    </div>
+    )
     }
+renderHelper(){
+    return (
+        <div className="bottomBalcony">
+            <div className="gradient w-100" >
+                <p>Pour une meilleure expérience, switchez votre écran en mode paysage si cela est possible</p>
+            </div>
+            <div className="helper">
+                <h1>Comment réaliser un balcon ?</h1>
+                <p>Cette section a pour but de vous aider à réaliser le balcon selon vos souhaits, l'objectif étant de le rendre le plus biodivers possible.</p>
+            <h3>Première étape</h3>
+            <p>Cliquez sur l'élément du balcon que vous souhaitez remplir : les planches représentent des constructeions (nichoirs, hôtels à insectes, etc.), le treillis vous permettra d'ajouter une plante grimpante, alors que les pots et bacs, suspendus ou non, vous laisseront les remplir de plantes.</p>
+            <h3>Deuxième étape</h3>
+            <p>Un pop-up va s'ouvrir, vous proposant alors un assortiment de plantes ou constructions les plus adaptés aux paramètres du balcon précédemment remplis. Il vous suffit de cliquer sur votre préférée.</p>
+        <h3>Troisème étape</h3>
+            <p>Ainsi, les détails de la plante choisie s'affichent, vous permettant ainsi de tout savoir sur son entretien, ce qu'elle attire, etc. Si la plante ne vous convient finalement pas, revenez en arrière grâce au bouton en haut à gauche. Sinon, pressez le bouton validé, et voilà, votre plante est ajoutée à votre balcon ! Un rond proche de l'emplacement rempli devrait vous indiquer quelle plante est dans cet emplacement, si les étapes ont été remplies correctement.</p>
+        <p>Procédez ainsi jusqu'à ce que le balcon vous convienne ! La sauvegarde est automatique, donc vous pouvez sans problème quitter et retrouver votre balcon dans l'état dans lequel vous le laissez à n'importe quel moment.'</p>
+        <h3>Un doute ?</h3>
+        <p>Cliquez sur le rond représentant les plantes dans les emplacements si vous voulez revoir ses informations, ou la modifier.</p>
+        <h3>Balcon terminé ?</h3>
+        <p>Félicitations ! Vous voilà riche de quelques points supplémentaires pour votre quartier, et de plusieurs informations pour rendre désormais en vrai votre balcon favorable à la biodiversité ! Cliquez sur la croix en haut à droite vous ramenera à votre tableau de bord. Sinon, vous pouvez partager votre balcon sur le forum Biodi-vers-City, et échangez sur votre solution avec la communauté !</p>
+            </div>
+        </div>
+    )
+}
 
    
     render() {
@@ -127,9 +153,7 @@ export default class Visualization extends React.Component {
                 </h1>*/}
                     {this.renderBalcony()}
                 
-                </div>
-                <div className="helper w-100">
-                </div>
+                 {this.renderHelper()}
                 
                 <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClick={(id)=> this.closeModalAndAdd(id)}>
                     
