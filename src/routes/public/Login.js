@@ -14,16 +14,30 @@ export default class Login extends React.Component {
         this.send = this.send.bind(this);
     }
 
+    checkErrors() {
+        if (!this.state.userName || !this.state.password) {
+            return false;
+        }
+        return true;
+    }
+
     send() {
-        let data = this.state;
-        this.props.history.push("/dashboard");
+        if(!this.checkErrors()) return null;
+
+        let data = {
+            username: this.state.userName,
+            password: this.state.password
+        };
+
         $.ajax({
             method: "POST",
-            url: Config.apiUrl + '/users',
+            url: Config.apiUrl + '/jwt-auth/v1/token',
             context: this,
             data: data
-        }).done((data) => {
+        }).done(data => {
+            localStorage.setItem("authKey", data.token);
             console.log(data);
+            //this.props.history.push("/dashboard");
         });
     }
 
@@ -34,8 +48,8 @@ export default class Login extends React.Component {
                     <form className="col-12 col-md-6 col-lg-4 mx-auto">
                         <img src={Config.imgFolder + "/biodi-clair.png"} alt="Biodi-vers-City"
                              className="text-center img-fluid my-4"/>
-                        <input type="text" placeholder="Adresse email" className="form-control my-2"
-                               onChange={e => this.setState({email: e.target.value})}/>
+                        <input type="text" placeholder="Nom d'utilisateur" className="form-control my-2"
+                               onChange={e => this.setState({userName: e.target.value})}/>
                         <input type="password" placeholder="Mot de passe" className="form-control my-2"
                                onChange={e => this.setState({password: e.target.value})}/>
                         <button type="button" className="btn btn-success w-100 my-2" onClick={this.send}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Map.css";
 import Config from "../Config";
+import $ from "jquery";
 
 export default class SignUp extends React.Component {
 
@@ -17,42 +18,48 @@ export default class SignUp extends React.Component {
         };
 
         this.messages = {
-            emptyField: "Tous les champs sont obligatoires.",
+            emptyField: "L'adresse email, le nom d'utilisateur et le mot de passe sont obligatoires.",
             passwordsDontMatch: "Les mots de passe ne correspondent pas."
         };
 
         this.send = this.send.bind(this);
     }
 
-    send() {
-        let data = this.state;
-        delete data.success;
-        delete data.error;
-
-        if (!data.firstName || !data.lastName || !data.email || !data.userName || !data.password1 || !data.password2) {
+    checkErrors() {
+        if (!this.state.email || !this.state.userName || !this.state.password1 || !this.state.password2) {
             this.setState({error: this.messages.emptyField});
-            return null;
+            return false;
         }
-
-        if (data.password1 !== data.password2) {
+        if (this.state.password1 !== this.state.password2) {
             this.setState({error: this.messages.passwordsDontMatch});
-            return null;
+            return false;
         }
-
         this.setState({error: null});
+        return true;
+    }
 
-        console.log("Sending: ", data);
+    send() {
+        if(!this.checkErrors()) return null;
 
-        /*$.ajax({
-            method: "PATCH",
-            url: Config.apiUrl + '/users',
+        let data = {
+            username: this.state.userName,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            password: this.state.password1,
+            meta: {
+                neighbourhood: "centre"
+            }
+        };
+
+        $.ajax({
+            method: "POST",
+            url: Config.apiUrl + '/wp/v2/users/register',
             context: this,
             data: data
         }).done((data) => {
             console.log(data);
-        });*/
-
-        this.setState({success: this.messages.updatedInfo});
+        });
     }
 
     render() {
@@ -97,12 +104,12 @@ export default class SignUp extends React.Component {
                                        onChange={e => this.setState({userName: e.target.value})}/>
                             </div>
                             <div className="col-12 col-sm-6 py-2">
-                                <input type="text" className="form-control" placeholder="Mot de passe"
+                                <input type="password" className="form-control" placeholder="Mot de passe"
                                        value={this.state.password1}
                                        onChange={e => this.setState({password1: e.target.value})}/>
                             </div>
                             <div className="col-12 col-sm-6 py-2">
-                                <input type="text" className="form-control" placeholder="Répéter le mot de passe"
+                                <input type="password" className="form-control" placeholder="Répéter le mot de passe"
                                        value={this.state.password2}
                                        onChange={e => this.setState({password2: e.target.value})}/>
                             </div>

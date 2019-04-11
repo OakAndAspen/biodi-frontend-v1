@@ -7,7 +7,6 @@ import * as serviceWorker from './serviceWorker';
 import $ from "jquery";
 
 $.ajaxSetup({
-    crossOrigin: true,
     accept: 'application/json',
     beforeSend: function (request) {
         request.setRequestHeader('Authorization', 'Bearer ' + localStorage.authKey);
