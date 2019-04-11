@@ -15,21 +15,21 @@ export default class Visualization extends React.Component {
             visible : false,
             plants : [],
             plantStickers:[
-            {id: "place1"},
-            {id: "place2"},
-            {id: "place3"},
-            {id: "place4"},
-            {id: "place5"},
-            {id: "place6"},
-            {id: "place7"},
-            {id: "place8"},
-            {id: "place9"},
-            {id: "place10"},
-            {id: "place11"},
+            {id: "place1", contient: null, clicked: false},
+            {id: "place2", contient: null, clicked: false},
+            {id: "place3", contient: null, clicked: false},
+            {id: "place4", contient: null, clicked: false},
+            {id: "place5", contient: null, clicked: false},
+            {id: "place6", contient: null, clicked: false},
+            {id: "place7", contient: null, clicked: false},
+            {id: "place8", contient: null, clicked: false},
+            {id: "place9", contient: null, clicked: false},
+            {id: "place10", contient: null, clicked: false},
+            {id: "place11", contient: null, clicked: false},
         ],
+            currentPlant:null
         };
         
-        console.log(this.state.plantStickers);
     }
     
      openModal() {
@@ -61,6 +61,17 @@ export default class Visualization extends React.Component {
         this.setState({
             visible : false
         });
+        
+    }
+    closeModalAndAdd (id){
+        let table = this.state.plantStickers;
+        table[0].contient=id;
+        table[0].clicked=true;
+        this.setState({
+            visible : false,
+            plantStickers:table
+        });
+        console.log(this.state.plantStickers[0]);
     }
 
    
@@ -108,15 +119,15 @@ export default class Visualization extends React.Component {
                     <div className="construction balconyelement" id="construction2" onClick={() => this.openModal()}>
                         <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div>
-                    {this.state.plantStickers.map(sticker => <PlantStickers id={sticker.id} />)}
+                    {this.state.plantStickers.map(sticker => 
+                                                  <PlantStickers id={sticker.id} etat={sticker.clicked}/>
+                                                 )}
                 </div>
                 <div className="helper w-100">
                 </div>
                 
-                <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClickAway={() => this.closeModal()}>
-                    <div>
-                        <a href="javascript:void(0);" onClick={() => this.closeModal()} id="closeModal">X</a>
-                    </div>
+                <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClick={(id)=> this.closeModalAndAdd(id)}>
+                    
                 </Modal>
             </div>
             

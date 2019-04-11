@@ -68,19 +68,32 @@ export default class Modal extends Component {
             }
         }
     }
+    closeModal() {
+        this.setState({
+            visible : false,
+            plantId: null,
+        });
+    }
 
     render() {
         return (
             <div>
                 <div style={this.state.visible ? this.state.style.container : this.state.style.containerHidden}>
-                    <div style={this.state.visible ? {...this.state.style.panel} : this.state.style.panelHidden} className="modalWhite" >
+                    <div style={this.state.visible ? {...this.state.style.panel} : this.state.style.panelHidden} className="modalWhite"  onClickAway={() => this.closeModal()}>
                         {this.props.children}
-            
+                    <div>
+                        <a href="javascript:void(0);" onClick={() => this.closeModal()} id="closeModal">X</a>
+                    </div>
+            {this.state.plantId==null &&
+                    <h1>
+                        Plantes recommandées
+                    </h1> 
+            }
                 {this.state.plantId==null &&
                     this.props.plants.map(plant => <PlantCard key={plant.id} name={plant.name} onClick={() => this.setState({plantId:plant.id})}/>)
                 }
                 {this.state.plantId!=null &&
-                    <DetailsPlant id={this.state.plantId}/>
+                    <DetailsPlant id={this.state.plantId} onClick={() => this.props.onClick(this.state.plantId)}/>
                 }
                     </div>
                     <div style={this.state.visible ? this.state.style.mask : this.state.style.maskHidden} onClick={this.props.onClickAway ? this.props.onClickAway : null} />

@@ -23,18 +23,13 @@ export default class PlantCard extends React.Component {
         });*/
           this.props.onClick();
          
-          console.log(id);
         this.setState({
             visible : true,
             
         });
     }
 
-    closeModal() {
-        this.setState({
-            visible : false
-        });
-    }
+    
 
     render() {
         return (
