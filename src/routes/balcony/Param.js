@@ -2,6 +2,7 @@ import React from 'react';
 import Config from "../../Config";
 import {Link} from "react-router-dom";
 import "./Param.css";
+import Slider from "@material-ui/lab/Slider";
 
 export default class Param extends React.Component {
 
@@ -10,7 +11,8 @@ export default class Param extends React.Component {
         this.state = {
             step: 1,
             name: "",
-            size: "S"
+            size: "S",
+            exposition: 3
         };
     }
 
@@ -160,8 +162,27 @@ export default class Param extends React.Component {
     }
 
     renderStepExposition() {
+        let options = {
+            1: "0-2",
+            2: "3-5",
+            3: "6-8",
+            4: "9-11",
+            5: "12+"
+        };
+
         return (
-            <h1>Step 3: Exposition</h1>
+            <div>
+                <h3 className="my-3">Exposition au soleil</h3>
+                <div className="py-4">
+                    <Slider min={1} max={5} step={1} id="ExpositionSlider" value={this.state.exposition}
+                            onChange={(e, value) => this.setState({exposition: value})}/>
+                </div>
+                <div id="ExpositionLegend">
+                    <i className={"fas fa-sun mr-2 display-4 exposition-" + this.state.exposition}/>
+                    <br/>
+                    {options[this.state.exposition]} heures par jour
+                </div>
+            </div>
         );
     }
 

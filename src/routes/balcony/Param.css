@@ -16,3 +16,27 @@
     font-size: 16px;
     font-family: BebasNeue, sans-serif;
 }
+
+#ExpositionSlider * {
+    background-color: rgb(var(--biodiDarkGrey));
+}
+
+#ExpositionLegend {
+    font-family: BebasNeue, sans-serif;
+}
+
+.exposition-1 {
+    color: #c3b149;
+}
+.exposition-2 {
+    color: #d2c338;
+}
+.exposition-3 {
+    color: #e1d054;
+}
+.exposition-4 {
+    color: #f0df52;
+}
+.exposition-5 {
+    color: #ffee54;
+}
