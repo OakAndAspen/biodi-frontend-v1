@@ -8,24 +8,28 @@ export default class Param extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            step: 1
+            step: 1,
+            name: "",
+            size: "S"
         };
     }
 
     render() {
         return (
-            <div className="h-100 w-100 bg-info">
-                {this.renderBanner()}
-                {this.renderProgress()}
-                <div className="row">
-                    <div className="col-12 col-md-3 col-lg-2">
-                        {this.renderPrevious()}
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-8 text-center">
-                        {this.renderCurrentStep()}
-                    </div>
-                    <div className="col-12 col-md-3 col-lg-2">
-                        {this.renderNext()}
+            <div className="h-100 w-100 bg-light">
+                <div className="h-100 w-100" id="Background">
+                    {this.renderBanner()}
+                    {this.renderProgress()}
+                    <div className="row">
+                        <div className="col-12 col-md-3 col-lg-2">
+                            {this.renderPrevious()}
+                        </div>
+                        <div className="col-12 col-md-6 col-lg-8 text-center">
+                            {this.renderCurrentStep()}
+                        </div>
+                        <div className="col-12 col-md-3 col-lg-2">
+                            {this.renderNext()}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,13 +114,48 @@ export default class Param extends React.Component {
 
     renderStepName() {
         return (
-            <h1>Step 1: Name</h1>
+            <div>
+                <h3 className="my-3">Quel nom voulez-vous donner à votre balcon?</h3>
+                <input type="text" className="form-control" placeholder="Balcony the First" value={this.state.name}
+                       onChange={e => this.setState({name: e.target.value})}/>
+            </div>
         );
     }
 
     renderStepSize() {
+        let options = [
+            {
+                letter: "S",
+                size: "1-2"
+            },
+            {
+                letter: "M",
+                size: "3-5"
+            },
+            {
+                letter: "L",
+                size: "5-7"
+            },
+            {
+                letter: "XL",
+                size: "8+"
+            }
+        ];
+
         return (
-            <h1>Step 2: Size</h1>
+            <div>
+                <h3 className="my-3">Taille du balcon</h3>
+                {options.map(o => {
+                    let color = this.state.size === o.letter ? "btn-success" : "btn-light";
+                    return (
+                        <button className={"btn " + color + " mx-2 px-4 SizeButton active"}
+                                onClick={() => this.setState({size: o.letter})}>
+                            <span className="display-4">{o.letter}</span><br/>
+                            <span>{o.size} m²</span>
+                        </button>
+                    );
+                })}
+            </div>
         );
     }
 

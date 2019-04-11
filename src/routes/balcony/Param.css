@@ -1,3 +1,7 @@
+#Background {
+    background-color: rgba(var(--biodiPastel), 0.5);
+}
+
 #BtnPrevious, #BtnNext {
     text-align: center;
     cursor: pointer;
