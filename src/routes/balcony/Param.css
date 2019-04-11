@@ -1,0 +1,14 @@
+#BtnPrevious, #BtnNext {
+    text-align: center;
+    cursor: pointer;
+}
+
+#BtnPrevious:hover *, #BtnNext:hover * {
+    color: rgb(var(--biodiLightGrey));
+}
+
+.progress, .progress-bar {
+    height: 24px;
+    font-size: 16px;
+    font-family: BebasNeue, sans-serif;
+}

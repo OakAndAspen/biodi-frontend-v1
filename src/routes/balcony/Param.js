@@ -1,6 +1,7 @@
 import React from 'react';
 import Config from "../../Config";
 import {Link} from "react-router-dom";
+import "./Param.css";
 
 export default class Param extends React.Component {
 
@@ -48,9 +49,19 @@ export default class Param extends React.Component {
     }
 
     renderProgress() {
+        let style = {
+            width: this.state.step * 100 / 7 + "%",
+        };
+
         return (
-            <div className="w-100 text-center my-4">
-                <h1>Progress bar (step {this.state.step})</h1>
+            <div className="row my-4">
+                <div className="col-12 col-sm-6 col-lg-4 mx-auto text-center">
+                    <div className="progress">
+                        <div className="progress-bar progress-bar-striped bg-dark" style={style}>
+                            Etape {this.state.step} / 7
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -58,8 +69,9 @@ export default class Param extends React.Component {
     renderPrevious() {
         if (this.state.step < 2) return null;
         return (
-            <div onClick={() => this.setState({step: this.state.step - 1})}>
-                <h1>Go back to {this.state.step - 1}</h1>
+            <div onClick={() => this.setState({step: this.state.step - 1})} id="BtnPrevious">
+                <h1><i className="fas fa-angle-double-left"/></h1>
+                <h3>Précédent</h3>
             </div>
         );
     }
@@ -67,8 +79,9 @@ export default class Param extends React.Component {
     renderNext() {
         if (this.state.step > 6) return null;
         return (
-            <div onClick={() => this.setState({step: this.state.step + 1})}>
-                <h1>Go to {this.state.step + 1}</h1>
+            <div onClick={() => this.setState({step: this.state.step + 1})} id="BtnNext">
+                <h1><i className="fas fa-angle-double-right"/></h1>
+                <h3>Suivant</h3>
             </div>
         );
     }
