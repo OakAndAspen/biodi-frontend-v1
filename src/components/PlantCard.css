@@ -1,0 +1,18 @@
+.PlantCard{
+    background-color: white;
+}
+.card{
+    border-radius: 1.2rem;
+    padding:0;
+    float: left;
+    background-clip: padding-box;
+    border: 8px solid transparent;
+}
+.card .card-title{
+    padding: 0.3rem;
+    margin: 0;
+}
+.card .card-body{
+    padding: 0.3rem;
+    margin: 0;
+}
