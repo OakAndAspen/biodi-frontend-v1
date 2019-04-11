@@ -75,7 +75,8 @@ export default class Visualization extends React.Component {
     }
     
     renderBalcony(){
-        <div id="balcony">
+        return
+        (<div id="balcony">
                     <img src={Config.imgFolder + "/balconyXL.svg"} className="hidden" alt="Balcony" />
                     <div id="iconswrap">
                         
@@ -114,7 +115,7 @@ export default class Visualization extends React.Component {
                     </div>
                     {this.state.plantStickers.map(sticker => 
                                                   <PlantStickers id={sticker.id} etat={sticker.clicked}/>
-                                                 )}
+                                                 )})
     }
 
    
