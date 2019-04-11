@@ -80,7 +80,7 @@ export default class Visualization extends React.Component {
                     <img src={Config.imgFolder + "/balconyXL.svg"} className="hidden" alt="Balcony" />
                     <div id="iconswrap">
                         
-                        <img src={Config.imgFolder + "/icon/information.svg"} alt="plus d'informations" className="icons" />
+                        <a href="#ancreHelper"><img src={Config.imgFolder + "/icon/information.svg"} alt="plus d'informations" className="icons" /></a>
                         <img src={Config.imgFolder + "/icon/share.svg"} alt="partager" className="icons" />
                         <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className="icons hiddenIco" /> {/* ${this.isOpen() ? 'open' : 'closed'} pour toggle */}
                         <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !" className="icons" />
@@ -125,7 +125,7 @@ renderHelper(){
             <div className="gradient w-100" >
                 <p>Pour une meilleure expérience, switchez votre écran en mode paysage si cela est possible</p>
             </div>
-            <div className="helper">
+            <div className="helper" id="ancreHelper">
                 <h1>Comment réaliser un balcon ?</h1>
                 <p>Cette section a pour but de vous aider à réaliser le balcon selon vos souhaits, l'objectif étant de le rendre le plus biodivers possible.</p>
             <h3>Première étape</h3>
