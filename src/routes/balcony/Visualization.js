@@ -73,16 +73,9 @@ export default class Visualization extends React.Component {
         });
         console.log(this.state.plantStickers[0]);
     }
-
-   
-    render() {
-        return (
-            <div className="w-100 h-100 container overflow-auto onePage">
-               {/* <h1>
-                    Visualization for balcony n°{this.props.match.params.id}
-                </h1>*/}
-         
-                <div id="balcony">
+    
+    renderBalcony(){
+        <div id="balcony">
                     <img src={Config.imgFolder + "/balconyXL.svg"} className="hidden" alt="Balcony" />
                     <div id="iconswrap">
                         
@@ -122,6 +115,17 @@ export default class Visualization extends React.Component {
                     {this.state.plantStickers.map(sticker => 
                                                   <PlantStickers id={sticker.id} etat={sticker.clicked}/>
                                                  )}
+    }
+
+   
+    render() {
+        return (
+            <div className="w-100 h-100 container overflow-auto onePage">
+               {/* <h1>
+                    Visualization for balcony n°{this.props.match.params.id}
+                </h1>*/}
+                    {this.renderBalcony()}
+                
                 </div>
                 <div className="helper w-100">
                 </div>
