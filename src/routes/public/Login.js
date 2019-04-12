@@ -7,22 +7,31 @@ export default class Login extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            email: "",
+            userName: "",
             password: ""
         };
+
         this.send = this.send.bind(this);
+
+        this.messages = {
+            missingData: "Les deux champs sont obligatoires",
+            loginIncorrect: "Le nom d'utilisateur ou le mot de passe est incorrect."
+        };
     }
 
     checkErrors() {
         if (!this.state.userName || !this.state.password) {
+            this.setState({error: this.messages.missingData});
             return false;
         }
+        this.setState({error: null});
         return true;
     }
 
     send() {
-        if(!this.checkErrors()) return null;
+        if (!this.checkErrors()) return null;
 
         let data = {
             username: this.state.userName,
@@ -32,11 +41,13 @@ export default class Login extends React.Component {
         $.ajax({
             method: "POST",
             url: Config.apiUrl + '/jwt-auth/v1/token',
-            context: this,
-            data: JSON.stringify(data)
+            data: JSON.stringify(data),
+            context: this
         }).done(data => {
             localStorage.setItem("authKey", data.token);
             this.props.history.push("/dashboard");
+        }).fail(() => {
+            this.setState({error: this.messages.loginIncorrect})
         });
     }
 
@@ -51,6 +62,9 @@ export default class Login extends React.Component {
                                onChange={e => this.setState({userName: e.target.value})}/>
                         <input type="password" placeholder="Mot de passe" className="form-control my-2"
                                onChange={e => this.setState({password: e.target.value})}/>
+                        {this.state.error && (
+                            <div className="alert alert-danger w-100">{this.state.error}</div>
+                        )}
                         <button type="button" className="btn btn-success w-100 my-2" onClick={this.send}>
                             Connexion
                         </button>
