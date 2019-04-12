@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Visualization.css";
 import Config from "../../Config";
+import {Link} from 'react-router-dom';
 
 
 
@@ -84,7 +85,7 @@ export default class Visualization extends React.Component {
                         <img src={Config.imgFolder + "/icon/share.svg"} alt="partager" className="icons" />
                         <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className="icons hiddenIco" /> {/* ${this.isOpen() ? 'open' : 'closed'} pour toggle */}
                         <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !" className="icons" />
-                         <a href="../balconies" ><img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer" className="icons" /></a>
+                         <Link to="/dashboard" ><img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer" className="icons" /></Link>
                     </div>
                     <div className="balconyelement" id="bac">
                         <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal()}/>
