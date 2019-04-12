@@ -13,8 +13,17 @@ export default class Param extends React.Component {
             name: "",
             size: "S",
             exposition: 3,
-            stock: 0
+            stock: 0,
+            environment: []
         };
+    }
+
+    toggleEnvElement(element) {
+        let environment = this.state.environment;
+        let index = environment.indexOf(element);
+        if (index === -1) environment.push(element);
+        else environment.splice(index, 1);
+        this.setState({environment: environment});
     }
 
     render() {
@@ -127,22 +136,10 @@ export default class Param extends React.Component {
 
     renderStepSize() {
         let options = [
-            {
-                letter: "S",
-                size: "1-2"
-            },
-            {
-                letter: "M",
-                size: "3-5"
-            },
-            {
-                letter: "L",
-                size: "5-7"
-            },
-            {
-                letter: "XL",
-                size: "8+"
-            }
+            {letter: "S", size: "1-2"},
+            {letter: "M", size: "3-5"},
+            {letter: "L", size: "5-7"},
+            {letter: "XL", size: "8+"}
         ];
 
         return (
@@ -220,8 +217,28 @@ export default class Param extends React.Component {
     }
 
     renderStepEnvironment() {
+        let options = [
+            {value: "tree", icon: "fas fa-tree", text: "Arbres"},
+            {value: "grass", icon: "fas fa-seedling", text: "Herbe"},
+            {value: "building", icon: "fas fa-building", text: "Immeubles"}
+        ];
+
         return (
-            <h1>Step 5: Environment</h1>
+            <div>
+                <h3 className="my-3">
+                    Cochez tout ce qui se trouve dans un rayon de 20 mètres autour de votre balcon
+                </h3>
+                {options.map(o => {
+                    let color = this.state.environment.indexOf(o.value) !== -1 ? "btn-success" : "btn-light";
+                    return (
+                        <button className={"btn " + color + " mx-2 px-4 active"}
+                                onClick={() => this.toggleEnvElement(o.value)}>
+                            <i className={o.icon + " display-4"}/> <br/>
+                            <span>{o.text}</span>
+                        </button>
+                    );
+                })}
+            </div>
         );
     }
 
