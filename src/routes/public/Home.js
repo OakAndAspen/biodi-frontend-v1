@@ -27,6 +27,7 @@ export default class Home extends React.Component {
                         history={this.props.history} neighbourhood={this.state.neighbourhood}/>
                 <div className="container">
                     {/* Logo Biodi */}
+                <div class="vertical-align-wrap">
                     <div className="row">
                         <div className="col-12 text-center">
                             <img src={Config.imgFolder + "/biodi-clair.png"} alt="Biodi-vers-City"
@@ -50,6 +51,7 @@ export default class Home extends React.Component {
                                 <Link to="/login" className="ml-1">Connectez-vous ici.</Link>
                             </span>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

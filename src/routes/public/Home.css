@@ -5,6 +5,11 @@
 	width: 54%;
     margin-left: 23%;
 }
+.vertical-align-wrap {
+  width: 100%;
+  height: 100%;
+    padding-top: 10%;
+}
 @media (max-width: 768px) { 
 .wrapMap #Zones {
 	width: 70%;

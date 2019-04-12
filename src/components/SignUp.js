@@ -4,6 +4,7 @@ import Config from "../Config";
 import $ from "jquery";
 import {Link} from "react-router-dom";
 
+
 export default class SignUp extends React.Component {
 
     constructor(props) {
@@ -91,7 +92,7 @@ export default class SignUp extends React.Component {
         const mainStyle = {
             zIndex: 100,
             backgroundColor: Config.colors.biodiDarkBlue,
-            display: this.props.show ? "inherit" : "none"
+            display: this.props.show ? "inherit" : "none",
         };
 
         const closeIconStyle = {
