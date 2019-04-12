@@ -11,7 +11,8 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            popupOn: false
+            popupOn: false,
+            neighbourhood: "centre"
         };
     }
 
@@ -21,8 +22,10 @@ export default class Home extends React.Component {
         };
         return (
             <div className="h-100 overflow-auto">
-                <SignUp show={this.state.popupOn} onClose={() => this.setState({popupOn:false})}/>
-                <div className="container ">
+
+                <SignUp show={this.state.popupOn} onClose={() => this.setState({popupOn:false})}
+                        history={this.props.history} neighbourhood={this.state.neighbourhood}/>
+                <div className="container">
                     {/* Logo Biodi */}
                     <div className="row">
                         <div className="col-12 text-center">
