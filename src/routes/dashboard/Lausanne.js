@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardLayout from "../../DashboardLayout";
+import Map from '../../components/Map';
 
 export default class Lausanne extends React.Component {
 
@@ -11,7 +12,16 @@ export default class Lausanne extends React.Component {
     render() {
         return (
             <DashboardLayout>
-                <h1>Lausanne</h1>
+
+                <div className="container">
+                    {/* Logo Biodi */}
+                
+                    <div className="row">
+                        <div className="col-12 my-3 wrapMap">
+                            <Map onChoice={id => this.setState({popupOn: true})}/>
+                        </div>
+                    </div>
+                </div>
             </DashboardLayout>
         );
     }
