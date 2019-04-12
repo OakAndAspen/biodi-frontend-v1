@@ -15,7 +15,7 @@ const PrivateRoute = ({component: Component, ...rest}) => (
             ) : (
                 <Redirect
                     to={{
-                        pathname: '/',
+                        pathname: '/login',
                         state: {from: props.location}
                     }}
                 />
@@ -79,13 +79,13 @@ class App extends Component {
                         <Route exact path='/' component={publicRoutes.Home}/>
                         <Route exact path='/login' component={publicRoutes.Login}/>
                         <Route exact path='/logout' component={privateRoutes.Logout}/>
-                        <Route exact path='/dashboard' component={privateRoutes.Balconies}/>
-                        <Route exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
-                        <Route exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
-                        <Route exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
-                        <Route exact path='/dashboard/account' component={privateRoutes.Account}/>
-                        <Route exact path='/balcony/new' component={privateRoutes.Param}/>
-                        <Route exact path='/balcony/:id' component={privateRoutes.Visualization}/>
+                        <PrivateRoute exact path='/dashboard' component={privateRoutes.Balconies}/>
+                        <PrivateRoute exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
+                        <PrivateRoute exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
+                        <PrivateRoute exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
+                        <PrivateRoute exact path='/dashboard/account' component={privateRoutes.Account}/>
+                        <PrivateRoute exact path='/balcony/new' component={privateRoutes.Param}/>
+                        <PrivateRoute exact path='/balcony/:id' component={privateRoutes.Visualization}/>
                         <Route path='*' component={NoMatch}/>
                     </Switch>
                 </div>
