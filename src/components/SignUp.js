@@ -22,7 +22,7 @@ export default class SignUp extends React.Component {
             passwordsDontMatch: "Les mots de passe ne correspondent pas."
         };
 
-        this.send = this.send.bind(this);
+        this.register = this.register.bind(this);
     }
 
     checkErrors() {
@@ -38,7 +38,7 @@ export default class SignUp extends React.Component {
         return true;
     }
 
-    send() {
+    register() {
         if(!this.checkErrors()) return null;
 
         let data = {
@@ -48,17 +48,36 @@ export default class SignUp extends React.Component {
             email: this.state.email,
             password: this.state.password1,
             meta: {
-                neighbourhood: "centre"
+                neighbourhood: this.props.neighbourhood
             }
         };
 
         $.ajax({
-            method: "POST",
             url: Config.apiUrl + '/wp/v2/users/register',
-            context: this,
-            data: data
-        }).done((data) => {
-            console.log(data);
+            method: "POST",
+            data: JSON.stringify(data),
+            context: this
+        }).done(res => {
+            if(res.code === 200) this.login();
+        });
+    }
+
+    login() {
+        let data = {
+            username: this.state.userName,
+            password: this.state.password1
+        };
+
+        $.ajax({
+            method: "POST",
+            url: Config.apiUrl + '/jwt-auth/v1/token',
+            data: JSON.stringify(data),
+            context: this
+        }).done(res => {
+            if(res.token) {
+                localStorage.setItem("authKey", res.token);
+                this.props.history.push("/dashboard");
+            }
         });
     }
 
@@ -123,7 +142,7 @@ export default class SignUp extends React.Component {
                         )}
                         <div className="row mt-2">
                             <div className="col-12">
-                                <button type="button" className="btn btn-success w-100" onClick={this.send}>
+                                <button type="button" className="btn btn-success w-100" onClick={this.register}>
                                     C'est parti !
                                 </button>
                             </div>

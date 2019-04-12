@@ -33,11 +33,10 @@ export default class Login extends React.Component {
             method: "POST",
             url: Config.apiUrl + '/jwt-auth/v1/token',
             context: this,
-            data: data
+            data: JSON.stringify(data)
         }).done(data => {
             localStorage.setItem("authKey", data.token);
-            console.log(data);
-            //this.props.history.push("/dashboard");
+            this.props.history.push("/dashboard");
         });
     }
 
