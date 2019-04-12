@@ -9,3 +9,86 @@
     fill: rgb(var(--birdLifeGreen));
     transition: 0.1s;
 }
+
+.cls-1 {
+    fill: none;
+    stroke: #161d1f;
+    stroke-miterlimit: 10;
+    stroke-width: 3px;
+}
+
+.cls-2 {
+    font-size: 100px;
+    fill: #bdbdbd;
+    font-family: BebasNeue, Bebas Neue;
+}
+
+.cls-3 {
+    letter-spacing: -0.04em;
+}
+
+.cls-4 {
+    letter-spacing: 0em;
+}
+.sti{
+    background-color: rgba(var(--biodiLightGrey), 0.8);
+    border-radius: 5px;
+    padding: 2%;
+    width: 22%;
+    position: absolute;
+    right: 0;
+    top:15%;
+    min-height: 40vh;
+}
+.hello{
+    opacity: 1;
+    transition: 0.3s;
+}
+.hiddenSti{
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+}
+.sti ul{
+    list-style-type:circle;
+}
+.help{
+    opacity: 0;
+}
+.close{
+    opacity: 0;
+}
+@media (max-width: 768px) { 
+    .help {
+	    color: rgb(var(--biodiLightGrey));
+        opacity: 1;
+        text-decoration: underline;
+        text-align: center;
+}
+    .close{
+         color: rgb(var(--biodiLightGrey));
+        text-decoration: underline;
+        text-align: center;
+    }
+   .help:hover ~ .close {
+       opacity: 1;
+	   
+}
+     .help:hover  {
+        opacity: 0;
+}
+    .help:hover ~ .sti {
+        opacity: 1;
+        position: relative;
+        width: 48%;
+        float: left;
+        margin-left: 2%;
+        margin-top: 3%;
+        transition: 0;
+}
+    .hiddenSti, .hello {
+	opacity: 0;
+}
+}
