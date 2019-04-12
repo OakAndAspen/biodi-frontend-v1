@@ -1,0 +1,16 @@
+.wrapMap {
+	width: 80%;
+    margin-left: 10%;
+}
+.col-12{
+    flex:auto;
+    max-width: 80%;
+}
+@media (max-width: 768px) { 
+    .col-12 {
+	max-width: 100%;
+}
+    .wrapMap{
+        margin-left: 0;
+    }
+}

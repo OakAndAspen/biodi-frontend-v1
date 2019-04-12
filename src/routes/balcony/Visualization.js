@@ -35,8 +35,8 @@ export default class Visualization extends React.Component {
     
      openModal() {
           /*$.ajax({
-            method: "PATCH",
-            url: Config.apiUrl + '/users',
+            method: "GET",
+            url: Config.apiUrl + '/balcony',
             context: this,
             data: data
         }).done((data) => {
