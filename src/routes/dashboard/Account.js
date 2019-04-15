@@ -1,5 +1,7 @@
 import React from 'react';
 import DashboardLayout from "../../DashboardLayout";
+import Config from "../../Config";
+import $ from "jquery";
 
 export default class Account extends React.Component {
 
@@ -10,7 +12,6 @@ export default class Account extends React.Component {
             lastName: "",
             email: "",
             userName: "",
-            oldPassword: "",
             password1: "",
             password2: "",
             error: null,
@@ -18,8 +19,8 @@ export default class Account extends React.Component {
         };
 
         this.messages = {
-            emptyField: "Les champs concernant les informations de base ne peuvent pas être vides.",
-            emptyPWField: "Les trois champs sont obligatoires pour changer le mot de passe.",
+            emptyField: "L'adresse email est obligatoire.",
+            emptyPWField: "Les deux champs sont obligatoires pour changer le mot de passe.",
             passwordsDontMatch: "Les mots de passe ne correspondent pas.",
             updatedInfo: "Les informations ont bien été modifiées."
         };
@@ -27,41 +28,57 @@ export default class Account extends React.Component {
         this.send = this.send.bind(this);
     }
 
-    send() {
-        let data = this.state;
-        delete data.success;
-        delete data.error;
+    componentDidMount() {
+        $.ajax({
+            method: "GET",
+            url: Config.apiUrl + '/wp/v2/users/me?context=edit',
+            context: this
+        }).done(data => {
+            this.setState({
+                firstName: data.first_name,
+                lastName: data.last_name,
+                email: data.email,
+                userName: data.username
+            });
+        }).fail(() => {
+            alert("Il y a eu un souci lors de la récupération de vos données. Essayez de vous reconnecter.")
+        });
+    }
 
-        if (!data.firstName || !data.lastName || !data.email || !data.userName) {
+    send() {
+        let data = {
+          first_name: this.state.firstName,
+          last_name: this.state.lastName,
+          email: this.state.email
+        };
+
+        if (!data.email) {
             this.setState({error: this.messages.emptyField});
             return null;
         }
 
-        if (data.oldPassword || data.password1 || data.password2) {
-            if (!data.oldPassword || !data.password1 || !data.password2) {
+        if (this.state.password1 || this.state.password2) {
+            if (!this.state.password1 || !this.state.password2) {
                 this.setState({error: this.messages.emptyPWField});
                 return null;
             }
-            if (data.password1 !== data.password2) {
+            if (this.state.password1 !== this.state.password2) {
                 this.setState({error: this.messages.passwordsDontMatch});
                 return null;
             }
+            data.password = this.state.password1;
         }
 
         this.setState({error: null});
 
-        console.log("Sending: ", data);
-
-        /*$.ajax({
-            method: "PATCH",
-            url: Config.apiUrl + '/users',
+        $.ajax({
+            method: "POST",
+            url: Config.apiUrl + '/wp/v2/users/me',
             context: this,
-            data: data
-        }).done((data) => {
-            console.log(data);
-        });*/
-
-        this.setState({success: this.messages.updatedInfo});
+            data: JSON.stringify(data)
+        }).done(() => {
+            this.setState({success: this.messages.updatedInfo});
+        });
     }
 
     render() {
@@ -90,24 +107,18 @@ export default class Account extends React.Component {
                         </div>
                         <div className="col-12 py-2">
                             <input type="text" className="form-control" placeholder="Nom d'utilisateur"
-                                   value={this.state.userName}
-                                   onChange={e => this.setState({userName: e.target.value})}/>
+                                   value={this.state.userName} disabled={true}/>
                         </div>
                         <div className="col-12 pt-2">
                             <h2>Modifier le mot de passe</h2>
                         </div>
-                        <div className="col-12 py-2">
-                            <input type="text" className="form-control" placeholder="Ancien mot de passe"
-                                   value={this.state.oldPassword}
-                                   onChange={e => this.setState({oldPassword: e.target.value})}/>
-                        </div>
                         <div className="col-12 col-sm-6 py-2">
-                            <input type="text" className="form-control" placeholder="Nouveau mot de passe"
+                            <input type="password" className="form-control" placeholder="Nouveau mot de passe"
                                    value={this.state.password1}
                                    onChange={e => this.setState({password1: e.target.value})}/>
                         </div>
                         <div className="col-12 col-sm-6 py-2">
-                            <input type="text" className="form-control" placeholder="Répéter le mot de passe"
+                            <input type="password" className="form-control" placeholder="Répéter le mot de passe"
                                    value={this.state.password2}
                                    onChange={e => this.setState({password2: e.target.value})}/>
                         </div>
