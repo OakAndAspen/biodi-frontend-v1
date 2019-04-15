@@ -1,22 +1,46 @@
 import React from 'react';
 import Hexagon from "../../components/Hexagon";
 import DashboardLayout from "../../DashboardLayout";
+import Config from "../../Config";
+import $ from "jquery";
 
 export default class Balconies extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            balconies: []
+        };
+    }
+
+    componentDidMount() {
+        $.ajax({
+            method: "GET",
+            url: Config.apiUrl + '/v1/balconies',
+            context: this
+        }).done(data => {
+            this.setState({balconies: data})
+        }).fail(() => {
+            alert("Il y a eu un souci lors du chargement de vos balcons. Essayez de vous reconnecter.")
+        });
+    }
+
     render() {
+        console.log("Trying to place those f***ing hexagons:");
         return (
             <DashboardLayout>
                 <div className="w-100 h-100 p-2 p-md-4">
-                    <Hexagon row="1" column="1"/>
-                    <Hexagon row="1" column="2" history={this.props.history} id="new"/>
-                    <Hexagon row="2" column="1"/>
-                    <Hexagon row="2" column="2" history={this.props.history} id="567" title="Mon balcon"/>
-                    <Hexagon row="2" column="3" history={this.props.history} id="567" title="Coucou"/>
-                    <Hexagon row="3" column="1"/>
-                    <Hexagon row="3" column="2"/>
-                    <Hexagon row="4" column="1"/>
-                    <Hexagon row="4" column="2"/>
+                    <Hexagon row="1" column="1" history={this.props.history} id="new"/>
+                    {this.state.balconies.map((b, i) => {
+                            let row = Math.ceil(i / 2 + 1);
+                            let column = i % 2 === 0 ? 2 : 1;
+                            console.log("Index " + i + " : row " + row + ", column " + column);
+                            return (
+                                <Hexagon row={row} column={column} history={this.props.history}
+                                         id={b.id} title={b.name} key={b.id}/>
+                            );
+                        }
+                    )}
                 </div>
             </DashboardLayout>
         );
