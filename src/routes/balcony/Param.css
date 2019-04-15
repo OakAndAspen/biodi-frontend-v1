@@ -17,8 +17,8 @@
     font-family: BebasNeue, sans-serif;
 }
 
-#ExpositionSlider * {
-    background-color: rgb(var(--biodiDarkGrey));
+.Slider * {
+    background-color: rgb(var(--biodiDarkGrey)) !important;
 }
 
 #ExpositionLegend {

@@ -14,7 +14,9 @@ export default class Param extends React.Component {
             size: "S",
             exposition: 3,
             stock: 0,
-            environment: []
+            environment: [],
+            animals: "non",
+            goal: 3
         };
     }
 
@@ -117,7 +119,7 @@ export default class Param extends React.Component {
             case 6:
                 return this.renderStepAnimals();
             case 7:
-                return this.renderStepFav();
+                return this.renderStepGoal();
             default:
                 this.setState({step: 1});
                 return <h1>Error</h1>;
@@ -172,7 +174,7 @@ export default class Param extends React.Component {
             <div>
                 <h3 className="my-3">Exposition au soleil</h3>
                 <div className="py-4">
-                    <Slider min={1} max={5} step={1} id="ExpositionSlider" value={this.state.exposition}
+                    <Slider min={1} max={5} step={1} value={this.state.exposition} className="Slider"
                             onChange={(e, value) => this.setState({exposition: value})}/>
                 </div>
                 <div id="ExpositionLegend">
@@ -243,14 +245,41 @@ export default class Param extends React.Component {
     }
 
     renderStepAnimals() {
+        let options = ["non", "oui"];
         return (
-            <h1>Step 6: Animaux</h1>
+            <div>
+                <h3 className="my-3">
+                    Avez-vous des animaux ayant accès au balcon?
+                </h3>
+                {options.map(o => {
+                    let color = this.state.animals === o ? "btn-success" : "btn-light";
+                    return (
+                        <button className={"btn " + color + " mx-2 px-4"}
+                                onClick={() => this.setState({animals: o})}>
+                            {o}
+                        </button>
+                    );
+                })}
+            </div>
         );
     }
 
-    renderStepFav() {
+    renderStepGoal() {
         return (
-            <h1>Step 7: Favoriser</h1>
+            <div>
+                <h3 className="my-3">Quel est votre objectif?</h3>
+                <div className="py-4">
+                    <Slider min={1} max={5} step={1} value={this.state.goal} className="Slider"
+                            onChange={(e, value) => this.setState({goal: value})}/>
+                </div>
+                <div className="row">
+                    <div className="col text-left"><h5>Enjoliver mon balcon</h5></div>
+                    <div className="col text-right"><h5>Favoriser la biodiversité</h5></div>
+                </div>
+                <div className="row">
+                    <button className="btn btn-lg btn-success w-100 my-3">Créer mon balcon</button>
+                </div>
+            </div>
         );
     }
 }
