@@ -17,7 +17,7 @@ export default class PlantCard extends React.Component {
 
     render() {
         return (
-            <div className={"places "+ (this.props.etat ? "full" : "hiddenPlaces")} id={this.props.id}>
+            <div className={"places "+ (this.props.etat!=null ? "full" : "hiddenPlaces")} id={this.props.id}>
             </div>
         );
     }

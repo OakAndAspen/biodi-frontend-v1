@@ -154,7 +154,7 @@ export default class Visualization extends React.Component {
                         <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div>
                     {this.state.plantStickers.map(sticker => 
-                                                  <PlantStickers id={sticker.id} etat={sticker.clicked} key={sticker.id}/>
+                                                  <PlantStickers id={sticker.id} etat={sticker.contient} key={sticker.id} contient={sticker.contient}/>
                                                  )}
     </div>
     )
