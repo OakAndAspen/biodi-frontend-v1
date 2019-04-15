@@ -16,6 +16,7 @@ export default class Visualization extends React.Component {
         this.state = {
             visible : false,
             isLoaded : false,
+            isSaved : false,
             plants : [],
             plantStickers:[
             {id: "place1", contient: null, clicked: false},
@@ -41,7 +42,7 @@ export default class Visualization extends React.Component {
             isLoaded: true,
             balcony: result
           });
-            console.log(result);
+            console.log(this.state.balcony);
         },
         
         // Note: it's important to handle errors here
@@ -122,8 +123,8 @@ export default class Visualization extends React.Component {
                         
                         <a href="#ancreHelper"><img src={Config.imgFolder + "/icon/information.svg"} alt="plus d'informations" className="icons" /></a>
                         <img src={Config.imgFolder + "/icon/share.svg"} alt="partager" className="icons" />
-                        <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className="icons hiddenIco" /> {/* ${this.isOpen() ? 'open' : 'closed'} pour toggle */}
-                        <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !" className="icons" />
+                        <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className={"icons " + (this.state.isSaved ? "hiddenIco" : "saving")} /> 
+                        <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !" className={"icons " + (this.state.isSaved ? "" : "hiddenIco")} />
                          <Link to="/dashboard" ><img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer" className="icons" /></Link>
                     </div>
                     <div className="balconyelement" id="bac">

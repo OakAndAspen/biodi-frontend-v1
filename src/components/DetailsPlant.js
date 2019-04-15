@@ -10,8 +10,31 @@ export default class DetailsPlant extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isFull: false
+            isFull: false, 
+            plant:[]
         };
+        
+        /*fetch(Config.apiUrl+'/v1/plants/'+this.props.match.params.id).then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            plant: result
+          });
+            console.log(result);
+        },
+        
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+            console.error(error);
+        }
+      )*/
     }
     
 
