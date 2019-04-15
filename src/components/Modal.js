@@ -8,12 +8,13 @@ import DetailsPlant from "./DetailsPlant";
 export default class Modal extends Component {
     constructor(props) {
         super(props);
+        console.log(this.props.plant);
         let effect = props.effect || 'fadeInDown';
         this.setSize(effect);
         this.state = {
             visible : props.visible,
             style : style[effect],
-            plantId:null
+            plantId :this.props.plant
         }
     }
 
@@ -94,7 +95,10 @@ export default class Modal extends Component {
                 }
                 {this.state.plantId!=null &&
                     <DetailsPlant id={this.state.plantId} onClick={() => this.props.onClick(this.state.plantId)}/>
+                    
                 }
+
+                        {this.state.plantId}
                     </div>
                     <div style={this.state.visible ? this.state.style.mask : this.state.style.maskHidden} onClick={this.props.onClickAway ? this.props.onClickAway : null} />
                 </div>

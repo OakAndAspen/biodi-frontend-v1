@@ -18,31 +18,23 @@ export default class Visualization extends React.Component {
             isLoaded : false,
             isSaved : false,
             plants : [],
-            plantStickers:[
-            {id: "place1", contient: null, clicked: false},
-            {id: "place2", contient: null, clicked: false},
-            {id: "place3", contient: null, clicked: false},
-            {id: "place4", contient: null, clicked: false},
-            {id: "place5", contient: null, clicked: false},
-            {id: "place6", contient: null, clicked: false},
-            {id: "place7", contient: null, clicked: false},
-            {id: "place8", contient: null, clicked: false},
-            {id: "place9", contient: null, clicked: false},
-            {id: "place10", contient: null, clicked: false},
-            {id: "place11", contient: null, clicked: false},
-        ],
+            plantStickers:[],
             currentPlant:null,
-            balcony:null,
         };
-        
-        fetch(Config.apiUrl+'/v1/balconies/'+this.props.match.params.id).then(res => res.json())
+    
+    }
+    
+    componentDidMount() {
+    fetch(Config.apiUrl+'/v1/balconies/'+this.props.match.params.id).then(res => res.json())
       .then(
         (result) => {
+            
+            
           this.setState({
             isLoaded: true,
-            balcony: result
+            plantStickers: result
           });
-            console.log(this.state.balcony);
+            console.log(this.state.plantStickers[0]);
         },
         
         // Note: it's important to handle errors here
@@ -56,8 +48,8 @@ export default class Visualization extends React.Component {
             console.error(error);
         }
       )
+  }
     
-    }
         
         /*
          $.ajax({
@@ -81,7 +73,7 @@ export default class Visualization extends React.Component {
        
     
      openModal() {
-          
+         
          
          let data = [
            {id:1, name:"Plantia"},
@@ -96,6 +88,8 @@ export default class Visualization extends React.Component {
             visible : true,
             plants: data
         });
+         
+         console.log(this.state.currentPlant);
     }
 
     closeModal() {
@@ -155,8 +149,13 @@ export default class Visualization extends React.Component {
                         <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div>
                     {this.state.plantStickers.map(sticker => 
-                                                  <PlantStickers id={sticker.id} etat={sticker.contient} key={sticker.id} contient={sticker.contient}/>
+                                                  <PlantStickers id={"place"+sticker.location} etat={sticker._contain} key={sticker.id} contient={sticker._contain} image={sticker.imgSrc} onClick={() => 
+                                                   this.setState({ currentPlant: sticker._contain }, () => {
+  this.openModal()
+})
+                    } />
                                                  )}
+
     </div>
     )
     }
@@ -198,7 +197,7 @@ renderHelper(){
 
 
                 
-                <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClick={(id)=> this.closeModalAndAdd(id)}>
+                <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClick={(id)=> this.closeModalAndAdd(id)} plant={this.state.currentPlant}>
                     
                 </Modal>
             </div>
