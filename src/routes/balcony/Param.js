@@ -18,6 +18,8 @@ export default class Param extends React.Component {
             animals: "non",
             goal: 3
         };
+
+        this.create = this.create.bind(this);
     }
 
     toggleEnvElement(element) {
@@ -28,21 +30,29 @@ export default class Param extends React.Component {
         this.setState({environment: environment});
     }
 
+    create() {
+        if(!this.state.name) return null;
+        console.log(this.state);
+        alert("TODO: Créer le balcon.");
+    }
+
     render() {
         return (
             <div className="h-100 w-100 bg-light">
                 <div className="h-100 w-100 overflow-auto" id="Background">
                     {this.renderBanner()}
-                    {this.renderProgress()}
-                    <div className="row">
-                        <div className="col-12 col-md-3 col-lg-2">
-                            {this.renderPrevious()}
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-8 text-center">
-                            {this.renderCurrentStep()}
-                        </div>
-                        <div className="col-12 col-md-3 col-lg-2">
-                            {this.renderNext()}
+                    <div className="container">
+                        {this.renderProgress()}
+                        <div className="row">
+                            <div className="col-6 col-lg-2 text-center py-2">
+                                {this.renderPrevious()}
+                            </div>
+                            <div className="col-6 col-lg-2 text-center py-2 order-lg-3">
+                                {this.renderNext()}
+                            </div>
+                            <div className="col-12 col-lg-8 text-center">
+                                {this.renderCurrentStep()}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -52,7 +62,7 @@ export default class Param extends React.Component {
 
     renderBanner() {
         let style = {
-            backgroundImage: "url(" + Config.imgFolder + "/photo-balcon.png" + ")",
+            backgroundImage: "url(" + Config.imgFolder + "/photo-balcon.png)",
             backgroundSize: "cover",
             height: "250px",
             backgroundPosition: "center center"
@@ -87,20 +97,26 @@ export default class Param extends React.Component {
     renderPrevious() {
         if (this.state.step < 2) return null;
         return (
-            <div onClick={() => this.setState({step: this.state.step - 1})} id="BtnPrevious">
-                <h1><i className="fas fa-angle-double-left"/></h1>
-                <h3>Précédent</h3>
-            </div>
+            <button className="btn btn-outline-dark text-dark"
+                    onClick={() => this.setState({step: this.state.step - 1})}>
+                <span className="m-2">
+                    <i className="fas fa-angle-double-left"/>
+                </span>
+                <span className="m-2 d-lg-block">Précédent</span>
+            </button>
         );
     }
 
     renderNext() {
         if (this.state.step > 6) return null;
         return (
-            <div onClick={() => this.setState({step: this.state.step + 1})} id="BtnNext">
-                <h1><i className="fas fa-angle-double-right"/></h1>
-                <h3>Suivant</h3>
-            </div>
+            <button className="btn btn-outline-dark text-dark"
+                    onClick={() => this.setState({step: this.state.step + 1})}>
+                <span className="m-2">
+                    <i className="fas fa-angle-double-right"/>
+                </span>
+                <span className="m-2 d-lg-block">Suivant</span>
+            </button>
         );
     }
 
@@ -130,7 +146,7 @@ export default class Param extends React.Component {
         return (
             <div>
                 <h3 className="my-3">Quel nom voulez-vous donner à votre balcon?</h3>
-                <input type="text" className="form-control" placeholder="Balcony the First" value={this.state.name}
+                <input type="text" className="form-control" value={this.state.name}
                        onChange={e => this.setState({name: e.target.value})}/>
             </div>
         );
@@ -145,16 +161,20 @@ export default class Param extends React.Component {
         ];
 
         return (
-            <div>
-                <h3 className="my-3">Taille du balcon</h3>
+            <div className="row">
+                <div className="col-12">
+                    <h3 className="my-3">Taille du balcon</h3>
+                </div>
                 {options.map(o => {
                     let color = this.state.size === o.letter ? "btn-success" : "btn-light";
                     return (
-                        <button className={"btn " + color + " mx-2 px-4 SizeButton active"}
-                                onClick={() => this.setState({size: o.letter})}>
-                            <span className="display-4">{o.letter}</span><br/>
-                            <span>{o.size} m²</span>
-                        </button>
+                        <div className="col-6 col-sm-3 p-3">
+                            <button className={color + " btn w-100 text-dark"}
+                                    onClick={() => this.setState({size: o.letter})}>
+                                <span className="display-4">{o.letter}</span><br/>
+                                <span>{o.size} m²</span>
+                            </button>
+                        </div>
                     );
                 })}
             </div>
@@ -178,9 +198,10 @@ export default class Param extends React.Component {
                             onChange={(e, value) => this.setState({exposition: value})}/>
                 </div>
                 <div id="ExpositionLegend">
-                    <i className={"fas fa-sun mr-2 display-4 exposition-" + this.state.exposition}/>
-                    <br/>
-                    {options[this.state.exposition]} heures par jour
+                    <span className={"display-4 exposition-" + this.state.exposition}>
+                        <i className="fas fa-sun"/>
+                    </span>
+                    <span className="text-dark d-block">{options[this.state.exposition]} heures par jour</span>
                 </div>
             </div>
         );
@@ -199,7 +220,7 @@ export default class Param extends React.Component {
         ];
 
         return (
-            <div className="row">
+            <div className="row mb-3">
                 <div className="col-12 col-md-4 col-lg-6">
                     <h3 className="my-3">Etage</h3>
                 </div>
@@ -226,18 +247,22 @@ export default class Param extends React.Component {
         ];
 
         return (
-            <div>
-                <h3 className="my-3">
-                    Cochez tout ce qui se trouve dans un rayon de 20 mètres autour de votre balcon
-                </h3>
+            <div className="row">
+                <div className="col-12">
+                    <h3 className="my-3">
+                        Cochez tout ce qui se trouve dans un rayon de 20 mètres autour de votre balcon
+                    </h3>
+                </div>
                 {options.map(o => {
                     let color = this.state.environment.indexOf(o.value) !== -1 ? "btn-success" : "btn-light";
                     return (
-                        <button className={"btn " + color + " mx-2 px-4 active"}
-                                onClick={() => this.toggleEnvElement(o.value)}>
-                            <i className={o.icon + " display-4"}/> <br/>
-                            <span>{o.text}</span>
-                        </button>
+                        <div className="col-6 col-sm-3 p-3">
+                            <button className={color + " btn w-100 text-dark"}
+                                    onClick={() => this.toggleEnvElement(o.value)}>
+                                <span className="display-4 d-block"><i className={o.icon}/></span>
+                                <span>{o.text}</span>
+                            </button>
+                        </div>
                     );
                 })}
             </div>
@@ -247,17 +272,21 @@ export default class Param extends React.Component {
     renderStepAnimals() {
         let options = ["non", "oui"];
         return (
-            <div>
-                <h3 className="my-3">
-                    Avez-vous des animaux ayant accès au balcon?
-                </h3>
+            <div className="row">
+                <div className="col-12">
+                    <h3 className="my-3">
+                        Avez-vous des animaux ayant accès au balcon?
+                    </h3>
+                </div>
                 {options.map(o => {
                     let color = this.state.animals === o ? "btn-success" : "btn-light";
                     return (
-                        <button className={"btn " + color + " mx-2 px-4"}
-                                onClick={() => this.setState({animals: o})}>
-                            {o}
-                        </button>
+                        <div className="col p-3">
+                            <button className={color + " btn w-100 text-dark"}
+                                    onClick={() => this.setState({animals: o})}>
+                                {o}
+                            </button>
+                        </div>
                     );
                 })}
             </div>
@@ -265,6 +294,7 @@ export default class Param extends React.Component {
     }
 
     renderStepGoal() {
+        let disabled = this.state.name ? "" : "disabled";
         return (
             <div>
                 <h3 className="my-3">Quel est votre objectif?</h3>
@@ -272,13 +302,16 @@ export default class Param extends React.Component {
                     <Slider min={1} max={5} step={1} value={this.state.goal} className="Slider"
                             onChange={(e, value) => this.setState({goal: value})}/>
                 </div>
-                <div className="row">
+                <div className="row mb-2">
                     <div className="col text-left"><h5>Enjoliver mon balcon</h5></div>
                     <div className="col text-right"><h5>Favoriser la biodiversité</h5></div>
                 </div>
-                <div className="row">
-                    <button className="btn btn-lg btn-success w-100 my-3">Créer mon balcon</button>
-                </div>
+                <button className={"col btn btn-lg btn-success w-100 mb-2 " + disabled} onClick={this.create}>
+                    Créer mon balcon
+                </button>
+                {!this.state.name &&
+                <div className="alert alert-warning w-100 mb-4">Vous n'avez pas choisi de nom pour votre balcon.</div>
+                }
             </div>
         );
     }
