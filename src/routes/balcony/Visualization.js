@@ -30,7 +30,8 @@ export default class Visualization extends React.Component {
             {id: "place10", contient: null, clicked: false},
             {id: "place11", contient: null, clicked: false},
         ],
-            currentPlant:null
+            currentPlant:null,
+            balcony:null,
         };
         
         fetch(Config.apiUrl+'/v1/balconies/'+this.props.match.params.id).then(res => res.json())
@@ -38,7 +39,7 @@ export default class Visualization extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result
+            balcony: result
           });
             console.log(result);
         },
@@ -153,7 +154,7 @@ export default class Visualization extends React.Component {
                         <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div>
                     {this.state.plantStickers.map(sticker => 
-                                                  <PlantStickers id={sticker.id} etat={sticker.clicked}/>
+                                                  <PlantStickers id={sticker.id} etat={sticker.clicked} key={sticker.id}/>
                                                  )}
     </div>
     )
