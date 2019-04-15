@@ -43,8 +43,26 @@ export default class Param extends React.Component {
 
     create() {
         if (!this.state.name) return null;
-        console.log(this.state);
-        alert("TODO: Créer le balcon.");
+        let data = {
+            name: this.state.name,
+            size: this.state.size,
+            sunlight: this.state.exposition,
+            pet: this.state.animals,
+            environnement: this.state.environment,
+            floor: this.state.stock,
+            favorising: this.state.goal
+        };
+
+        $.ajax({
+            method: "POST",
+            url: Config.apiUrl + '/v1/balconies/add',
+            data: JSON.stringify(data),
+            context: this
+        }).done(() => {
+            this.props.history.push("/dashboard");
+        }).fail(() => {
+            alert("Il y a eu une erreur lors de la création du balcon. Désolés pour le dérangement! Nous faisons de notre mieux.");
+        });
     }
 
     render() {

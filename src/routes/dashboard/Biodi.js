@@ -16,7 +16,7 @@ export default class Biodi extends React.Component {
                 <div className="w-100 h-100 container overflow-auto">
                     <div className="row my-4">
                         <div className="col-12 col-md-6 ml-auto">
-                            <img src={Config.imgFolder + "/biodi-gris.png"}
+                            <img src={Config.imgFolder + "/biodi-fonce.png"}
                                  alt="Biodi-vers-City" className="img-fluid my-4"/>
                         </div>
                     </div>
