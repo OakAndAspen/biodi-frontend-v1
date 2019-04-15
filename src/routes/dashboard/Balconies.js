@@ -26,7 +26,6 @@ export default class Balconies extends React.Component {
     }
 
     render() {
-        console.log("Trying to place those f***ing hexagons:");
         return (
             <DashboardLayout>
                 <div className="w-100 h-100 p-2 p-md-4">
@@ -34,7 +33,6 @@ export default class Balconies extends React.Component {
                     {this.state.balconies.map((b, i) => {
                             let row = Math.ceil(i / 2 + 1);
                             let column = i % 2 === 0 ? 2 : 1;
-                            console.log("Index " + i + " : row " + row + ", column " + column);
                             return (
                                 <Hexagon row={row} column={column} history={this.props.history}
                                          id={b.id} title={b.name} key={b.id}/>

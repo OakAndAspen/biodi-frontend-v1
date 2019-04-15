@@ -50,7 +50,7 @@ export default class Param extends React.Component {
             pet: this.state.animals,
             environnement: this.state.environment,
             floor: this.state.stock,
-            favorising: this.state.goal
+            goal: this.state.goal
         };
 
         $.ajax({
