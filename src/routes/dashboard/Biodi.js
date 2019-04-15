@@ -1,6 +1,7 @@
 import React from 'react';
 import Config from "../../Config";
 import DashboardLayout from "../../DashboardLayout";
+import {Link} from "react-router-dom";
 
 export default class Biodi extends React.Component {
 
@@ -20,47 +21,46 @@ export default class Biodi extends React.Component {
                         </div>
                     </div>
                     <div className="row my-4">
-                        <div className="col-12 col-md-6">
-                            <h2>Premier paragraphe</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus lacinia facilisis.
-                                Donec quis faucibus dui, a accumsan odio. Morbi et lacus vitae diam efficitur mollis.
-                                Nunc a
-                                urna erat. Nunc porta turpis id congue luctus. Nunc lobortis mauris sed neque aliquet
-                                egestas. Curabitur at eros quis elit euismod euismod id sed velit. Mauris pellentesque
-                                in
-                                elit eget imperdiet. Maecenas dictum molestie ipsum, in pharetra risus pretium quis.
-                                Suspendisse at enim augue. Etiam lacinia tortor ex. Ut convallis cursus dictum. Donec
-                                dapibus risus sit amet magna cursus, sit amet varius est interdum. </p>
-                            <p>Mauris quis rhoncus leo. Vestibulum egestas posuere pulvinar. Aliquam pulvinar pulvinar
-                                purus, vel egestas dui dignissim in. Mauris egestas leo quis orci accumsan, in imperdiet
-                                risus posuere. In hac habitasse platea dictumst. Proin lorem felis, porta a semper in,
-                                egestas et mauris. Proin lectus eros, pretium at sapien non, pretium ultricies nunc. Sed
-                                ac
-                                sollicitudin mi, nec mattis justo. Vestibulum ut dictum nibh, ut commodo arcu. Ut at
-                                enim
-                                ante. Duis consequat nunc ipsum, vel convallis leo malesuada nec. Nam sed hendrerit est.
-                                Nulla magna eros, fringilla eu pretium vel, placerat at erat. </p>
+                        <div className="col-12 col-md-6 text-justify">
+                            <h2>À propos de Biodi-vers-City</h2>
+                            <p>Biodi-vers-City est un projet du département COMEM de l’HEIG-VD supporté par BirdLife
+                                Suisse.</p>
+
+                            <p>Ce projet a pour mission de promouvoir la biodiversité dans les milieux urbains. Cette
+                                action se concentre sur les particuliers en encourageant l’aménagement des balcons et
+                                bords de fenêtres, mais aussi des jardins et espaces verts communs.</p>
+
+                            <p>Le terme <i>biodiversité</i> englobe tout le vivant, en d’autres termes la flore et la
+                                faune. Ce projet encourage l’installation de fleurs et de plantes ainsi que divers
+                                habitats pour les insectes et les petits animaux.</p>
                         </div>
                         <div className="col-12 col-md-6">
-                            <h2>Deuxième paragraphe</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus lacinia facilisis.
-                                Donec quis faucibus dui, a accumsan odio. Morbi et lacus vitae diam efficitur mollis.
-                                Nunc a
-                                urna erat. Nunc porta turpis id congue luctus. Nunc lobortis mauris sed neque aliquet
-                                egestas. Curabitur at eros quis elit euismod euismod id sed velit. Mauris pellentesque
-                                in
-                                elit eget imperdiet. Maecenas dictum molestie ipsum, in pharetra risus pretium quis.
-                                Suspendisse at enim augue. Etiam lacinia tortor ex. Ut convallis cursus dictum. Donec
-                                dapibus risus sit amet magna cursus, sit amet varius est interdum. </p>
-                            <p>Mauris quis rhoncus leo. Vestibulum egestas posuere pulvinar. Aliquam pulvinar pulvinar
-                                purus, vel egestas dui dignissim in. Mauris egestas leo quis orci accumsan, in imperdiet
-                                risus posuere. In hac habitasse platea dictumst. Proin lorem felis, porta a semper in,
-                                egestas et mauris. Proin lectus eros, pretium at sapien non, pretium ultricies nunc. Sed
-                                ac
-                                sollicitudin mi, nec mattis justo. Vestibulum ut dictum nibh, ut commodo arcu. Ut at
-                                enim
-                                ante. Duis consequat nunc ipsum, vel convallis leo malesuada nec. Nam sed hendrerit est.
-                                Nulla magna eros, fringilla eu pretium vel, placerat at erat. </p>
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title">Customisez votre balcon</h5>
+                                    <p className="card-text text-justify">Sur <b>l'application</b>, créez votre balcon et découvrez
+                                        comment le rendre plus accueillant pour la biodiversité! Ajoutez des plantes et
+                                        des constructions permettant à la faune et la flore de s'y épanouir. Rapportez
+                                        des points à votre quartier en créant des balcons et en participant sur le
+                                        forum, afin qu'il devienne le quartier le plus vert de Biodi-vers-City!</p>
+                                    <Link to="/dashboard" className="btn btn-success w-100">
+                                        Voir mes balcons
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="card my-3">
+                                <div className="card-body">
+                                    <h5 className="card-title">Partagez votre expérience</h5>
+                                    <p className="card-text text-justify">Sur <b>le forum</b>, partagez votre expérience
+                                        et vos questions avec d'autres citoyens de Biodi-vers-City. Des membres de
+                                        BirdLife pourront également vous donner une opinion professionnelle sur vos
+                                        aménagements, qu'ils soient sur votre balcon, sur vos bords de fenêtres ou dans
+                                        votre jardin.</p>
+                                    <a href="https://forum.biodi-vers-city-ch" className="btn btn-success w-100">
+                                        Aller sur le forum
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
