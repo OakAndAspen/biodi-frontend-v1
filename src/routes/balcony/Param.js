@@ -3,6 +3,7 @@ import Config from "../../Config";
 import {Link} from "react-router-dom";
 import "./Param.css";
 import Slider from "@material-ui/lab/Slider";
+import $ from "jquery";
 
 export default class Param extends React.Component {
 
@@ -20,6 +21,16 @@ export default class Param extends React.Component {
         };
 
         this.create = this.create.bind(this);
+        this.showFileDialog = this.showFileDialog.bind(this);
+        this.uploadImage = this.uploadImage.bind(this);
+    }
+
+    showFileDialog() {
+        $("#FileInput").trigger("click");
+    }
+
+    uploadImage(value) {
+        console.log(value);
     }
 
     toggleEnvElement(element) {
@@ -31,7 +42,7 @@ export default class Param extends React.Component {
     }
 
     create() {
-        if(!this.state.name) return null;
+        if (!this.state.name) return null;
         console.log(this.state);
         alert("TODO: Créer le balcon.");
     }
@@ -68,10 +79,18 @@ export default class Param extends React.Component {
             backgroundPosition: "center center"
         };
         return (
-            <div className="w-100 p-3" style={style}>
-                <Link to="/dashboard">
-                    <i className="fas fa-times text-dark"/>
-                </Link>
+            <div className="w-100" style={style}>
+                <div className="row h-100 align-items-center">
+                    <Link to="/dashboard" className="btn btn-dark text-info px-3" id="CloseButton">
+                        <i className="fas fa-times"/>
+                    </Link>
+                    <button className="btn btn-light mx-auto" onClick={this.showFileDialog}>
+                        <i className="fas fa-image"/>
+                        <span className="ml-2">Choisir une autre image</span>
+                    </button>
+                    <input type="file" className="d-none" id="FileInput"
+                           onChange={e => this.uploadImage(e.target.value)}/>
+                </div>
             </div>
         );
     }
