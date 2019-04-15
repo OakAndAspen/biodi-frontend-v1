@@ -10,7 +10,7 @@ export default class HexaEmpty extends React.Component {
 
         return (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 519.62" className="HexaEmpty">
-                <polygon className="cls-1" style={polyStyle}
+                <polygon style={polyStyle}
                          points="450 0 600 259.81 450 519.62 150 519.62 0 259.81 150 0 450 0"/>
             </svg>
         );

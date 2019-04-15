@@ -24,7 +24,7 @@ export default class HexaBalcony extends React.Component {
                             <image height="1" width="1" preserveAspectRatio="none" href={imageUrl}/>
                         </pattern>
                     </defs>
-                    <polygon className="cls-1" style={polyStyle}
+                    <polygon style={polyStyle}
                              points="450 0 600 259.81 450 519.62 150 519.62 0 259.81 150 0 450 0"/>
                 </svg>
                 <div style={textStyle} className="text-center w-100 text-light">{this.props.title}</div>

@@ -187,7 +187,7 @@ export default class Param extends React.Component {
                 {options.map(o => {
                     let color = this.state.size === o.letter ? "btn-success" : "btn-light";
                     return (
-                        <div className="col-6 col-sm-3 p-3">
+                        <div className="col-6 col-sm-3 p-3" key={o.letter}>
                             <button className={color + " btn w-100 text-dark"}
                                     onClick={() => this.setState({size: o.letter})}>
                                 <span className="display-4">{o.letter}</span><br/>
@@ -247,7 +247,7 @@ export default class Param extends React.Component {
                     {stocks.map(stock => {
                         let color = stock.value === this.state.stock ? "btn-success" : "btn-light";
                         return (
-                            <button className={"d-block w-100 mb-1 btn btn-sm " + color}
+                            <button className={"d-block w-100 mb-1 btn btn-sm " + color} key={stock.value}
                                     onClick={() => this.setState({stock: stock.value})}>
                                 {stock.label}
                             </button>
@@ -275,7 +275,7 @@ export default class Param extends React.Component {
                 {options.map(o => {
                     let color = this.state.environment.indexOf(o.value) !== -1 ? "btn-success" : "btn-light";
                     return (
-                        <div className="col-6 col-sm-3 p-3">
+                        <div className="col-6 col-sm-3 p-3" key={o.value}>
                             <button className={color + " btn w-100 text-dark"}
                                     onClick={() => this.toggleEnvElement(o.value)}>
                                 <span className="display-4 d-block"><i className={o.icon}/></span>
@@ -300,7 +300,7 @@ export default class Param extends React.Component {
                 {options.map(o => {
                     let color = this.state.animals === o ? "btn-success" : "btn-light";
                     return (
-                        <div className="col p-3">
+                        <div className="col p-3" key={o}>
                             <button className={color + " btn w-100 text-dark"}
                                     onClick={() => this.setState({animals: o})}>
                                 {o}
