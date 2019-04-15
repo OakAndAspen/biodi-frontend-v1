@@ -56,7 +56,7 @@ export default class Biodi extends React.Component {
                                         BirdLife pourront également vous donner une opinion professionnelle sur vos
                                         aménagements, qu'ils soient sur votre balcon, sur vos bords de fenêtres ou dans
                                         votre jardin.</p>
-                                    <a href="https://forum.biodi-vers-city-ch" className="btn btn-success w-100">
+                                    <a href="https://forum.biodi-vers-city.ch" className="btn btn-success w-100">
                                         Aller sur le forum
                                     </a>
                                 </div>
