@@ -2,6 +2,7 @@ import React from 'react';
 import "./Visualization.css";
 import Config from "../../Config";
 import {Link} from 'react-router-dom';
+import $ from 'jquery';
 
 
 
@@ -14,6 +15,7 @@ export default class Visualization extends React.Component {
         super(props);
         this.state = {
             visible : false,
+            isLoaded : false,
             plants : [],
             plantStickers:[
             {id: "place1", contient: null, clicked: false},
@@ -31,17 +33,53 @@ export default class Visualization extends React.Component {
             currentPlant:null
         };
         
+        fetch(Config.apiUrl+'/v1/balconies/'+this.props.match.params.id).then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result
+          });
+            console.log(result);
+        },
+        
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+            console.error(error);
+        }
+      )
+    
     }
+        
+        /*
+         $.ajax({
+            method: "GET",
+            url: Config.apiUrl + '/v1/balconies/'+ this.props.match.params.id,
+            context: this,
+    error: function (xhr) {
+        //Here the status code can be retrieved like;
+        xhr.status;
+
+        //The message added to Response object in Controller can be retrieved as following.
+        xhr.responseText;
+    }
+        }).done(response => {
+                console.log(response);
+            }).error(err =>{
+             console.error(err);
+         });
+    }*/
+    
+       
     
      openModal() {
-          /*$.ajax({
-            method: "GET",
-            url: Config.apiUrl + '/balcony',
-            context: this,
-            data: data
-        }).done((data) => {
-            console.log(data);
-        });*/
+          
          
          let data = [
            {id:1, name:"Plantia"},
@@ -155,6 +193,8 @@ renderHelper(){
                     {this.renderBalcony()}
                 
                  {this.renderHelper()}
+
+
                 
                 <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClick={(id)=> this.closeModalAndAdd(id)}>
                     
