@@ -21,16 +21,10 @@ export default class Param extends React.Component {
         };
 
         this.create = this.create.bind(this);
-        this.showFileDialog = this.showFileDialog.bind(this);
-        this.uploadImage = this.uploadImage.bind(this);
     }
 
-    showFileDialog() {
-        $("#FileInput").trigger("click");
-    }
-
-    uploadImage(value) {
-        console.log(value);
+    onNameChange(value) {
+        if (value.length <= 14) this.setState({name: value});
     }
 
     toggleEnvElement(element) {
@@ -102,12 +96,6 @@ export default class Param extends React.Component {
                     <Link to="/dashboard" className="btn btn-dark text-info px-3" id="CloseButton">
                         <i className="fas fa-times"/>
                     </Link>
-                    <button className="btn btn-light mx-auto" onClick={this.showFileDialog}>
-                        <i className="fas fa-image"/>
-                        <span className="ml-2">Choisir une autre image</span>
-                    </button>
-                    <input type="file" className="d-none" id="FileInput"
-                           onChange={e => this.uploadImage(e.target.value)}/>
                 </div>
             </div>
         );
@@ -181,10 +169,15 @@ export default class Param extends React.Component {
 
     renderStepName() {
         return (
-            <div>
-                <h3 className="my-3">Quel nom voulez-vous donner à votre balcon?</h3>
-                <input type="text" className="form-control" value={this.state.name}
-                       onChange={e => this.setState({name: e.target.value})}/>
+            <div className="row">
+                <div className="col-12">
+                    <h3 className="my-3">Quel nom voulez-vous donner à votre balcon?</h3>
+                </div>
+                <div className="col-12 col-sm-6 mx-auto">
+                    <input type="text" className="form-control text-center" value={this.state.name}
+                           onChange={e => this.onNameChange(e.target.value)}/>
+                    <small className="form-text text-muted">Max. 14 caractères</small>
+                </div>
             </div>
         );
     }
