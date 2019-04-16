@@ -43,21 +43,20 @@ export default class PlantCard extends React.Component {
         }).done((data) => {
             console.log(data);
         });*/
-          this.props.onClick();
-         
-        this.setState({
-            visible : true,
-            
-        });
+          this.props.onCardClick(id);
+         console.log(id);
     }
 
     
 
     render() {
         return (
-            <div className="PlantCard card col-sm-4" data-id={this.props.id} onClick={() => this.seeDetails(this.props.id)} key={this.props.id} >
+            <div className="PlantCard card col-sm-4" 
+            data-id={this.props.plant} 
+            onClick={() => this.seeDetails(this.props.plant.id)} 
+            key={this.props.plant} >
                 <img src="https://blog.interflora.fr/wp-content/uploads/2016/05/Entretien-bouquet-de-fleurs.jpg" alt={"Photo de "+ this.props.name} className="card-img-top"/>
-                <h2 className="card-title">{this.props.name}</h2>
+                <h2 className="card-title">{this.props.plant.name}</h2>
                 <p className="card-body">Argent - Temps - Saison</p>
                 <p className="card-body">Attire : </p>
             </div>

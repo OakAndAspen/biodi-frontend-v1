@@ -1,7 +1,6 @@
 import React from 'react';
 import "./DetailsPlant.css";
 import Config from "../Config";
-import PropTypes from "prop-types";
 
 export default class DetailsPlant extends React.Component {
 
@@ -14,33 +13,38 @@ export default class DetailsPlant extends React.Component {
             plant:[]
         };
         
-        /*fetch(Config.apiUrl+'/v1/plants/'+this.props.match.params.id).then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            plant: result
-          });
-            console.log(result);
-        },
         
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-            console.error(error);
-        }
-      )*/
     }
-    
+      componentWillReceiveProps() {
+            fetch(Config.apiUrl+'/v1/plants/'+this.props.id).then(res => res.json())
+              .then(
+                (result) => {
 
-    addPlant(id) {
-        this.props.onClick();
-    }
+
+                  this.setState({
+                    isLoaded: true,
+                    plant: result[0]
+                  }, () => {
+                    console.log(this.state.plant);  
+                  });
+                    
+                },
+
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                  this.setState({
+                    isLoaded: true,
+                    error
+                  });
+                    console.error(error);
+                }
+              )
+         
+  }
+
+   
     delPlant(id){
         this.props.onClick();
     }
@@ -50,7 +54,7 @@ export default class DetailsPlant extends React.Component {
             <div className="wrapDetails">
             <a href="#">Retour</a>
             {/*<p>{this.props.id}</p>*/}
-                <h2>Nom de la plante </h2>
+                <h2>PLANTE NUMERO {this.state.plant.id}</h2>
                 <div className="imgPlant">
                 </div>
                 <p className="wrapIcons">
@@ -82,7 +86,7 @@ export default class DetailsPlant extends React.Component {
                         Il n\'a pas fait que survivre cinq siècles, mais s\'est aussi adapté à la bureautique informatique, sans que son contenu n\'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset..
                     </p>
                 </div>  
-                <button className={"btn btn-success addPlant "+ (this.state.isFull ? "imp" : "")} onClick={() => this.addPlant(this.props.id)} >Ajouter</button>
+                <button className={"btn btn-success addPlant "+ (this.state.isFull ? "imp" : "")} onClick={() => this.props.onAdd()} >Ajouter</button>
                 <button className={"btn btn-danger delPlant "+ (this.state.isFull ? "" : "imp")} onClick={() => this.delPlant(this.props.id)} >Supprimer</button>
             </div>
         );
