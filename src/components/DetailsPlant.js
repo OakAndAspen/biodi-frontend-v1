@@ -9,11 +9,39 @@ export default class DetailsPlant extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            isFull: false, 
+            plant:[]
+        };
+        
+        /*fetch(Config.apiUrl+'/v1/plants/'+this.props.match.params.id).then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            plant: result
+          });
+            console.log(result);
+        },
+        
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+            console.error(error);
+        }
+      )*/
     }
     
 
     addPlant(id) {
+        this.props.onClick();
+    }
+    delPlant(id){
         this.props.onClick();
     }
 
@@ -54,7 +82,8 @@ export default class DetailsPlant extends React.Component {
                         Il n\'a pas fait que survivre cinq siècles, mais s\'est aussi adapté à la bureautique informatique, sans que son contenu n\'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset..
                     </p>
                 </div>  
-                <button className="btn btn-success addPlant" onClick={() => this.addPlant(this.props.id)} >Ajouter</button>
+                <button className={"btn btn-success addPlant "+ (this.state.isFull ? "imp" : "")} onClick={() => this.addPlant(this.props.id)} >Ajouter</button>
+                <button className={"btn btn-danger delPlant "+ (this.state.isFull ? "" : "imp")} onClick={() => this.delPlant(this.props.id)} >Supprimer</button>
             </div>
         );
     }

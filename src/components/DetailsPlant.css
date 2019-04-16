@@ -41,3 +41,16 @@
 	background-color: #649955 !important;
     transition: 0.1s;
 }
+.delPlant{
+    width: 50%;
+    margin-left: 50%;
+    font-size: 1.2em;
+    transition: 0.1s;
+}
+.delPlant:hover {
+	background-color: darkred!important;
+    transition: 0.1s;
+}
+.imp{
+    display: none;
+}

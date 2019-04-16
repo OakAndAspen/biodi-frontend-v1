@@ -39,7 +39,7 @@ export default class Home extends React.Component {
                     {/* Quartiers */}
                     <div className="row">
                         <div className="col-12 my-3 wrapMap">
-                            <Map onChoice={id => this.setState({popupOn: true})}/>
+                            <Map onChoice={id => this.setState({popupOn: true})} page="home" />
                         </div>
                     </div>
                     {/* Texte */}

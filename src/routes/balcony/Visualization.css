@@ -40,6 +40,15 @@
 .hiddenIco{
     display: none;
 }
+.saving{
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 /* -------- PLACEMENT IMAGES MOBILIER--------*/
 .pots{
@@ -142,6 +151,7 @@
 }
 .helper h1{
     color:white !important;
+    text-align: left;
 }
 .helper h3{
     color:white !important;
@@ -193,6 +203,7 @@
     border-radius: 50%; 
     background-size: cover;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 .hiddenPlaces{
     display: none !important;

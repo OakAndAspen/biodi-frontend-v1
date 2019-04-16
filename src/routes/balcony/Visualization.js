@@ -2,6 +2,7 @@ import React from 'react';
 import "./Visualization.css";
 import Config from "../../Config";
 import {Link} from 'react-router-dom';
+import $ from 'jquery';
 
 
 
@@ -14,34 +15,65 @@ export default class Visualization extends React.Component {
         super(props);
         this.state = {
             visible : false,
+            isLoaded : false,
+            isSaved : false,
             plants : [],
-            plantStickers:[
-            {id: "place1", contient: null, clicked: false},
-            {id: "place2", contient: null, clicked: false},
-            {id: "place3", contient: null, clicked: false},
-            {id: "place4", contient: null, clicked: false},
-            {id: "place5", contient: null, clicked: false},
-            {id: "place6", contient: null, clicked: false},
-            {id: "place7", contient: null, clicked: false},
-            {id: "place8", contient: null, clicked: false},
-            {id: "place9", contient: null, clicked: false},
-            {id: "place10", contient: null, clicked: false},
-            {id: "place11", contient: null, clicked: false},
-        ],
-            currentPlant:null
+            plantStickers:[],
+            currentPlant:null,
         };
-        
+    
     }
     
-     openModal() {
-          /*$.ajax({
-            method: "PATCH",
-            url: Config.apiUrl + '/users',
+    componentDidMount() {
+    fetch(Config.apiUrl+'/v1/balconies/'+this.props.match.params.id).then(res => res.json())
+      .then(
+        (result) => {
+            
+            
+          this.setState({
+            isLoaded: true,
+            plantStickers: result
+          });
+            console.log(this.state.plantStickers[0]);
+        },
+        
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+            console.error(error);
+        }
+      )
+  }
+    
+        
+        /*
+         $.ajax({
+            method: "GET",
+            url: Config.apiUrl + '/v1/balconies/'+ this.props.match.params.id,
             context: this,
-            data: data
-        }).done((data) => {
-            console.log(data);
-        });*/
+    error: function (xhr) {
+        //Here the status code can be retrieved like;
+        xhr.status;
+
+        //The message added to Response object in Controller can be retrieved as following.
+        xhr.responseText;
+    }
+        }).done(response => {
+                console.log(response);
+            }).error(err =>{
+             console.error(err);
+         });
+    }*/
+    
+       
+    
+     openModal() {
+         
          
          let data = [
            {id:1, name:"Plantia"},
@@ -56,6 +88,8 @@ export default class Visualization extends React.Component {
             visible : true,
             plants: data
         });
+         
+         console.log(this.state.currentPlant);
     }
 
     closeModal() {
@@ -83,8 +117,8 @@ export default class Visualization extends React.Component {
                         
                         <a href="#ancreHelper"><img src={Config.imgFolder + "/icon/information.svg"} alt="plus d'informations" className="icons" /></a>
                         <img src={Config.imgFolder + "/icon/share.svg"} alt="partager" className="icons" />
-                        <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className="icons hiddenIco" /> {/* ${this.isOpen() ? 'open' : 'closed'} pour toggle */}
-                        <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !" className="icons" />
+                        <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement" className={"icons " + (this.state.isSaved ? "hiddenIco" : "saving")} /> 
+                        <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !" className={"icons " + (this.state.isSaved ? "" : "hiddenIco")} />
                          <Link to="/dashboard" ><img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer" className="icons" /></Link>
                     </div>
                     <div className="balconyelement" id="bac">
@@ -115,8 +149,13 @@ export default class Visualization extends React.Component {
                         <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" />
                     </div>
                     {this.state.plantStickers.map(sticker => 
-                                                  <PlantStickers id={sticker.id} etat={sticker.clicked}/>
+                                                  <PlantStickers id={"place"+sticker.location} etat={sticker._contain} key={sticker.id} contient={sticker._contain} image={sticker.imgSrc} onClick={() => 
+                                                   this.setState({ currentPlant: sticker._contain }, () => {
+  this.openModal()
+})
+                    } />
                                                  )}
+
     </div>
     )
     }
@@ -155,8 +194,10 @@ renderHelper(){
                     {this.renderBalcony()}
                 
                  {this.renderHelper()}
+
+
                 
-                <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClick={(id)=> this.closeModalAndAdd(id)}>
+                <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClick={(id)=> this.closeModalAndAdd(id)} plant={this.state.currentPlant}>
                     
                 </Modal>
             </div>

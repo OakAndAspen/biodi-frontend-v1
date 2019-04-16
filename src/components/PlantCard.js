@@ -10,6 +10,28 @@ export default class PlantCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        
+        /*fetch(Config.apiUrl+'/v1/plants/'+this.props.match.params.id).then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            balcony: result
+          });
+            console.log(result);
+        },
+        
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+            console.error(error);
+        }
+      )*/
     }
     
       seeDetails(id) {
@@ -33,7 +55,7 @@ export default class PlantCard extends React.Component {
 
     render() {
         return (
-            <div className="PlantCard card col-sm-4" data-id={this.props.id} onClick={() => this.seeDetails(this.props.id)}>
+            <div className="PlantCard card col-sm-4" data-id={this.props.id} onClick={() => this.seeDetails(this.props.id)} key={this.props.id} >
                 <img src="https://blog.interflora.fr/wp-content/uploads/2016/05/Entretien-bouquet-de-fleurs.jpg" alt={"Photo de "+ this.props.name} className="card-img-top"/>
                 <h2 className="card-title">{this.props.name}</h2>
                 <p className="card-body">Argent - Temps - Saison</p>
