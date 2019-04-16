@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import style from './ModalStyle.js';
 import "./Modal.css";
+import Config from "../Config";
 
 import PlantCard from "./PlantCard";
 import DetailsPlant from "./DetailsPlant";
@@ -8,23 +9,54 @@ import DetailsPlant from "./DetailsPlant";
 export default class Modal extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props.plant);
         let effect = props.effect || 'fadeInDown';
         this.setSize(effect);
         this.state = {
             visible : props.visible,
             style : style[effect],
-            plantId :this.props.plant
-        }
+            plant : [],
+            plants:[],
+        };
     }
+    
+    
+    
 
     componentWillReceiveProps({visible, effect = 'fadeInDown'}) {
         this.setState({
-            visible : visible
+            visible : visible,
         });
         this.setSize(effect);
         this.setStyles(effect);
     }
+    componentDidMount() {  
+        fetch(Config.apiUrl+'/v1/balconies/'+this.props.currentBalcony+"/plants").then(res => res.json())
+      .then(
+        (result) => {
+            
+          this.setState({
+            isLoaded: true,
+            plants: result
+          });
+            console.log(this.state.plants);
+        },
+        
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+            console.error(error);
+        }
+      )
+  }
+    onAdd(){
+        this.props.onAdd();
+    }
+    
 
     setStyles(effect){
         if (this.props && this.props.styles) {
@@ -69,12 +101,7 @@ export default class Modal extends Component {
             }
         }
     }
-    closeModal() {
-        this.setState({
-            visible : false,
-            plantId: null,
-        });
-    }
+   
 
     render() {
         return (
@@ -83,22 +110,21 @@ export default class Modal extends Component {
                     <div style={this.state.visible ? {...this.state.style.panel} : this.state.style.panelHidden} className="modalWhite"  onClickAway={() => this.closeModal()}>
                         {this.props.children}
                     <div>
-                        <a href="javascript:void(0);" onClick={() => this.closeModal()} id="closeModal">X</a>
+                        <a href="javascript:void(0);" onClick={() => this.props.onClose()} id="closeModal">X</a>
                     </div>
-            {this.state.plantId==null &&
+            {this.props.plant==null &&
                     <h1>
                         Plantes recommandées
                     </h1> 
             }
-                {this.state.plantId==null &&
-                    this.props.plants.map(plant => <PlantCard key={plant.id} name={plant.name} onClick={() => this.setState({plantId:plant.id})}/>)
+                {this.props.plant==null &&
+                    this.state.plants.map(plant => <PlantCard key={plant.id} plant={plant} onCardClick={()=>this.props.onCardClick(plant.id)}/>)
                 }
-                {this.state.plantId!=null &&
-                    <DetailsPlant id={this.state.plantId} onClick={() => this.props.onClick(this.state.plantId)}/>
+                {this.props.plant!=null &&
+                    <DetailsPlant id={this.props.plant} onClick={() => this.props.onClick(this.props.plant)}/>
                     
                 }
 
-                        {this.state.plantId}
                     </div>
                     <div style={this.state.visible ? this.state.style.mask : this.state.style.maskHidden} onClick={this.props.onClickAway ? this.props.onClickAway : null} />
                 </div>

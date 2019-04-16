@@ -17,7 +17,6 @@ export default class Visualization extends React.Component {
             visible : false,
             isLoaded : false,
             isSaved : false,
-            plants : [],
             plantStickers:[],
             currentPlant:null,
         };
@@ -25,7 +24,7 @@ export default class Visualization extends React.Component {
     }
     
     componentDidMount() {
-    fetch(Config.apiUrl+'/v1/balconies/'+this.props.match.params.id).then(res => res.json())
+        fetch(Config.apiUrl+'/v1/balconies/'+this.props.match.params.id).then(res => res.json())
       .then(
         (result) => {
             
@@ -72,29 +71,16 @@ export default class Visualization extends React.Component {
     
        
     
-     openModal() {
-         
-         
-         let data = [
-           {id:1, name:"Plantia"},
-           {id:2, name:"Edelweiss"},
-             {id:3, name:"Coquelicot"},
-             {id:4, name:"Menthe"},
-             {id:5, name:"Laurier"},
-             {id:6, name:"Bye"},
-         ];
-         
+     openModal() {     
         this.setState({
-            visible : true,
-            plants: data
+            visible : true
         });
-         
-         console.log(this.state.currentPlant);
     }
 
     closeModal() {
         this.setState({
-            visible : false
+            visible : false,
+            currentPlant:null
         });
         
     }
@@ -108,6 +94,7 @@ export default class Visualization extends React.Component {
         });
         console.log(this.state.plantStickers[0]);
     }
+
     
     renderBalcony(){
         return (
@@ -197,7 +184,7 @@ renderHelper(){
 
 
                 
-                <Modal visible={this.state.visible} plants={this.state.plants} width="90%" height="90%" effect="fadeInUp" onClick={(id)=> this.closeModalAndAdd(id)} plant={this.state.currentPlant}>
+                <Modal visible={this.state.visible} width="90%" height="90%" effect="fadeInUp" onAdd={(id)=> this.closeModalAndAdd(id)} onClose={()=> this.closeModal()} plant={this.state.currentPlant} currentBalcony={this.props.match.params.id} onCardClick={(id)=> this.setState({currentPlant:id})}>
                     
                 </Modal>
             </div>
