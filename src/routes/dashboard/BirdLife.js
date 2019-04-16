@@ -1,6 +1,6 @@
 import React from 'react';
 import Config from "../../Config";
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 
 export default class BirdLife extends React.Component {
 

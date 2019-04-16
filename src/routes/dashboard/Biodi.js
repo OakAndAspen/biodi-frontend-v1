@@ -1,6 +1,6 @@
 import React from 'react';
 import Config from "../../Config";
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 import {Link} from "react-router-dom";
 
 export default class Biodi extends React.Component {

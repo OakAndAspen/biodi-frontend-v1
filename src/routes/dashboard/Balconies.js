@@ -1,6 +1,6 @@
 import React from 'react';
 import Hexagon from "../../components/Hexagon";
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 import Config from "../../Config";
 import $ from "jquery";
 

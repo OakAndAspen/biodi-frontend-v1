@@ -7,14 +7,16 @@ export default class HexaBalcony extends React.Component {
     render() {
         let textStyle = {
             position: "absolute",
-            top: "50px",
-            fontVariant: "small-caps",
+            top: "55px",
             fontWeight: "bold",
+            textShadow: "1px 1px "+Config.colors.biodiDarkGrey,
+            fontFamily: "BebasNeue, sans-serif",
             cursor: this.props.title ? 'pointer' : 'inherit'
         };
         let imageUrl = Config.imgFolder + "/photo-balcon.png";
         let polyStyle = {
-            fill: 'url(#image)'
+            fill: 'url(#image)',
+            opacity: 0.6
         };
         return (
             <div className="w-100 h-100 HexaBalcony" onClick={this.props.onClick}>
@@ -27,7 +29,9 @@ export default class HexaBalcony extends React.Component {
                     <polygon style={polyStyle}
                              points="450 0 600 259.81 450 519.62 150 519.62 0 259.81 150 0 450 0"/>
                 </svg>
-                <div style={textStyle} className="text-center w-100 text-light">{this.props.title}</div>
+                <div style={textStyle} className="text-center w-100">
+                    <h5 className="text-light">{this.props.title}</h5>
+                </div>
             </div>
         );
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardLayout from "../../DashboardLayout";
+import DashboardLayout from "../../components/DashboardLayout";
 import Map from '../../components/Map';
 
 export default class Lausanne extends React.Component {
