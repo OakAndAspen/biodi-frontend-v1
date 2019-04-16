@@ -1,7 +1,7 @@
 export default {
-    apiUrl: 'https://forum.biodi-vers-city.ch/wp-json',
-    imgFolder: 'http://localhost:3000/images',
-    plantsFolder: 'https://forum.biodi-vers-city.ch/wp-json',
+    apiUrl: 'https://my-api-url.com',
+    imgFolder: 'https://my-app.com/images',
+    plantsFolder: 'https://my-app.com/images/plants',
     colors: {
         biodiDarkBlue: '#2A4263',
         biodiDarkGrey: '#525C62',
