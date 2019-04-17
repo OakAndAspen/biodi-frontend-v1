@@ -10,9 +10,16 @@
 .PlantCard .card-title {
     padding: 0.3rem;
     margin: 0;
+    padding-bottom: 0;
 }
 
 .PlantCard .card-body {
     padding: 0.3rem;
     margin: 0;
+    padding-top: 0;
+}
+.PlantCard .imgPlantCard{
+    height: 20vh;
+    display: block;
+    background-size: cover;
 }

@@ -13,7 +13,8 @@ export default class Modal extends Component {
         this.state = {
             visible: props.visible,
             style: style[effect],
-            plants: []
+            plants: [],
+            constructions: []
         };
     }
 
@@ -22,7 +23,20 @@ export default class Modal extends Component {
         this.setState({visible: nextProps.visible});
         this.setSize(effect);
         this.setStyles(effect);
-        this.getPlants();
+        console.log(this.props.pot);
+        switch(this.props.pot) {
+            case 10:
+              this.getConstructions();
+                break;
+            case 11:
+             this.getConstructions();
+                break;
+
+            default:
+              this.getPlants();
+                break;
+        }
+        
         this.render();
     }
 
@@ -34,6 +48,24 @@ export default class Modal extends Component {
                     this.setState({
                         isLoaded: true,
                         plants: result
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
+    }
+    getConstructions(){
+        fetch(Config.apiUrl + '/v1/balconies/' + this.props.currentBalcony + "/constructions")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        isLoaded: true,
+                        constructions: result
                     });
                 },
                 (error) => {
@@ -126,11 +158,33 @@ export default class Modal extends Component {
 
     renderPlantCards() {
         return (
+        
             <div>
-                {this.state.plants.map(plant =>
+            {(() => {
+        switch(this.props.pot) {
+          case 10:
+            return <div>{this.state.constructions.map(cs =>
+                    <PlantCard key={cs.id} plant={cs}
+                               onClickCard={() => this.props.onClickCard(cs.id)}/>)
+                }</div>;
+          case 11:
+            return <div>{this.state.constructions.map(cs =>
+                    <PlantCard key={cs.id} plant={cs}
+                               onClickCard={() => this.props.onClickCard(cs.id)}/>)
+                }</div>;
+          case 9:
+            return <div>{this.state.plants.map(plant =>
                     <PlantCard key={plant.id} plant={plant}
                                onClickCard={() => this.props.onClickCard(plant.id)}/>)
-                }
+                }</div>;
+          default:
+            return <div>{this.state.plants.map(plant =>
+                    <PlantCard key={plant.id} plant={plant}
+                               onClickCard={() => this.props.onClickCard(plant.id)}/>)
+                }</div>;
+        }
+      })()}
+                
             </div>
         );
     }

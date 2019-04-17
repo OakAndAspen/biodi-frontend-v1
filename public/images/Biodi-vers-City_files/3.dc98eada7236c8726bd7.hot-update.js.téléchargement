@@ -1,0 +1,23 @@
+webpackHotUpdate(3,{
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/PlantCard.css":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/components/PlantCard.css ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".PlantCard {\r\n    background-color: white;\r\n    border-radius: 1.2rem;\r\n    padding: 0;\r\n    float: left;\r\n    background-clip: padding-box;\r\n    border: 8px solid transparent;\r\n}\r\n\r\n.PlantCard .card-title {\r\n    padding: 0.3rem;\r\n    margin: 0;\r\n}\r\n\r\n.PlantCard .card-body {\r\n    padding: 0.3rem;\r\n    margin: 0;\r\n}\r\n.PlantCard .imgPlantCard{\r\n    height: 40%;\r\n    display: block;\r\n}", ""]);
+
+// exports
+
+
+/***/ })
+
+})
+//# sourceMappingURL=3.dc98eada7236c8726bd7.hot-update.js.map

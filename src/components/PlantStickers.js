@@ -1,8 +1,7 @@
 import React from 'react';
 import Config from "../Config";
-import PropTypes from "prop-types";
 
-export default class PlantCard extends React.Component {
+export default class PlantStickers extends React.Component {
 
    
 
@@ -38,9 +37,6 @@ export default class PlantCard extends React.Component {
   
 }
 
-PlantCard.propTypes = {
-  id: PropTypes.string.isRequired,
-}
 
 
 
