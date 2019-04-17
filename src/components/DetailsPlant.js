@@ -33,18 +33,18 @@ export default class DetailsPlant extends React.Component {
 
     render() {
         if (!this.state.plant) return <h1 className="text-center my-4">...</h1>;
+        
+        const stylesImg = {
+            backgroundImage: 'url(' + Config.imgFolder+'/'+ this.state.plant.img + ')',
+        }
         return (
             <div id="DetailsPlant">
                 <h2>{this.state.plant.name}</h2>
-                <div className="imgPlant"/>
+                <div className="imgPlant" style={stylesImg} alt={"Photo de " + this.state.plant.name} />
                 {this.renderIcons()}
                 <div className="wrapLeft col-sm-6">
                     <h2>Pourquoi ?</h2>
-                    <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant
-                        impression. Le Lorem Ipsum est le faux texte standard de l\'imprimerie depuis les années 1500,
-                        quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre
-                        spécimen de polices de texte. Il n\'a pas fait que survivre cinq siècles, mais s\'est aussi
-                        adapté à la bureautique.</p>
+                    <p>{this.state.plant.description}</p>
                 </div>
                 <div className="wrapRight col-sm-6">
                     <h2>Conseils pratiques</h2>
@@ -64,13 +64,17 @@ export default class DetailsPlant extends React.Component {
     renderIcons() {
         return (
             <p className="wrapIcons">
-                <img src={Config.imgFolder + "/icon/coin.png"} alt="Soleil!" className="iconDetails"/>
+                {this.state.plant.initialBudget}/5
+                <img src={Config.imgFolder + "/icon/coin.png"} alt="Argent!" className="iconDetails"/>
                 -
-                <img src={Config.imgFolder + "/icon/time.png"} alt="Soleil!" className="iconDetails"/>
+                {this.state.plant.initialTime}/5
+                <img src={Config.imgFolder + "/icon/time.png"} alt="Temps!" className="iconDetails"/>
                 -
+                {this.state.plant.sunlight}/5
                 <img src={Config.imgFolder + "/icon/sun.png"} alt="Soleil!" className="iconDetails"/>
                 -
-                Oiseaux, Insectes
+                Favorise : &nbsp;
+                {this.state.plant.favorising}
             </p>
         );
     }

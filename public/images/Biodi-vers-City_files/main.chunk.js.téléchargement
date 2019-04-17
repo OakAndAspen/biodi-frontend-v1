@@ -1,0 +1,778 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/App.css ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#App {\r\n    width: 100vw;\r\n    max-width: 100vw;\r\n    height: 100vh;\r\n    max-height: 100vh;\r\n    overflow: hidden;\r\n    background-color: rgb(var(--biodiDarkBlue));\r\n}\r\n\r\n#NavWrapper {\r\n    background-color: rgba(var(--biodiPastel), 0.5);\r\n}\r\n\r\nh1, h2, h3, h4, h5, h5 {\r\n    font-family: \"BebasNeue\", sans-serif;\r\n    color: rgb(var(--biodiDarkGrey));\r\n}\r\n\r\n.btn {\r\n    font-family: BebasNeue, sans-serif;\r\n    padding: 8px 9px 5px 9px;\r\n    border-width: 0;\r\n}\r\n\r\na {\r\n    color: rgb(var(--birdLifeGreen));\r\n    outline: 0;\r\n}\r\n\r\na:hover {\r\n    color: rgb(var(--birdLifeGreen));\r\n}\r\n\r\n/* --- Primary --- */\r\n.btn-primary, .bg-primary, .badge-primary {background-color: rgb(var(--birdLifeBlue)) !important;}\r\n.alert-primary, .btn-outline-primary:hover {background-color: rgba(var(--birdLifeBlue), 0.2) !important;}\r\n.border-primary, .btn-outline-primary, .alert-primary {border: 1px solid rgb(var(--birdLifeBlue)) !important;}\r\n.btn-outline-primary, .text-primary {color: rgb(var(--birdLifeBlue)) !important;}\r\n\r\n/* --- Secondary --- */\r\n.btn-secondary, .bg-secondary, .badge-secondary {background-color: rgb(var(--biodiLightGrey)) !important;}\r\n.alert-secondary, .btn-outline-secondary:hover {background-color: rgba(var(--biodiLightGrey), 0.2) !important;}\r\n.border-secondary, .btn-outline-secondary, .alert-secondary {border: 1px solid rgb(var(--biodiLightGrey)) !important;}\r\n.btn-outline-secondary, .text-secondary {color: rgb(var(--biodiLightGrey)) !important;}\r\n\r\n/* --- Info --- */\r\n.btn-info, .bg-info, .badge-info {background-color: rgb(var(--biodiPastel)) !important;}\r\n.alert-info, .btn-outline-info:hover {background-color: rgba(var(--biodiPastel), 0.2) !important;}\r\n.border-info, .btn-outline-info, .alert-info {border: 1px solid rgb(var(--biodiPastel)) !important;}\r\n.btn-outline-info, .text-info {color: rgb(var(--biodiPastel)) !important;}\r\n\r\n/* --- Success --- */\r\n.btn-success, .bg-success, .badge-success {background-color: rgba(var(--birdLifeGreen), 0.7) !important;}\r\n.alert-success, .btn-outline-success:hover {background-color: rgba(var(--birdLifeGreen), 0.2) !important;}\r\n.border-success, .btn-outline-success, .alert-success {border: 1px solid rgb(var(--birdLifeGreen)) !important;}\r\n.btn-outline-success, .text-success {color: rgb(var(--birdLifeGreen)) !important;}\r\n\r\n/* --- Warning --- */\r\n.btn-warning, .bg-warning, .badge-warning {background-color: rgba(var(--customOrange), 0.7) !important;}\r\n.alert-warning, .btn-outline-warning:hover {background-color: rgba(var(--customOrange), 0.2) !important;}\r\n.border-warning, .btn-outline-warning, .alert-warning {border: 1px solid rgb(var(--customOrange)) !important;}\r\n.btn-outline-warning, .text-warning {color: rgb(var(--customOrange)) !important;}\r\n\r\n/* --- Danger --- */\r\n.btn-danger, .bg-danger, .badge-danger {background-color: rgba(var(--customRed), 0.8) !important;}\r\n.alert-danger, .btn-outline-danger:hover {background-color: rgba(var(--customRed), 0.2) !important;}\r\n.border-danger, .btn-outline-danger, .alert-danger {border: 1px solid rgb(var(--customRed)) !important;}\r\n.btn-outline-danger, .text-danger {color: rgb(var(--customRed)) !important;}\r\n\r\n/* --- Light --- */\r\n.btn-light, .bg-light, .badge-light {background-color: rgba(255,255,255, 0.9) !important;}\r\n.alert-light, .btn-outline-light:hover {background-color: rgba(255,255,255, 0.2) !important;}\r\n.border-light, .btn-outline-light, .alert-light {border: 1px solid rgb(255,255,255) !important;}\r\n.btn-outline-light, .text-light {color: rgb(255,255,255) !important;}\r\n\r\n/* --- Dark --- */\r\n.btn-dark, .bg-dark, .badge-dark {background-color: rgba(var(--biodiDarkGrey), 0.9) !important;}\r\n.alert-dark, .btn-outline-dark:hover {background-color: rgba(var(--biodiDarkGrey), 0.2) !important;}\r\n.border-dark, .btn-outline-dark, .alert-dark {border: 1px solid rgb(var(--biodiDarkGrey)) !important;}\r\n.btn-outline-dark, .text-dark {color: rgb(var(--biodiDarkGrey)) !important;}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/index.css ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(/*! ../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* --- STRUCTURE --- */\r\n\r\n\r\n\r\n/* --- FONTS --- */\r\n@font-face {\r\n  font-family: BebasNeue;\r\n  src: url(" + escape(__webpack_require__(/*! ./fonts/BebasNeue-Regular.otf */ "./src/fonts/BebasNeue-Regular.otf")) + ");\r\n}\r\n\r\nbody {\r\n  font-family: \"Tahoma\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\r\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\r\n    sans-serif;\r\n}\r\n\r\n/* --- COLORS --- */\r\n:root {\r\n  --biodiDarkBlue: 42,66,99;\r\n  --biodiDarkGrey: 82,92,98;\r\n  --biodiLightGrey: 189,189,189;\r\n  --biodiPastel: 178,223,219;\r\n  --birdLifeGreen: 82,174,50;\r\n  --birdLifeBlue: 0,110,171;\r\n  --customRed: 216,67,21;\r\n  --customOrange: 255,183,77;\r\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./src/App.css":
+/*!*********************!*\
+  !*** ./src/App.css ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../node_modules/css-loader??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css", function() {
+		var newContent = __webpack_require__(/*! !../node_modules/css-loader??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/App.js":
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_loadable__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-loadable */ "./node_modules/react-loadable/lib/index.js");
+/* harmony import */ var react_loadable__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_loadable__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _routes_NoMatch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./routes/NoMatch */ "./src/routes/NoMatch.js");
+
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Romane\\Documents\\Cours\\transmedia\\GitFrontEnd\\biodi-frontend-v1\\src\\App.js";
+
+
+
+
+
+
+var App =
+/*#__PURE__*/
+function (_Component) {
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(App, _Component);
+
+  function App() {
+    Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, App);
+
+    return Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(App).apply(this, arguments));
+  }
+
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["BrowserRouter"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        id: "App",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Switch"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Route"], {
+        exact: true,
+        path: "/",
+        component: publicRoutes.Home,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PublicRoute, {
+        exact: true,
+        path: "/login",
+        component: publicRoutes.Login,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Route"], {
+        exact: true,
+        path: "/logout",
+        component: privateRoutes.Logout,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PrivateRoute, {
+        exact: true,
+        path: "/dashboard",
+        component: privateRoutes.Balconies,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PrivateRoute, {
+        exact: true,
+        path: "/dashboard/lausanne",
+        component: privateRoutes.Lausanne,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PrivateRoute, {
+        exact: true,
+        path: "/dashboard/biodi-vers-city",
+        component: privateRoutes.Biodi,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PrivateRoute, {
+        exact: true,
+        path: "/dashboard/birdlife",
+        component: privateRoutes.BirdLife,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PrivateRoute, {
+        exact: true,
+        path: "/dashboard/account",
+        component: privateRoutes.Account,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PrivateRoute, {
+        exact: true,
+        path: "/balcony/new",
+        component: privateRoutes.Param,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(PrivateRoute, {
+        exact: true,
+        path: "/balcony/:id",
+        component: privateRoutes.Visualization,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Route"], {
+        path: "*",
+        component: _routes_NoMatch__WEBPACK_IMPORTED_MODULE_10__["default"],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }))));
+    }
+  }]);
+
+  return App;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+var Loading = function Loading() {
+  return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }, "Loading...");
+};
+
+var PrivateRoute = function PrivateRoute(_ref) {
+  var Component = _ref.component,
+      rest = Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["component"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Route"], Object.assign({}, rest, {
+    render: function render(props) {
+      return localStorage.authKey ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(Component, Object.assign({}, props, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      })) : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Redirect"], {
+        to: {
+          pathname: '/login',
+          state: {
+            from: props.location
+          }
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      });
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }));
+};
+
+var PublicRoute = function PublicRoute(_ref2) {
+  var Component = _ref2.component,
+      rest = Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref2, ["component"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Route"], Object.assign({}, rest, {
+    render: function render(props) {
+      return !localStorage.authKey ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(Component, Object.assign({}, props, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: this
+      })) : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["Redirect"], {
+        to: {
+          pathname: '/dashboard',
+          state: {
+            from: props.location
+          }
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      });
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
+  }));
+};
+
+var publicRoutes = {
+  Home: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./routes/public/Home */ "./src/routes/public/Home.js"));
+    },
+    loading: Loading
+  }),
+  Login: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./routes/public/Login */ "./src/routes/public/Login.js"));
+    },
+    loading: Loading
+  })
+};
+var privateRoutes = {
+  Balconies: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./routes/dashboard/Balconies */ "./src/routes/dashboard/Balconies.js"));
+    },
+    loading: Loading
+  }),
+  Lausanne: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./routes/dashboard/Lausanne */ "./src/routes/dashboard/Lausanne.js"));
+    },
+    loading: Loading
+  }),
+  Biodi: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./routes/dashboard/Biodi */ "./src/routes/dashboard/Biodi.js"));
+    },
+    loading: Loading
+  }),
+  BirdLife: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./routes/dashboard/BirdLife */ "./src/routes/dashboard/BirdLife.js"));
+    },
+    loading: Loading
+  }),
+  Account: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./routes/dashboard/Account */ "./src/routes/dashboard/Account.js"));
+    },
+    loading: Loading
+  }),
+  Logout: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./routes/dashboard/Logout */ "./src/routes/dashboard/Logout.js"));
+    },
+    loading: Loading
+  }),
+  Param: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ./routes/balcony/Param */ "./src/routes/balcony/Param.js"));
+    },
+    loading: Loading
+  }),
+  Visualization: react_loadable__WEBPACK_IMPORTED_MODULE_8___default()({
+    loader: function loader() {
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./routes/balcony/Visualization */ "./src/routes/balcony/Visualization.js"));
+    },
+    loading: Loading
+  })
+};
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./src/Config.js":
+/*!***********************!*\
+  !*** ./src/Config.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  apiUrl: 'https://forum.biodi-vers-city.ch/wp-json',
+  imgFolder: 'http://localhost:3000/images',
+  plantsFolder: 'https://forum.biodi-vers-city.ch/wp-json',
+  colors: {
+    biodiDarkBlue: '#2A4263',
+    biodiDarkGrey: '#525C62',
+    biodiLightGrey: '#BDBDBD',
+    biodiPastel: '#B2DFDB',
+    birdLifeGreen: '#52AE32',
+    birdLifeBlue: '#006EAB'
+  }
+});
+
+/***/ }),
+
+/***/ "./src/fonts/BebasNeue-Regular.otf":
+/*!*****************************************!*\
+  !*** ./src/fonts/BebasNeue-Regular.otf ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/BebasNeue-Regular.5ddf8dc0.otf";
+
+/***/ }),
+
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../node_modules/css-loader??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css", function() {
+		var newContent = __webpack_require__(/*! !../node_modules/css-loader??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App */ "./src/App.js");
+/* harmony import */ var _serviceWorker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./serviceWorker */ "./src/serviceWorker.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_6__);
+var _jsxFileName = "C:\\Users\\Romane\\Documents\\Cours\\transmedia\\GitFrontEnd\\biodi-frontend-v1\\src\\index.js";
+
+
+
+
+
+
+
+var headers = {
+  "Content-Type": "application/json"
+};
+if (localStorage.getItem("authKey")) headers.Authorization = "Bearer " + localStorage.authKey;
+jquery__WEBPACK_IMPORTED_MODULE_6___default.a.ajaxSetup({
+  headers: headers,
+  error: function error(jqXHR) {
+    console.log('An error occured (' + jqXHR.status + ' ' + jqXHR.statusText + ')');
+  }
+});
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 21
+  },
+  __self: undefined
+}), document.getElementById('root')); // If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+
+_serviceWorker__WEBPACK_IMPORTED_MODULE_5__["unregister"]();
+
+/***/ }),
+
+/***/ "./src/routes/NoMatch.js":
+/*!*******************************!*\
+  !*** ./src/routes/NoMatch.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NoMatch; });
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Config */ "./src/Config.js");
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Romane\\Documents\\Cours\\transmedia\\GitFrontEnd\\biodi-frontend-v1\\src\\routes\\NoMatch.js";
+
+
+
+
+var NoMatch =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(NoMatch, _React$Component);
+
+  function NoMatch() {
+    Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, NoMatch);
+
+    return Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(NoMatch).apply(this, arguments));
+  }
+
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(NoMatch, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "p-4 h-100 w-100 overflow-auto text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "row my-4",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "col-12 col-md-6 mx-auto",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/biodi-clair.png",
+        alt: "Biodi-vers-City",
+        className: "img-fluid",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", {
+        className: "text-secondary",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      }, "Perdu ?"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("span", {
+        className: "text-secondary",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: this
+      }, "Cette page n'existe pas.", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+        to: "/",
+        className: "ml-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }, "Retournez \xE0 la page d'accueil.")));
+    }
+  }]);
+
+  return NoMatch;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./src/serviceWorker.js":
+/*!******************************!*\
+  !*** ./src/serviceWorker.js ***!
+  \******************************/
+/*! exports provided: register, unregister */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "register", function() { return register; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unregister", function() { return unregister; });
+// This optional code is used to register a service worker.
+// register() is not called by default.
+// This lets the app load faster on subsequent visits in production, and gives
+// it offline capabilities. However, it also means that developers (and users)
+// will only see deployed updates on subsequent visits to a page, after all the
+// existing tabs open on the page have been closed, since previously cached
+// resources are updated in the background.
+// To learn more about the benefits of this model and instructions on how to
+// opt-in, read https://bit.ly/CRA-PWA
+var isLocalhost = Boolean(window.location.hostname === 'localhost' || // [::1] is the IPv6 localhost address.
+window.location.hostname === '[::1]' || // 127.0.0.1/8 is considered localhost for IPv4.
+window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+function register(config) {
+  if (false) { var publicUrl; }
+}
+
+function registerValidSW(swUrl, config) {
+  navigator.serviceWorker.register(swUrl).then(function (registration) {
+    registration.onupdatefound = function () {
+      var installingWorker = registration.installing;
+
+      if (installingWorker == null) {
+        return;
+      }
+
+      installingWorker.onstatechange = function () {
+        if (installingWorker.state === 'installed') {
+          if (navigator.serviceWorker.controller) {
+            // At this point, the updated precached content has been fetched,
+            // but the previous service worker will still serve the older
+            // content until all client tabs are closed.
+            console.log('New content is available and will be used when all ' + 'tabs for this page are closed. See https://bit.ly/CRA-PWA.'); // Execute callback
+
+            if (config && config.onUpdate) {
+              config.onUpdate(registration);
+            }
+          } else {
+            // At this point, everything has been precached.
+            // It's the perfect time to display a
+            // "Content is cached for offline use." message.
+            console.log('Content is cached for offline use.'); // Execute callback
+
+            if (config && config.onSuccess) {
+              config.onSuccess(registration);
+            }
+          }
+        }
+      };
+    };
+  }).catch(function (error) {
+    console.error('Error during service worker registration:', error);
+  });
+}
+
+function checkValidServiceWorker(swUrl, config) {
+  // Check if the service worker can be found. If it can't reload the page.
+  fetch(swUrl).then(function (response) {
+    // Ensure service worker exists, and that we really are getting a JS file.
+    var contentType = response.headers.get('content-type');
+
+    if (response.status === 404 || contentType != null && contentType.indexOf('javascript') === -1) {
+      // No service worker found. Probably a different app. Reload the page.
+      navigator.serviceWorker.ready.then(function (registration) {
+        registration.unregister().then(function () {
+          window.location.reload();
+        });
+      });
+    } else {
+      // Service worker found. Proceed as normal.
+      registerValidSW(swUrl, config);
+    }
+  }).catch(function () {
+    console.log('No internet connection found. App is running in offline mode.');
+  });
+}
+
+function unregister() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then(function (registration) {
+      registration.unregister();
+    });
+  }
+}
+
+/***/ }),
+
+/***/ 0:
+/*!**********************************************************************************!*\
+  !*** multi ./node_modules/react-dev-utils/webpackHotDevClient.js ./src/index.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! C:\Users\Romane\Documents\Cours\transmedia\GitFrontEnd\biodi-frontend-v1\node_modules\react-dev-utils\webpackHotDevClient.js */"./node_modules/react-dev-utils/webpackHotDevClient.js");
+module.exports = __webpack_require__(/*! C:\Users\Romane\Documents\Cours\transmedia\GitFrontEnd\biodi-frontend-v1\src\index.js */"./src/index.js");
+
+
+/***/ })
+
+},[[0,"runtime~main",13]]]);
+//# sourceMappingURL=main.chunk.js.map

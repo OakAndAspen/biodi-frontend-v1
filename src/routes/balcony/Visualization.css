@@ -87,6 +87,16 @@
     height: 23%;
     background-repeat: no-repeat;
 }
+.fullbac{
+    visibility: hidden;
+}
+#Visualization #bac .fullbac:hover{
+    visibility: hidden;
+    opacity: 0;
+}
+#Visualization #bac:hover .fullbac {
+    visibility: hidden;
+}
 
 #Visualization #bac:hover {
     opacity: 0.6;

@@ -1,0 +1,1999 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/objectSpread.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectSpread.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectSpread; });
+/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/DetailsPlant.css":
+/*!********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/components/DetailsPlant.css ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(/*! ../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#DetailsPlant {\r\n    width: 100%;\r\n    height: auto;\r\n    overflow-y: auto;\r\n}\r\n\r\n#DetailsPlant p, #DetailsPlant ul {\r\n    color: rgb(var(--biodiDarkGrey));\r\n}\r\n\r\n#DetailsPlant .imgPlant {\r\n    width: 100%;\r\n    height: 25vh;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/plants.jpg */ "./src/components/img/plants.jpg")) + ");\r\n    background-size: cover;\r\n    background-position: center;\r\n}\r\n\r\n#DetailsPlant .col-sm-6 {\r\n    margin: 0;\r\n    float: left;\r\n    text-align: justify;\r\n}\r\n\r\n#DetailsPlant .iconDetails {\r\n    width: 2%;\r\n    margin-left: 1%;\r\n    margin-right: 1%;\r\n}\r\n\r\n#DetailsPlant .wrapIcons {\r\n    text-align: center;\r\n    margin-top: 1%;\r\n    color: rgb(var(--biodiDarkGrey));\r\n}\r\n\r\n#DetailsPlant .wrapIcons img:first-of-type {\r\n    opacity: 0.6;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Modal.css":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/components/Modal.css ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".modalWhite{\r\n    background-color: rgba(255,255,255,0.9)!important;\r\n    padding: 2%;\r\n    padding-top: 3%;\r\n    overflow-y: auto;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/PlantCard.css":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/components/PlantCard.css ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".PlantCard {\r\n    background-color: white;\r\n    border-radius: 1.2rem;\r\n    padding: 0;\r\n    float: left;\r\n    background-clip: padding-box;\r\n    border: 8px solid transparent;\r\n}\r\n\r\n.PlantCard .card-title {\r\n    padding: 0.3rem;\r\n    margin: 0;\r\n}\r\n\r\n.PlantCard .card-body {\r\n    padding: 0.3rem;\r\n    margin: 0;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/routes/balcony/Visualization.css":
+/*!*************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/routes/balcony/Visualization.css ***!
+  \*************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(/*! ../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#Visualization {\r\n    margin: 0;\r\n    padding: 0;\r\n    max-width: 100%;\r\n    background-color: rgb(var(--biodiDarkBlue));\r\n    scroll-behavior: smooth;\r\n}\r\n\r\n#Visualization #balcony {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/balconyXL.svg */ "./src/routes/balcony/img/balconyXL.svg")) + ");\r\n    width: 100%;\r\n    background-repeat: no-repeat;\r\n    position: relative;\r\n}\r\n\r\n#Visualization .hidden {\r\n    visibility: hidden;\r\n}\r\n\r\n/* -------- PLACEMENT ICONES UP --------*/\r\n#Visualization #iconswrap {\r\n    width: 15%;\r\n    position: absolute;\r\n    left: 84%;\r\n    top: 2%;\r\n    z-index: 100;\r\n\r\n}\r\n\r\n#Visualization #balcony img.icons {\r\n    width: 19%;\r\n    margin-right: 3%;\r\n    height: 5vh;\r\n    opacity: 0.6;\r\n    transition: 0.1s;\r\n}\r\n\r\n#Visualization #balcony .icons:hover {\r\n    opacity: 1;\r\n    transition: 0.1s;\r\n    cursor: pointer;\r\n}\r\n\r\n#Visualization .hiddenIco {\r\n    display: none;\r\n}\r\n\r\n#Visualization .saving {\r\n    -webkit-animation: spin 4s linear infinite;\r\n    animation: spin 4s linear infinite;\r\n}\r\n\r\n@-webkit-keyframes spin {\r\n    100% {\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n@keyframes spin {\r\n    100% {\r\n        -webkit-transform: rotate(360deg);\r\n        transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n/* -------- PLACEMENT IMAGES MOBILIER--------*/\r\n#Visualization  .pots {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/pot.svg */ "./src/routes/balcony/img/pot.svg")) + ");\r\n    width: 11%;\r\n    height: 15%;\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n#Visualization #bac {\r\n    position: absolute;\r\n    top: 69%;\r\n    left: 30%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/BAC.svg */ "./src/routes/balcony/img/BAC.svg")) + ");\r\n    width: 32%;\r\n    height: 23%;\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n#Visualization #bac:hover {\r\n    opacity: 0.6;\r\n    cursor: auto;\r\n}\r\n\r\n#Visualization #bac:hover img {\r\n    visibility: visible;\r\n}\r\n\r\n#Visualization #bac img:hover {\r\n    opacity: 1;\r\n    transition: 0.2s;\r\n}\r\n\r\n#Visualization #bac img {\r\n    width: 20%;\r\n    position: relative;\r\n    float: left;\r\n    margin-left: 3%;\r\n    margin-top: 4%;\r\n    transition: 0.2s;\r\n}\r\n\r\n#Visualization #pot3 {\r\n    position: absolute;\r\n    top: 72%;\r\n    left: 73%;\r\n}\r\n\r\n#Visualization #pot4 {\r\n    position: absolute;\r\n    top: 78.5%;\r\n    left: 80%;\r\n}\r\n\r\n#Visualization #pot5 {\r\n    position: absolute;\r\n    top: 85%;\r\n    left: 87%;\r\n}\r\n\r\n#Visualization #suspendedpot {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/suspendedpot.svg */ "./src/routes/balcony/img/suspendedpot.svg")) + ");\r\n    width: 11%;\r\n    height: 50%;\r\n    position: absolute;\r\n    top: -3%;\r\n    left: 74%;\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n#Visualization #climbingtrail {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/climbingtrail.svg */ "./src/routes/balcony/img/climbingtrail.svg")) + ");\r\n    width: 12%;\r\n    height: 55%;\r\n    position: absolute;\r\n    top: 13%;\r\n    left: 0.5%;\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n#Visualization .construction {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/construction.svg */ "./src/routes/balcony/img/construction.svg")) + ");\r\n    width: 10%;\r\n    height: 30%;\r\n    position: absolute;\r\n    background-repeat: no-repeat;\r\n\r\n}\r\n\r\n#Visualization #construction1 {\r\n    top: 70%;\r\n    left: 4%;\r\n}\r\n\r\n#Visualization #construction2 {\r\n    top: 60%;\r\n    left: 14%;\r\n}\r\n\r\n#Visualization .gradient {\r\n    background-image: linear-gradient(#4e4e4d, rgb(42, 66, 99));\r\n    height: 60vh;\r\n    border-top: solid 1px #353535;\r\n}\r\n\r\n#Visualization .gradient p {\r\n    text-align: center;\r\n    color: rgb(var(--biodiLightGrey));\r\n    margin-top: 10%;\r\n}\r\n\r\n#Visualization .helper {\r\n    padding: 5%;\r\n    color: rgb(var(--biodiLightGrey)) !important;\r\n    text-align: justify;\r\n}\r\n\r\n#Visualization .helper h1 {\r\n    color: white !important;\r\n    text-align: left;\r\n}\r\n\r\n#Visualization .helper h3 {\r\n    color: white !important;\r\n    margin-top: 2%;\r\n    margin-bottom: 0.3%;\r\n}\r\n\r\n#Visualization .balconyelement {\r\n    opacity: 0.5;\r\n    transition: 0.2s;\r\n}\r\n\r\n#Visualization .balconyelement:hover {\r\n    opacity: 1;\r\n    transition: 0.2s;\r\n    cursor: pointer;\r\n}\r\n\r\n/* -------- PLACEMENT PLUS SUR MOBILIER--------*/\r\n#Visualization .balconyelement img {\r\n    color: white;\r\n    display: block;\r\n    width: 90%;\r\n    opacity: 0.6;\r\n    position: absolute;\r\n    left: 5%;\r\n    top: -30%;\r\n}\r\n\r\n#Visualization .balconyelement:hover img {\r\n    visibility: hidden;\r\n}\r\n\r\n#Visualization .construction img {\r\n    top: 0%;\r\n}\r\n\r\n#Visualization #suspendedpot img {\r\n    top: 50%;\r\n}\r\n\r\n#Visualization #climbingtrail img {\r\n    top: 20%;\r\n}\r\n\r\n/* -------- PLACEMENT PLANTES ETIQUETTES--------*/\r\n#Visualization .full {\r\n    opacity: 1;\r\n}\r\n\r\n#Visualization .places {\r\n    width: 8%;\r\n    height: auto;\r\n    padding-top: 8%;\r\n    position: absolute;\r\n    border-radius: 50%;\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    cursor: pointer;\r\n}\r\n\r\n#Visualization .hiddenPlaces {\r\n    display: none !important;\r\n}\r\n\r\n#Visualization #place1 {\r\n    top: 54%;\r\n    left: 32%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place2 {\r\n    top: 80%;\r\n    left: 37.5%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place3 {\r\n    top: 54%;\r\n    left: 47%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place4 {\r\n    top: 80%;\r\n    left: 52%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place5 {\r\n    top: 54%;\r\n    left: 74%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place6 {\r\n    top: 60.5%;\r\n    left: 81.5%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place7 {\r\n    top: 67%;\r\n    left: 89%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place8 {\r\n    top: 25%;\r\n    left: 65%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place9 {\r\n    top: 33%;\r\n    left: 15%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place10 {\r\n    top: 75%;\r\n    left: 5%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n\r\n#Visualization #place11 {\r\n    top: 65%;\r\n    left: 15%;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/fleurs.jpg */ "./src/routes/balcony/img/fleurs.jpg")) + ");\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./src/components/DetailsPlant.css":
+/*!*****************************************!*\
+  !*** ./src/components/DetailsPlant.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./DetailsPlant.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/DetailsPlant.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./DetailsPlant.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/DetailsPlant.css", function() {
+		var newContent = __webpack_require__(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./DetailsPlant.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/DetailsPlant.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/DetailsPlant.js":
+/*!****************************************!*\
+  !*** ./src/components/DetailsPlant.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DetailsPlant; });
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _DetailsPlant_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DetailsPlant.css */ "./src/components/DetailsPlant.css");
+/* harmony import */ var _DetailsPlant_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_DetailsPlant_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Config */ "./src/Config.js");
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Romane\\Documents\\Cours\\transmedia\\GitFrontEnd\\biodi-frontend-v1\\src\\components\\DetailsPlant.js";
+
+
+
+
+var DetailsPlant =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(DetailsPlant, _React$Component);
+
+  function DetailsPlant(props) {
+    var _this;
+
+    Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, DetailsPlant);
+
+    _this = Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(DetailsPlant).call(this, props));
+    _this.state = {
+      isFull: false,
+      plant: null
+    };
+    return _this;
+  }
+
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(DetailsPlant, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps() {
+      var _this2 = this;
+
+      fetch(_Config__WEBPACK_IMPORTED_MODULE_7__["default"].apiUrl + '/v1/plants/' + this.props.id).then(function (res) {
+        return res.json();
+      }).then(function (result) {
+        _this2.setState({
+          isLoaded: true,
+          plant: result
+        });
+      }, function (error) {
+        _this2.setState({
+          isLoaded: true,
+          error: error
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (!this.state.plant) return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", {
+        className: "text-center my-4",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      }, "...");
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        id: "DetailsPlant",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, this.state.plant.name), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "imgPlant",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      }), this.renderIcons(), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "wrapLeft col-sm-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, "Pourquoi ?"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        },
+        __self: this
+      }, "Le Lorem Ipsum est simplement du faux texte employ\xE9 dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l\\'imprimerie depuis les ann\xE9es 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour r\xE9aliser un livre sp\xE9cimen de polices de texte. Il n\\'a pas fait que survivre cinq si\xE8cles, mais s\\'est aussi adapt\xE9 \xE0 la bureautique.")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "wrapRight col-sm-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50
+        },
+        __self: this
+      }, "Conseils pratiques"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, "Arroser toutes les heures"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, "Arroser toutes les heures")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, "Il n\\'a pas fait que survivre cinq si\xE8cles, mais s\\'est aussi adapt\xE9 \xE0 la bureautique informatique, sans que son contenu n\\'en soit modifi\xE9. Il a \xE9t\xE9 popularis\xE9 dans les ann\xE9es 1960 gr\xE2ce \xE0 la vente de feuilles Letraset..")), this.renderButton());
+    }
+  }, {
+    key: "renderIcons",
+    value: function renderIcons() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        className: "wrapIcons",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/coin.png",
+        alt: "Soleil!",
+        className: "iconDetails",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }), "-", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/time.png",
+        alt: "Soleil!",
+        className: "iconDetails",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
+        },
+        __self: this
+      }), "-", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/sun.png",
+        alt: "Soleil!",
+        className: "iconDetails",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        },
+        __self: this
+      }), "- Oiseaux, Insectes");
+    }
+  }, {
+    key: "renderButton",
+    value: function renderButton() {
+      if (this.state.isFull) return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
+        className: "btn btn-danger mb-3 w-100",
+        onClick: this.props.onClickDelete,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80
+        },
+        __self: this
+      }, "Supprimer");
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("button", {
+        className: "btn btn-success mb-3 w-100",
+        onClick: this.props.onClickAdd,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, "Ajouter");
+    }
+  }]);
+
+  return DetailsPlant;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./src/components/Modal.css":
+/*!**********************************!*\
+  !*** ./src/components/Modal.css ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./Modal.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Modal.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./Modal.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Modal.css", function() {
+		var newContent = __webpack_require__(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./Modal.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/Modal.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/Modal.js":
+/*!*********************************!*\
+  !*** ./src/components/Modal.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Modal; });
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread */ "./node_modules/@babel/runtime/helpers/esm/objectSpread.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ModalStyle.js */ "./src/components/ModalStyle.js");
+/* harmony import */ var _Modal_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Modal.css */ "./src/components/Modal.css");
+/* harmony import */ var _Modal_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Modal_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Config__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Config */ "./src/Config.js");
+/* harmony import */ var _PlantCard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./PlantCard */ "./src/components/PlantCard.js");
+/* harmony import */ var _DetailsPlant__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./DetailsPlant */ "./src/components/DetailsPlant.js");
+
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Romane\\Documents\\Cours\\transmedia\\GitFrontEnd\\biodi-frontend-v1\\src\\components\\Modal.js";
+
+
+
+
+
+
+
+var Modal =
+/*#__PURE__*/
+function (_Component) {
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Modal, _Component);
+
+  function Modal(props) {
+    var _this;
+
+    Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Modal);
+
+    _this = Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Modal).call(this, props));
+    var effect = props.effect || 'fadeInDown';
+
+    _this.setSize(effect);
+
+    _this.state = {
+      visible: props.visible,
+      style: _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect],
+      plants: []
+    };
+    return _this;
+  }
+
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Modal, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps, nextContext) {
+      var effect = 'fadeInDown';
+      this.setState({
+        visible: nextProps.visible
+      });
+      this.setSize(effect);
+      this.setStyles(effect);
+      this.getPlants();
+      this.render();
+    }
+  }, {
+    key: "getPlants",
+    value: function getPlants() {
+      var _this2 = this;
+
+      fetch(_Config__WEBPACK_IMPORTED_MODULE_9__["default"].apiUrl + '/v1/balconies/' + this.props.currentBalcony + "/plants").then(function (res) {
+        return res.json();
+      }).then(function (result) {
+        _this2.setState({
+          isLoaded: true,
+          plants: result
+        });
+      }, function (error) {
+        _this2.setState({
+          isLoaded: true,
+          error: error
+        });
+      });
+    }
+  }, {
+    key: "setStyles",
+    value: function setStyles(effect) {
+      if (this.props && this.props.styles) {
+        _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect].panel = Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect].panel, this.props.styles);
+      }
+    }
+  }, {
+    key: "setSize",
+    value: function setSize(effect) {
+      if (this.props && this.props.width) {
+        if (this.props.width.charAt(this.props.width.length - 1) === '%') {
+          // Use Percentage
+          var width = this.props.width.slice(0, -1);
+          _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect].panel.width = width + '%';
+        } else if (this.props.width.charAt(this.props.width.length - 1) === 'x') {
+          // Use Pixels
+          var _width = this.props.width.slice(0, -2);
+
+          _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect].panel.width = _width + 'px';
+        } else {
+          // Defaults
+          _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect].panel.width = this.props.width + 'px';
+        }
+      }
+
+      if (this.props && this.props.height) {
+        if (this.props.height.charAt(this.props.height.length - 1) === '%') {
+          // Use Percentage
+          var height = this.props.height.slice(0, -1);
+          _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect].panel.height = height + 'vh';
+        } else if (this.props.height.charAt(this.props.height.length - 1) === 'x') {
+          // Use Pixels
+          var _height = this.props.height.slice(0, -2);
+
+          _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect].panel.height = _height + 'px';
+        } else {
+          // Defaults
+          _ModalStyle_js__WEBPACK_IMPORTED_MODULE_7__["default"][effect].panel.height = this.props.height + 'px';
+        }
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        style: this.state.visible ? this.state.style.container : this.state.style.containerHidden,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        style: this.state.visible ? Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, this.state.style.panel) : this.state.style.panelHidden,
+        className: "modalWhite",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      }, this.renderModalHeader(), this.props.plant == null ? this.renderPlantCards() : this.renderPlantDetails()), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        style: this.state.visible ? this.state.style.mask : this.state.style.maskHidden,
+        onClick: this.props.onClickAway ? this.props.onClickAway : null,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      })));
+    }
+  }, {
+    key: "renderModalHeader",
+    value: function renderModalHeader() {
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        className: "col-9",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }, this.props.plant == null ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        },
+        __self: this
+      }, "Plantes recommand\xE9es") : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h3", {
+        onClick: this.props.onClickBack,
+        className: "text-left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("i", {
+        className: "fas fa-angle-double-left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        className: "col-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h3", {
+        onClick: this.props.onClose,
+        className: "text-right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 119
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("i", {
+        className: "fas fa-times",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 120
+        },
+        __self: this
+      }))));
+    }
+  }, {
+    key: "renderPlantCards",
+    value: function renderPlantCards() {
+      var _this3 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129
+        },
+        __self: this
+      }, this.state.plants.map(function (plant) {
+        return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_PlantCard__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          key: plant.id,
+          plant: plant,
+          onClickCard: function onClickCard() {
+            return _this3.props.onClickCard(plant.id);
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 131
+          },
+          __self: this
+        });
+      }));
+    }
+  }, {
+    key: "renderPlantDetails",
+    value: function renderPlantDetails() {
+      var _this4 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_DetailsPlant__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        id: this.props.plant,
+        onClickAdd: function onClickAdd() {
+          return _this4.props.onClickAdd(_this4.props.plant);
+        },
+        onClickDelete: function onClickDelete() {
+          return _this4.props.onClickDelete(_this4.props.plant);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140
+        },
+        __self: this
+      });
+    }
+  }]);
+
+  return Modal;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./src/components/ModalStyle.js":
+/*!**************************************!*\
+  !*** ./src/components/ModalStyle.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_effect_fadeInDown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/effect/fadeInDown */ "./src/components/effect/fadeInDown.js");
+/* harmony import */ var _effect_fadeInUp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./effect/fadeInUp */ "./src/components/effect/fadeInUp.js");
+/* harmony import */ var _effect_fadeInLeft__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./effect/fadeInLeft */ "./src/components/effect/fadeInLeft.js");
+/* harmony import */ var _effect_fadeInRight__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./effect/fadeInRight */ "./src/components/effect/fadeInRight.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  fadeInDown: _components_effect_fadeInDown__WEBPACK_IMPORTED_MODULE_0__["default"],
+  fadeInUp: _effect_fadeInUp__WEBPACK_IMPORTED_MODULE_1__["default"],
+  fadeInLeft: _effect_fadeInLeft__WEBPACK_IMPORTED_MODULE_2__["default"],
+  fadeInRight: _effect_fadeInRight__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/components/PlantCard.css":
+/*!**************************************!*\
+  !*** ./src/components/PlantCard.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./PlantCard.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/PlantCard.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./PlantCard.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/PlantCard.css", function() {
+		var newContent = __webpack_require__(/*! !../../node_modules/css-loader??ref--6-oneOf-3-1!../../node_modules/postcss-loader/src??postcss!./PlantCard.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/components/PlantCard.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/PlantCard.js":
+/*!*************************************!*\
+  !*** ./src/components/PlantCard.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PlantCard; });
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _PlantCard_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PlantCard.css */ "./src/components/PlantCard.css");
+/* harmony import */ var _PlantCard_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_PlantCard_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Config */ "./src/Config.js");
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Romane\\Documents\\Cours\\transmedia\\GitFrontEnd\\biodi-frontend-v1\\src\\components\\PlantCard.js";
+
+
+
+
+var PlantCard =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(PlantCard, _React$Component);
+
+  function PlantCard() {
+    Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, PlantCard);
+
+    return Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PlantCard).apply(this, arguments));
+  }
+
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(PlantCard, [{
+    key: "render",
+    value: function render() {
+      var stylesImg = {
+        backgroundImage: 'url(' + _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + '/' + this.props.plant.img + ')'
+      };
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "PlantCard card col-sm-4",
+        "data-id": this.props.plant,
+        onClick: this.props.onClickCard,
+        key: this.props.plant,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        style: stylesImg,
+        alt: "Photo de " + this.props.plant.name,
+        className: "card-img-top",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h2", {
+        className: "card-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: this
+      }, this.props.plant.name), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        className: "card-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, "Argent - Temps - Saison"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        className: "card-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }, "Attire : "));
+    }
+  }]);
+
+  return PlantCard;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./src/components/PlantStickers.js":
+/*!*****************************************!*\
+  !*** ./src/components/PlantStickers.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PlantStickers; });
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Config */ "./src/Config.js");
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Romane\\Documents\\Cours\\transmedia\\GitFrontEnd\\biodi-frontend-v1\\src\\components\\PlantStickers.js";
+
+
+
+var PlantStickers =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(PlantStickers, _React$Component);
+
+  function PlantStickers(props) {
+    var _this;
+
+    Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, PlantStickers);
+
+    _this = Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PlantStickers).call(this, props));
+    _this.state = {};
+    return _this;
+  }
+
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(PlantStickers, [{
+    key: "seeDetails",
+    value: function seeDetails(id) {
+      this.props.onClick();
+      this.setState({
+        visible: true
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var stylesStick = {
+        backgroundImage: 'url(' + _Config__WEBPACK_IMPORTED_MODULE_6__["default"].imgFolder + '/' + this.props.image + ')',
+        overflow: 'hidden'
+      };
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "places " + (this.props.etat != null ? "full" : "hiddenPlaces"),
+        id: this.props.id,
+        style: stylesStick,
+        onClick: function onClick() {
+          return _this2.seeDetails(_this2.props.id);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        },
+        __self: this
+      });
+    }
+  }]);
+
+  return PlantStickers;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./src/components/effect/fadeInDown.js":
+/*!*********************************************!*\
+  !*** ./src/components/effect/fadeInDown.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  'mask': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'backgroundColor': 'rgba(0, 0, 0, 0.7)',
+    'zIndex': 10001
+  },
+  'maskHidden': {
+    'display': 'none'
+  },
+  'container': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'zIndex': 10000,
+    'padding': '2%;'
+  },
+  'containerHidden': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'zIndex': -1
+  },
+  'panel': {
+    'backgroundColor': '#fff',
+    'borderRadius': '5px',
+    'boxSizing': 'border-box',
+    'boxShadow': '0 2px 4px rgba(0, 0, 0, 0.3)',
+    'transform': 'translate3d(0, 0, 0)',
+    'transition': 'transform 500ms cubic-bezier(0, 0, 0.25, 1), opacity 500ms cubic-bezier(0, 0, 0.25, 1)',
+    'zIndex': 10002
+  },
+  'panelHidden': {
+    'transform': 'translate3d(0, -100px, 0)',
+    'opacity': 0,
+    'zIndex': -1,
+    'height': 0,
+    'width': 0,
+    'overflow': 'hidden'
+  }
+});
+
+/***/ }),
+
+/***/ "./src/components/effect/fadeInLeft.js":
+/*!*********************************************!*\
+  !*** ./src/components/effect/fadeInLeft.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  'mask': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'backgroundColor': 'rgba(0, 0, 0, 0.7)',
+    'zIndex': 10001
+  },
+  'maskHidden': {
+    'display': 'none'
+  },
+  'container': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'zIndex': 10000
+  },
+  'containerHidden': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'zIndex': -1
+  },
+  'panel': {
+    'backgroundColor': '#fff',
+    'borderRadius': '5px',
+    'boxSizing': 'border-box',
+    'boxShadow': '0 2px 4px rgba(0, 0, 0, 0.3)',
+    'transform': 'translate3d(0, 0, 0)',
+    'transition': 'transform 500ms cubic-bezier(0, 0, 0.25, 1), opacity 500ms cubic-bezier(0, 0, 0.25, 1)',
+    'zIndex': 10002
+  },
+  'panelHidden': {
+    'transform': 'translate3d(-100px, 0, 0)',
+    'opacity': 0,
+    'zIndex': -1,
+    'height': 0,
+    'width': 0,
+    'overflow': 'hidden'
+  }
+});
+
+/***/ }),
+
+/***/ "./src/components/effect/fadeInRight.js":
+/*!**********************************************!*\
+  !*** ./src/components/effect/fadeInRight.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  'mask': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'backgroundColor': 'rgba(0, 0, 0, 0.7)',
+    'zIndex': 10001
+  },
+  'maskHidden': {
+    'display': 'none'
+  },
+  'container': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'zIndex': 10000
+  },
+  'containerHidden': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'zIndex': -1
+  },
+  'panel': {
+    'backgroundColor': '#fff',
+    'borderRadius': '5px',
+    'boxSizing': 'border-box',
+    'boxShadow': '0 2px 4px rgba(0, 0, 0, 0.3)',
+    'transform': 'translate3d(0, 0, 0)',
+    'transition': 'transform 500ms cubic-bezier(0, 0, 0.25, 1), opacity 500ms cubic-bezier(0, 0, 0.25, 1)',
+    'zIndex': 10002
+  },
+  'panelHidden': {
+    'transform': 'translate3d(100px, 0, 0)',
+    'opacity': 0,
+    'zIndex': -1,
+    'height': 0,
+    'width': 0,
+    'overflow': 'hidden'
+  }
+});
+
+/***/ }),
+
+/***/ "./src/components/effect/fadeInUp.js":
+/*!*******************************************!*\
+  !*** ./src/components/effect/fadeInUp.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  'mask': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'backgroundColor': 'rgba(0, 0, 0, 0.7)',
+    'zIndex': 10001
+  },
+  'maskHidden': {
+    'display': 'none'
+  },
+  'container': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'zIndex': 10000
+  },
+  'containerHidden': {
+    'position': 'fixed',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'zIndex': -1
+  },
+  'panel': {
+    'backgroundColor': '#fff',
+    'borderRadius': '5px',
+    'boxSizing': 'border-box',
+    'boxShadow': '0 2px 4px rgba(0, 0, 0, 0.3)',
+    'transform': 'translate3d(0, 0, 0)',
+    'transition': 'transform 500ms cubic-bezier(0, 0, 0.25, 1), opacity 500ms cubic-bezier(0, 0, 0.25, 1)',
+    'zIndex': 10002
+  },
+  'panelHidden': {
+    'transform': 'translate3d(0, 100px, 0)',
+    'opacity': 0,
+    'zIndex': -1,
+    'height': 0,
+    'width': 0,
+    'overflow': 'hidden'
+  }
+});
+
+/***/ }),
+
+/***/ "./src/components/img/plants.jpg":
+/*!***************************************!*\
+  !*** ./src/components/img/plants.jpg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/plants.499c23d8.jpg";
+
+/***/ }),
+
+/***/ "./src/routes/balcony/Visualization.css":
+/*!**********************************************!*\
+  !*** ./src/routes/balcony/Visualization.css ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Visualization.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/routes/balcony/Visualization.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Visualization.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/routes/balcony/Visualization.css", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Visualization.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/routes/balcony/Visualization.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/routes/balcony/Visualization.js":
+/*!*********************************************!*\
+  !*** ./src/routes/balcony/Visualization.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Visualization; });
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Visualization_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Visualization.css */ "./src/routes/balcony/Visualization.css");
+/* harmony import */ var _Visualization_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_Visualization_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Config */ "./src/Config.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Modal */ "./src/components/Modal.js");
+/* harmony import */ var _components_PlantStickers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/PlantStickers */ "./src/components/PlantStickers.js");
+
+
+
+
+
+var _jsxFileName = "C:\\Users\\Romane\\Documents\\Cours\\transmedia\\GitFrontEnd\\biodi-frontend-v1\\src\\routes\\balcony\\Visualization.js";
+
+
+
+
+
+
+
+var Visualization =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Visualization, _React$Component);
+
+  function Visualization(props) {
+    var _this;
+
+    Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Visualization);
+
+    _this = Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Visualization).call(this, props));
+    _this.state = {
+      visible: false,
+      isLoaded: false,
+      isSaved: false,
+      plantStickers: [],
+      currentPlant: null,
+      currentPot: null
+    };
+    return _this;
+  }
+
+  Object(C_Users_Romane_Documents_Cours_transmedia_GitFrontEnd_biodi_frontend_v1_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Visualization, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch(_Config__WEBPACK_IMPORTED_MODULE_7__["default"].apiUrl + '/v1/balconies/' + this.props.match.params.id).then(function (res) {
+        return res.json();
+      }).then(function (result) {
+        _this2.setState({
+          isLoaded: true,
+          plantStickers: result
+        });
+
+        console.log(_this2.state.plantStickers);
+      }, function (error) {
+        _this2.setState({
+          isLoaded: true,
+          error: error
+        });
+
+        console.error(error);
+      });
+    }
+  }, {
+    key: "openModal",
+    value: function openModal(idPot) {
+      this.setState({
+        visible: true,
+        currentPot: idPot
+      });
+    }
+  }, {
+    key: "closeModal",
+    value: function closeModal() {
+      this.setState({
+        visible: false,
+        currentPlant: null
+      });
+    }
+  }, {
+    key: "closeModalAndAdd",
+    value: function closeModalAndAdd(id) {
+      console.log(id);
+      fetch(_Config__WEBPACK_IMPORTED_MODULE_7__["default"].apiUrl + '/v1//arrangementsbalcony/' + this.state.currentPot, {
+        method: 'PATCH',
+        body: id
+      });
+      this.setState({
+        visible: false,
+        currentPlant: null
+      });
+      console.log(this.state.plantStickers);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "w-100 h-100 container overflow-auto onePage",
+        id: "Visualization",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, this.renderBalcony(), this.renderHelper(), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_Modal__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        visible: this.state.visible,
+        width: "90%",
+        height: "90%",
+        effect: "fadeInUp",
+        plant: this.state.currentPlant,
+        currentBalcony: this.props.match.params.id,
+        onClose: function onClose() {
+          return _this3.closeModal();
+        },
+        onClickAdd: function onClickAdd(id) {
+          return _this3.closeModalAndAdd(id);
+        },
+        onClickDelete: function onClickDelete() {
+          return alert("Deleting plant");
+        },
+        onClickCard: function onClickCard(id) {
+          return _this3.setState({
+            currentPlant: id
+          });
+        },
+        onClickBack: function onClickBack() {
+          return _this3.setState({
+            currentPlant: null
+          });
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      }));
+    }
+  }, {
+    key: "renderBalcony",
+    value: function renderBalcony() {
+      var _this4 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        id: "balcony",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/balconyXL.svg",
+        className: "hidden",
+        alt: "Balcony",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        id: "iconswrap",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
+        href: "#ancreHelper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/information.svg",
+        alt: "plus d'informations",
+        className: "icons",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/share.svg",
+        alt: "partager",
+        className: "icons",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/loading.svg",
+        alt: "en cours d'enregistrement",
+        className: "icons " + (this.state.isSaved ? "hiddenIco" : "saving"),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/tick-inside-circle.svg",
+        alt: "Enregistr\xE9 !",
+        className: "icons " + (this.state.isSaved ? "" : "hiddenIco"),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Link"], {
+        to: "/dashboard",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/cancel.svg",
+        alt: "Fermer",
+        className: "icons",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "balconyelement",
+        id: "bac",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        onClick: function onClick() {
+          return _this4.openModal(1);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 105
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        onClick: function onClick() {
+          return _this4.openModal(2);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        onClick: function onClick() {
+          return _this4.openModal(3);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        onClick: function onClick() {
+          return _this4.openModal(4);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "pots balconyelement",
+        id: "pot3",
+        onClick: function onClick() {
+          return _this4.openModal(5);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "pots balconyelement",
+        id: "pot4",
+        onClick: function onClick() {
+          return _this4.openModal(6);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "pots balconyelement",
+        id: "pot5",
+        onClick: function onClick() {
+          return _this4.openModal(7);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 116
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 117
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "balconyelement",
+        id: "suspendedpot",
+        onClick: function onClick() {
+          return _this4.openModal(8);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 119
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 120
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "balconyelement",
+        id: "climbingtrail",
+        onClick: function onClick() {
+          return _this4.openModal(9);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 123
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "construction balconyelement",
+        id: "construction1",
+        onClick: function onClick() {
+          return _this4.openModal(10);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 125
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 126
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "construction balconyelement",
+        id: "construction2",
+        onClick: function onClick() {
+          return _this4.openModal(11);
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _Config__WEBPACK_IMPORTED_MODULE_7__["default"].imgFolder + "/icon/plus.svg",
+        alt: "Plus",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129
+        },
+        __self: this
+      })), this.state.plantStickers.map(function (sticker) {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_PlantStickers__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          id: "place" + sticker.location,
+          etat: sticker._contain,
+          key: sticker.id,
+          contient: sticker._contain,
+          image: sticker.imgSrc,
+          onClick: function onClick() {
+            return _this4.setState({
+              currentPlant: sticker._contain
+            }, function () {
+              _this4.openModal();
+            });
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 132
+          },
+          __self: this
+        });
+      }));
+    }
+  }, {
+    key: "renderHelper",
+    value: function renderHelper() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "bottomBalcony",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 146
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "gradient w-100",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 147
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 148
+        },
+        __self: this
+      }, "Pour une meilleure exp\xE9rience, switchez votre \xE9cran en mode paysage si cela est possible")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "helper",
+        id: "ancreHelper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 150
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 151
+        },
+        __self: this
+      }, "Comment r\xE9aliser un balcon ?"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 152
+        },
+        __self: this
+      }, "Cette section a pour but de vous aider \xE0 r\xE9aliser le balcon selon vos souhaits, l'objectif \xE9tant de le rendre le plus biodivers possible."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
+        },
+        __self: this
+      }, "Premi\xE8re \xE9tape"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 155
+        },
+        __self: this
+      }, "Cliquez sur l'\xE9l\xE9ment du balcon que vous souhaitez remplir : les planches repr\xE9sentent des constructeions (nichoirs, h\xF4tels \xE0 insectes, etc.), le treillis vous permettra d'ajouter une plante grimpante, alors que les pots et bacs, suspendus ou non, vous laisseront les remplir de plantes."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 159
+        },
+        __self: this
+      }, "Deuxi\xE8me \xE9tape"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 160
+        },
+        __self: this
+      }, "Un pop-up va s'ouvrir, vous proposant alors un assortiment de plantes ou constructions les plus adapt\xE9s aux param\xE8tres du balcon pr\xE9c\xE9demment remplis. Il vous suffit de cliquer sur votre pr\xE9f\xE9r\xE9e."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 163
+        },
+        __self: this
+      }, "Troisi\xE8me \xE9tape"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 164
+        },
+        __self: this
+      }, "Ainsi, les d\xE9tails de la plante choisie s'affichent, vous permettant ainsi de tout savoir sur son entretien, ce qu'elle attire, etc. Si la plante ne vous convient finalement pas, revenez en arri\xE8re gr\xE2ce au bouton en haut \xE0 gauche. Sinon, pressez le bouton valid\xE9, et voil\xE0, votre plante est ajout\xE9e \xE0 votre balcon ! Un rond proche de l'emplacement rempli devrait vous indiquer quelle plante est dans cet emplacement, si les \xE9tapes ont \xE9t\xE9 remplies correctement."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 169
+        },
+        __self: this
+      }, "Proc\xE9dez ainsi jusqu'\xE0 ce que le balcon vous convienne ! La sauvegarde est automatique, donc vous pouvez sans probl\xE8me quitter et retrouver votre balcon dans l'\xE9tat dans lequel vous le laissez \xE0 n'importe quel moment.'"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172
+        },
+        __self: this
+      }, "Un doute ?"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 173
+        },
+        __self: this
+      }, "Cliquez sur le rond repr\xE9sentant les plantes dans les emplacements si vous voulez revoir ses informations, ou la modifier."), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 175
+        },
+        __self: this
+      }, "Balcon termin\xE9 ?"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 176
+        },
+        __self: this
+      }, "F\xE9licitations ! Vous voil\xE0 riche de quelques points suppl\xE9mentaires pour votre quartier, et de plusieurs informations pour rendre d\xE9sormais en vrai votre balcon favorable \xE0 la biodiversit\xE9 ! Cliquez sur la croix en haut \xE0 droite vous ramenera \xE0 votre tableau de bord. Sinon, vous pouvez partager votre balcon sur le forum Biodi-vers-City, et \xE9changez sur votre solution avec la communaut\xE9 !")));
+    }
+  }]);
+
+  return Visualization;
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./src/routes/balcony/img/BAC.svg":
+/*!****************************************!*\
+  !*** ./src/routes/balcony/img/BAC.svg ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/BAC.9cf6e3a1.svg";
+
+/***/ }),
+
+/***/ "./src/routes/balcony/img/balconyXL.svg":
+/*!**********************************************!*\
+  !*** ./src/routes/balcony/img/balconyXL.svg ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/balconyXL.ae46b8d8.svg";
+
+/***/ }),
+
+/***/ "./src/routes/balcony/img/climbingtrail.svg":
+/*!**************************************************!*\
+  !*** ./src/routes/balcony/img/climbingtrail.svg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/climbingtrail.a50013ff.svg";
+
+/***/ }),
+
+/***/ "./src/routes/balcony/img/construction.svg":
+/*!*************************************************!*\
+  !*** ./src/routes/balcony/img/construction.svg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/construction.706d8aa5.svg";
+
+/***/ }),
+
+/***/ "./src/routes/balcony/img/fleurs.jpg":
+/*!*******************************************!*\
+  !*** ./src/routes/balcony/img/fleurs.jpg ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/fleurs.08836381.jpg";
+
+/***/ }),
+
+/***/ "./src/routes/balcony/img/pot.svg":
+/*!****************************************!*\
+  !*** ./src/routes/balcony/img/pot.svg ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/pot.0d8fbe8f.svg";
+
+/***/ }),
+
+/***/ "./src/routes/balcony/img/suspendedpot.svg":
+/*!*************************************************!*\
+  !*** ./src/routes/balcony/img/suspendedpot.svg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/media/suspendedpot.08c7f806.svg";
+
+/***/ })
+
+}]);
+//# sourceMappingURL=3.chunk.js.map

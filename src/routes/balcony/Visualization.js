@@ -14,7 +14,8 @@ export default class Visualization extends React.Component {
             isLoaded: false,
             isSaved: false,
             plantStickers: [],
-            currentPlant: null
+            currentPlant: null,
+            currentPot:null
         };
     }
 
@@ -27,7 +28,7 @@ export default class Visualization extends React.Component {
                         isLoaded: true,
                         plantStickers: result
                     });
-                    console.log(this.state.plantStickers[0]);
+                    console.log(this.state.plantStickers);
                 },
                 (error) => {
                     this.setState({
@@ -39,26 +40,49 @@ export default class Visualization extends React.Component {
             )
     }
 
-    openModal() {
-        this.setState({visible: true});
+    openModal(idPot) {
+        this.setState({
+            visible: true,
+            currentPot:idPot
+        });
     }
 
     closeModal() {
         this.setState({
             visible: false,
-            currentPlant: null
+            currentPlant: null,
+            currentPot:null
         });
     }
 
     closeModalAndAdd(id) {
-        let table = this.state.plantStickers;
-        table[0].contient = id;
-        table[0].clicked = true;
+        console.log(id);
+        console.log(this.state.currentPot);
+        let data = {
+            idPlant: id,
+            location: this.state.currentPot
+        };
+        fetch(Config.apiUrl + '/v1/balconies/' + this.props.match.params.id+'/plants', {
+           method: 'PATCH',                                                              
+          body: JSON.stringify(data),
+        })
         this.setState({
             visible: false,
-            plantStickers: table
+            currentPlant:null,
+            currentPot:null,
+            isSaved:true
         });
-        console.log(this.state.plantStickers[0]);
+        this.componentDidMount();
+    }
+    
+    isFilled(id) {
+        let isFilled = false;
+        this.state.plantStickers.map(ps => {
+            if(ps.location ==  id){
+                isFilled = true;
+            }
+        });
+        return isFilled;
     }
 
     render() {
@@ -68,7 +92,7 @@ export default class Visualization extends React.Component {
                 {this.renderHelper()}
 
                 <Modal visible={this.state.visible} width="90%" height="90%" effect="fadeInUp"
-                       plant={this.state.currentPlant} currentBalcony={this.props.match.params.id}
+                       plant={this.state.currentPlant} currentBalcony={this.props.match.params.id} pot={this.state.currentPot}
                        onClose={() => this.closeModal()}
                        onClickAdd={(id) => this.closeModalAndAdd(id)}
                        onClickDelete={() => alert("Deleting plant")}
@@ -87,44 +111,73 @@ export default class Visualization extends React.Component {
                     <a href="#ancreHelper"><img src={Config.imgFolder + "/icon/information.svg"}
                                                 alt="plus d'informations" className="icons"/></a>
                     <img src={Config.imgFolder + "/icon/share.svg"} alt="partager" className="icons"/>
-                    <img src={Config.imgFolder + "/icon/loading.svg"} alt="en cours d'enregistrement"
-                         className={"icons " + (this.state.isSaved ? "hiddenIco" : "saving")}/>
-                    <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} alt="Enregistré !"
+                    <img src={Config.imgFolder + "/icon/loading.svg"} title="en cours d'enregistrement"
+                         className={"icons " + (this.state.isSaved ? "hiddenIco" : "saving")} data-toggle="tooltip"/>
+                    <img src={Config.imgFolder + "/icon/tick-inside-circle.svg"} title="Enregistré !"
                          className={"icons " + (this.state.isSaved ? "" : "hiddenIco")}/>
                     <Link to="/dashboard"><img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer"
                                                className="icons"/></Link>
                 </div>
                 <div className="balconyelement" id="bac">
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal()}/>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal()}/>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal()}/>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal()}/>
+                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal(1)} className={(this.isFilled(1) ? "fullbac" : "")}/>
+                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal(2)} className={(this.isFilled(2) ? "fullbac" : "")}/>
+                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal(3)} className={(this.isFilled(3) ? "fullbac" : "")}/>
+                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal(4)} className={(this.isFilled(4) ? "fullbac" : "")}/>
                 </div>
-                <div className="pots balconyelement" id="pot3" onClick={() => this.openModal()}>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                    
+                <div className={"pots balconyelement "+ (this.isFilled(5) ? "full" : "")} id="pot3" onClick={() => this.openModal(5)}>
+                    {this.isFilled(5) ?
+                    ''
+                     :
+                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                    }
                 </div>
-                <div className="pots balconyelement" id="pot4" onClick={() => this.openModal()}>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                <div className={"pots balconyelement "+ (this.isFilled(6) ? "full" : "")} id="pot4" onClick={() => this.openModal(6)}>
+                    {this.isFilled(6) ?
+                    ''
+                     :
+                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                    }
                 </div>
-                <div className="pots balconyelement" id="pot5" onClick={() => this.openModal()}>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                <div className={"pots balconyelement "+ (this.isFilled(7) ? "full" : "")} id="pot5" onClick={() => this.openModal(7)}>
+                    {this.isFilled(7) ?
+                    ''
+                     :
+                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                    }
                 </div>
-                <div className="balconyelement" id="suspendedpot" onClick={() => this.openModal()}>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                <div className={"balconyelement "+ (this.isFilled(8) ? "full" : "")} id="suspendedpot" onClick={() => this.openModal(8)}>
+                    {this.isFilled(8) ?
+                    ''
+                     :
+                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                    }
                 </div>
-                <div className="balconyelement" id="climbingtrail" onClick={() => this.openModal()}>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                <div className={"balconyelement "+ (this.isFilled(9) ? "full" : "")} id="climbingtrail" onClick={() => this.openModal(9)}>
+                    {this.isFilled(9) ?
+                    ''
+                     :
+                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                    }
                 </div>
-                <div className="construction balconyelement" id="construction1" onClick={() => this.openModal()}>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                <div className={"construction balconyelement "+ (this.isFilled(10) ? "full" : "")} id="construction1" onClick={() => this.openModal(10)}>
+                    {this.isFilled(10) ?
+                    ''
+                     :
+                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                    }
                 </div>
-                <div className="construction balconyelement" id="construction2" onClick={() => this.openModal()}>
-                    <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                <div className={"construction balconyelement "+ (this.isFilled(11) ? "full" : "")} id="construction2" onClick={() => this.openModal(11)}>
+                   {this.isFilled(11) ?
+                    ''
+                     :
+                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus"/>
+                    }
                 </div>
                 {this.state.plantStickers.map(sticker =>
-                    <PlantStickers id={"place" + sticker.location} etat={sticker._contain} key={sticker.id}
-                                   contient={sticker._contain} image={sticker.imgSrc} onClick={() =>
-                        this.setState({currentPlant: sticker._contain}, () => {
+                    <PlantStickers id={"place" + sticker.location} etat={sticker._plant} key={sticker.id}
+                                   contient={sticker._plant} image={sticker.imgSrc} onClick={() =>
+                        this.setState({currentPlant: sticker._plant}, () => {
                             this.openModal()
                         })
                     }/>
