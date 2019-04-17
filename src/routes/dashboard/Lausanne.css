@@ -1,16 +1,19 @@
-.wrapMap {
-	width: 80%;
-    margin-left: 10%;
+#Lausanne #Scoreboard {
+    font-family: BebasNeue, sans-serif;
 }
-.col-12{
-    flex:auto;
-    max-width: 80%;
+
+#Lausanne .trophy-1 {
+    color: #e4c42c;
 }
-@media (max-width: 768px) { 
-    .col-12 {
-	max-width: 100%;
+
+#Lausanne .trophy-2 {
+    color: #aaaaaa;
 }
-    .wrapMap{
-        margin-left: 0;
-    }
+
+#Lausanne .trophy-3 {
+    color: #a37a19;
+}
+
+#Lausanne .trophy-4, #Lausanne .trophy-5 {
+    display: none;
 }
