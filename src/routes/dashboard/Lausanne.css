@@ -15,5 +15,5 @@
 }
 
 #Lausanne .trophy-4, #Lausanne .trophy-5 {
-    color: transparent;
+    display: none;
 }

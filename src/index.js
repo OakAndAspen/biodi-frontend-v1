@@ -6,15 +6,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import $ from "jquery";
 
-let headers = {
-    "Content-Type": "application/json"
-};
-if(localStorage.getItem("authKey")) headers.Authorization = "Bearer " + localStorage.authKey;
-
 $.ajaxSetup({
-    headers: headers,
-    error: function (jqXHR) {
-        console.log('An error occured (' + jqXHR.status + ' ' + jqXHR.statusText + ')');
+    headers: {
+        "Content-Type": "application/json"
+    },
+    beforeSend: function (xhr) {
+        if (localStorage.authKey) {
+            xhr.setRequestHeader('Authorization', "Bearer " + localStorage.authKey);
+        }
     }
 });
 

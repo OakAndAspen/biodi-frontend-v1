@@ -119,22 +119,26 @@
     top: 50%;
 }
 
-#Map .max {
-    fill: rgba(var(--birdLifeGreen), 1);
+#Map .rank-1 {
+    fill: #52AE32;
 }
 
-#Map .max2 {
-    fill: rgba(var(--birdLifeGreen), 0.8);
+#Map .rank-2 {
+    fill: #6CB154;
 }
 
-#Map .middle {
-    fill: rgba(var(--birdLifeGreen), 0.6);
+#Map .rank-3 {
+    fill: #87B577;
 }
 
-#Map .min2 {
-    fill: rgba(var(--birdLifeGreen), 0.4);
+#Map .rank-4 {
+    fill: #A2B99A;
 }
 
-#Map .min {
-    fill: rgba(var(--biodiLightGrey), 1);
+#Map .rank-5 {
+    fill: #BDBDBD;
+}
+
+#Map .score {
+    font-family: BebasNeue, sans-serif;
 }
