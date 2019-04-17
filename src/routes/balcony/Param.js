@@ -52,8 +52,8 @@ export default class Param extends React.Component {
             url: Config.apiUrl + '/v1/balconies/add',
             data: JSON.stringify(data),
             context: this
-        }).done(() => {
-            this.props.history.push("/dashboard");
+        }).done(res => {
+            this.props.history.push("/balcony/" + res[1]);
         }).fail(() => {
             alert("Il y a eu une erreur lors de la création du balcon. Désolés pour le dérangement! Nous faisons de notre mieux.");
         });

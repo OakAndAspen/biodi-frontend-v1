@@ -29,7 +29,11 @@ export default class Balconies extends React.Component {
         return (
             <DashboardLayout>
                 <div className="w-100 h-100 p-2 p-md-4">
-                    <Hexagon row="1" column="1" history={this.props.history} id="new"/>
+                    {this.state.balconies.length < 5 ?
+                        <Hexagon row="1" column="1" history={this.props.history} id="new"/>
+                        :
+                        <Hexagon row="1" column="1"/>
+                    }
                     {this.state.balconies.map((b, i) => {
                             let row = Math.ceil(i / 2 + 1);
                             let column = i % 2 === 0 ? 2 : 1;
