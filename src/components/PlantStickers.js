@@ -1,5 +1,4 @@
 import React from 'react';
-import Config from "../Config";
 
 export default class PlantStickers extends React.Component {
 
@@ -22,7 +21,8 @@ export default class PlantStickers extends React.Component {
 
     render() {
         const stylesStick = {
-            backgroundImage: 'url(' + Config.imgFolder+'/'+ this.props.image + ')',
+            backgroundColor: 'white',
+            backgroundImage: 'url(' + this.props.image + ')',
             overflow: 'hidden',
         }
         return (

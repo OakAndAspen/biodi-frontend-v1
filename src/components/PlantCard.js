@@ -1,11 +1,10 @@
 import React from 'react';
 import "./PlantCard.css";
-import Config from "../Config";
 
 export default class PlantCard extends React.Component {
     render() {
          const stylesImg = {
-            backgroundImage: 'url(' + Config.imgFolder+'/'+ this.props.plant.img + ')',
+            backgroundImage: 'url(' + this.props.plant.img + ')',
         }
         return (
             <div className="PlantCard card col-sm-4" data-id={this.props.plant}

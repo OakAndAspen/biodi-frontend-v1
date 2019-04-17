@@ -21,7 +21,11 @@ export default class Visualization extends React.Component {
     }
 
     componentDidMount() {
-        fetch(Config.apiUrl + '/v1/balconies/' + this.props.match.params.id)
+       this.fetchBalcony();
+    }
+    
+    fetchBalcony(){
+         fetch(Config.apiUrl + '/v1/balconies/' + this.props.match.params.id)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -42,6 +46,7 @@ export default class Visualization extends React.Component {
     }
 
     openModal(idPot) {
+        console.log(idPot);
         this.setState({
             currentPot:idPot,
             visible: true,
@@ -63,20 +68,48 @@ export default class Visualization extends React.Component {
 
     closeModalAndAdd(id) {
         let data = {
-            idPlant: id,
+            idContent: id,
             location: this.state.currentPot
         };
-        fetch(Config.apiUrl + '/v1/balconies/' + this.props.match.params.id+'/plants', {
+        fetch(Config.apiUrl + '/v1/balconies/' + this.props.match.params.id+'/contents', {
            method: 'PATCH',                                                              
           body: JSON.stringify(data),
-        })
-        this.setState({
-            visible: false,
-            currentPlant:null,
-            currentPot:null,
-            isSaved:true
-        });
-        this.componentDidMount();
+        }).then(
+            () => {
+                this.fetchBalcony();
+            }).then(
+            () => {
+                this.setState({
+                    visible: false,
+                    currentPlant:null,
+                    currentPot:null,
+                    isSaved:true
+                });
+            })
+        
+    }
+    closeModalAndDelete() {
+        console.log(this.state.currentPot);
+        let data = {
+            idContent: null,
+            location: this.state.currentPot
+        };
+        fetch(Config.apiUrl + '/v1/balconies/' + this.props.match.params.id+'/contents', {
+           method: 'PATCH',                                                              
+          body: JSON.stringify(data),
+        }).then(
+            () => {
+                this.fetchBalcony();
+            }).then(
+            () => {
+                this.setState({
+                    visible: false,
+                    currentPlant:null,
+                    currentPot:null,
+                    isSaved:true,
+                    isAlreadyFill:false
+                });
+            })
     }
     
     isFilled(id) {
@@ -99,7 +132,7 @@ export default class Visualization extends React.Component {
                        plant={this.state.currentPlant} currentBalcony={this.props.match.params.id} pot={this.state.currentPot} stickOrNot={this.state.isAlreadyFill}
                        onClose={() => this.closeModal()}
                        onClickAdd={(id) => this.closeModalAndAdd(id)}
-                       onClickDelete={() => alert("Deleting plant")}
+                       onClickDelete={() => this.closeModalAndDelete()}
                        onClickCard={(id) => this.setState({currentPlant: id})}
                        onClickBack={() => this.setState({currentPlant: null})}/>
             </div>
@@ -122,7 +155,7 @@ export default class Visualization extends React.Component {
                     <Link to="/dashboard"><img src={Config.imgFolder + "/icon/cancel.svg"} alt="Fermer"
                                                className="icons"/></Link>
                 </div>
-                <div className="balconyelement" id="bac">
+                <div className={"balconyelement "+ (this.isFilled(1)||this.isFilled(2)||this.isFilled(3)||this.isFilled(4) ? "full" : "")} id="bac">
                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal(1)} className={(this.isFilled(1) ? "fullbac" : "")}/>
                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal(2)} className={(this.isFilled(2) ? "fullbac" : "")}/>
                     <img src={Config.imgFolder + "/icon/plus.svg"} alt="Plus" onClick={() => this.openModal(3)} className={(this.isFilled(3) ? "fullbac" : "")}/>
@@ -185,7 +218,7 @@ export default class Visualization extends React.Component {
                                         currentPlant: sticker._content,
                                         isAlreadyFill : true
                                       }, () => {
-                            this.openModal()
+                            this.openModal(sticker.location)
                         })
                     }/>
                 )}

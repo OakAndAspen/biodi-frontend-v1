@@ -34,7 +34,7 @@ export default class DetailsPlant extends React.Component {
         if (!this.state.plant) return <h1 className="text-center my-4">...</h1>;
         
         const stylesImg = {
-            backgroundImage: 'url(' + Config.imgFolder+'/'+ this.state.plant.img + ')',
+            backgroundImage: 'url(' + this.state.plant.img + ')',
         }
         return (
             <div id="DetailsPlant">

@@ -56,7 +56,6 @@ export default class Modal extends Component {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log('hello');
                     this.setState({
                         isLoaded: true,
                         plants: result
@@ -165,6 +164,7 @@ export default class Modal extends Component {
         return (
             <DetailsPlant id={this.props.plant} stickOrNot={this.props.stickOrNot}
                           onClickAdd={() => this.props.onClickAdd(this.props.plant)}
+                            onClickDelete={() => this.props.onClickDelete()}
                           onClickDelete={() => this.props.onClickDelete(this.props.plant)}/>
         );
     }
