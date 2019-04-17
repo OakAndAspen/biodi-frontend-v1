@@ -42,7 +42,7 @@ export default class DetailsPlant extends React.Component {
                 <div className="imgPlant" style={stylesImg} alt={"Photo de " + this.state.plant.name} />
                 {this.renderIcons()}
                 <div className="wrapLeft col-sm-6">
-                    <h2>Pourquoi ?</h2>
+                    <h2>Description </h2>
                     <p>{this.state.plant.description}</p>
                 </div>
                 <div className="wrapRight col-sm-6">
