@@ -47,13 +47,7 @@ export default class DetailsPlant extends React.Component {
                 </div>
                 <div className="wrapRight col-sm-6">
                     <h2>Conseils pratiques</h2>
-                    <ul>
-                        <li>Arroser toutes les heures</li>
-                        <li>Arroser toutes les heures</li>
-                    </ul>
-                    <p>Il n\'a pas fait que survivre cinq siècles, mais s\'est aussi adapté à la bureautique
-                        informatique, sans que son contenu n\'en soit modifié. Il a été popularisé dans les années 1960
-                        grâce à la vente de feuilles Letraset..</p>
+                    <p>{this.state.plant.maintain}</p>
                 </div>
                 {this.renderButton()}
             </div>
