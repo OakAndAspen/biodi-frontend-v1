@@ -7,13 +7,12 @@ export default class DetailsPlant extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isFull: false,
             plant: null
         };
     }
 
     componentWillReceiveProps() {
-        fetch(Config.apiUrl + '/v1/plants/' + this.props.id)
+        fetch(Config.apiUrl + '/v1/contents/' + this.props.id)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -66,13 +65,13 @@ export default class DetailsPlant extends React.Component {
             <p className="wrapIcons">
                 {this.state.plant.initialBudget}/5
                 <img src={Config.imgFolder + "/icon/coin.png"} alt="Argent!" className="iconDetails"/>
-                -
+                -&nbsp;
                 {this.state.plant.initialTime}/5
                 <img src={Config.imgFolder + "/icon/time.png"} alt="Temps!" className="iconDetails"/>
-                -
+                -&nbsp;
                 {this.state.plant.sunlight}/5
                 <img src={Config.imgFolder + "/icon/sun.png"} alt="Soleil!" className="iconDetails"/>
-                -
+                -&nbsp;
                 Favorise : &nbsp;
                 {this.state.plant.favorising}
             </p>
@@ -80,7 +79,7 @@ export default class DetailsPlant extends React.Component {
     }
 
     renderButton() {
-        if (this.state.isFull) return (
+        if (this.props.stickOrNot) return (
             <button className={"btn btn-danger mb-3 w-100"}
                     onClick={this.props.onClickDelete}>
                 Supprimer

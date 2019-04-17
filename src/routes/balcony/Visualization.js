@@ -12,10 +12,11 @@ export default class Visualization extends React.Component {
         this.state = {
             visible: false,
             isLoaded: false,
-            isSaved: false,
+            isSaved: true,
             plantStickers: [],
             currentPlant: null,
-            currentPot:null
+            currentPot:null,
+            isAlreadyFill : false
         };
     }
 
@@ -42,8 +43,8 @@ export default class Visualization extends React.Component {
 
     openModal(idPot) {
         this.setState({
+            currentPot:idPot,
             visible: true,
-            currentPot:idPot
         });
     }
 
@@ -53,11 +54,14 @@ export default class Visualization extends React.Component {
             currentPlant: null,
             currentPot:null
         });
+        {this.state.isAlreadyFill &&
+            this.setState({
+            isAlreadyFill:false
+        })
+        }
     }
 
     closeModalAndAdd(id) {
-        console.log(id);
-        console.log(this.state.currentPot);
         let data = {
             idPlant: id,
             location: this.state.currentPot
@@ -92,7 +96,7 @@ export default class Visualization extends React.Component {
                 {this.renderHelper()}
 
                 <Modal visible={this.state.visible} width="90%" height="90%" effect="fadeInUp"
-                       plant={this.state.currentPlant} currentBalcony={this.props.match.params.id} pot={this.state.currentPot}
+                       plant={this.state.currentPlant} currentBalcony={this.props.match.params.id} pot={this.state.currentPot} stickOrNot={this.state.isAlreadyFill}
                        onClose={() => this.closeModal()}
                        onClickAdd={(id) => this.closeModalAndAdd(id)}
                        onClickDelete={() => alert("Deleting plant")}
@@ -175,9 +179,12 @@ export default class Visualization extends React.Component {
                     }
                 </div>
                 {this.state.plantStickers.map(sticker =>
-                    <PlantStickers id={"place" + sticker.location} etat={sticker._plant} key={sticker.id}
-                                   contient={sticker._plant} image={sticker.imgSrc} onClick={() =>
-                        this.setState({currentPlant: sticker._plant}, () => {
+                    <PlantStickers id={"place" + sticker.location} etat={sticker._content} key={sticker.id}
+                                   contient={sticker._content} image={sticker.imgSrc} onClick={() =>
+                        this.setState({
+                                        currentPlant: sticker._content,
+                                        isAlreadyFill : true
+                                      }, () => {
                             this.openModal()
                         })
                     }/>

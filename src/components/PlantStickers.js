@@ -16,10 +16,7 @@ export default class PlantStickers extends React.Component {
    seeDetails(id) {
           this.props.onClick();
          
-        this.setState({
-            visible : true,
-            
-        });
+        
     }
   
 

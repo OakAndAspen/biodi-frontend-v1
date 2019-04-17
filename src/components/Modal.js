@@ -23,49 +23,43 @@ export default class Modal extends Component {
         this.setState({visible: nextProps.visible});
         this.setSize(effect);
         this.setStyles(effect);
-        console.log(this.props.pot);
-        switch(this.props.pot) {
-            case 10:
-              this.getConstructions();
-                break;
-            case 11:
-             this.getConstructions();
-                break;
-
-            default:
-              this.getPlants();
-                break;
-        }
-        
+        this.getArrange(nextProps.pot);
         this.render();
     }
+    
+    getArrange(pot){
+        let idArrangement;
+        {(() => {
+        switch(pot) {
+          case 9:
+            idArrangement = 2;
+                break;
+          case 10:
+          idArrangement = 4;
+                break;
+          case 11:
+            idArrangement = 4;
+                break;
+            case 8:
+             idArrangement = 3;
+                break;
+          default:
+           idArrangement = 1;
+                break;
+        }
+      })()}
+        this.getPlants(idArrangement);
+    }
 
-    getPlants() {
-        fetch(Config.apiUrl + '/v1/balconies/' + this.props.currentBalcony + "/plants")
+    getPlants(data) {
+        fetch(Config.apiUrl + '/v1/balconies/' + this.props.currentBalcony + '/contents/'+data)
             .then(res => res.json())
             .then(
                 (result) => {
+                    console.log('hello');
                     this.setState({
                         isLoaded: true,
                         plants: result
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
-    }
-    getConstructions(){
-        fetch(Config.apiUrl + '/v1/balconies/' + this.props.currentBalcony + "/constructions")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        constructions: result
                     });
                 },
                 (error) => {
@@ -140,7 +134,7 @@ export default class Modal extends Component {
             <div className="row">
                 <div className="col-9">
                     {this.props.plant == null ?
-                        <h1>Plantes recommandées</h1>
+                        <h1>Elements recommandées</h1>
                         :
                         <h3 onClick={this.props.onClickBack} className="text-left">
                             <i className="fas fa-angle-double-left"/>
@@ -158,40 +152,18 @@ export default class Modal extends Component {
 
     renderPlantCards() {
         return (
-        
             <div>
-            {(() => {
-        switch(this.props.pot) {
-          case 10:
-            return <div>{this.state.constructions.map(cs =>
-                    <PlantCard key={cs.id} plant={cs}
-                               onClickCard={() => this.props.onClickCard(cs.id)}/>)
-                }</div>;
-          case 11:
-            return <div>{this.state.constructions.map(cs =>
-                    <PlantCard key={cs.id} plant={cs}
-                               onClickCard={() => this.props.onClickCard(cs.id)}/>)
-                }</div>;
-          case 9:
-            return <div>{this.state.plants.map(plant =>
+                {this.state.plants.map(plant =>
                     <PlantCard key={plant.id} plant={plant}
                                onClickCard={() => this.props.onClickCard(plant.id)}/>)
-                }</div>;
-          default:
-            return <div>{this.state.plants.map(plant =>
-                    <PlantCard key={plant.id} plant={plant}
-                               onClickCard={() => this.props.onClickCard(plant.id)}/>)
-                }</div>;
-        }
-      })()}
-                
+                }
             </div>
         );
     }
 
     renderPlantDetails() {
         return (
-            <DetailsPlant id={this.props.plant}
+            <DetailsPlant id={this.props.plant} stickOrNot={this.props.stickOrNot}
                           onClickAdd={() => this.props.onClickAdd(this.props.plant)}
                           onClickDelete={() => this.props.onClickDelete(this.props.plant)}/>
         );
