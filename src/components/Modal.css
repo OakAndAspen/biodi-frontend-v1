@@ -4,13 +4,3 @@
     padding-top: 3%;
     overflow-y: auto;
 }
-#closeModal{
-    position: absolute;
-    right: 2%;
-    top:2%;
-    font-size: 2em;
-}
-#closeModal:hover {
-	text-decoration: none;
-    color: darkolivegreen;
-}

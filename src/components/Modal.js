@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import style from './ModalStyle.js';
 import "./Modal.css";
 import Config from "../Config";
-
 import PlantCard from "./PlantCard";
 import DetailsPlant from "./DetailsPlant";
 
@@ -12,53 +11,41 @@ export default class Modal extends Component {
         let effect = props.effect || 'fadeInDown';
         this.setSize(effect);
         this.state = {
-            visible : props.visible,
-            style : style[effect],
-            plant : [],
-            plants:[],
+            visible: props.visible,
+            style: style[effect],
+            plants: []
         };
     }
-    
-    
-    
 
-    componentWillReceiveProps({visible, effect = 'fadeInDown'}) {
-        this.setState({
-            visible : visible,
-        });
+    componentWillReceiveProps(nextProps, nextContext) {
+        let effect = 'fadeInDown';
+        this.setState({visible: nextProps.visible});
         this.setSize(effect);
         this.setStyles(effect);
+        this.getPlants();
+        this.render();
     }
-    componentDidMount() {  
-        fetch(Config.apiUrl+'/v1/balconies/'+this.props.currentBalcony+"/plants").then(res => res.json())
-      .then(
-        (result) => {
-            
-          this.setState({
-            isLoaded: true,
-            plants: result
-          });
-            console.log(this.state.plants);
-        },
-        
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-            console.error(error);
-        }
-      )
-  }
-    onAdd(){
-        this.props.onAdd();
-    }
-    
 
-    setStyles(effect){
+    getPlants() {
+        fetch(Config.apiUrl + '/v1/balconies/' + this.props.currentBalcony + "/plants")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        isLoaded: true,
+                        plants: result
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
+    }
+
+    setStyles(effect) {
         if (this.props && this.props.styles) {
             style[effect].panel = {
                 ...style[effect].panel,
@@ -69,28 +56,26 @@ export default class Modal extends Component {
 
     setSize(effect) {
         if (this.props && this.props.width) {
-            if (this.props.width.charAt(this.props.width.length-1) === '%') {
+            if (this.props.width.charAt(this.props.width.length - 1) === '%') {
                 // Use Percentage
                 const width = this.props.width.slice(0, -1);
                 style[effect].panel.width = width + '%';
-
-            } else if (this.props.width.charAt(this.props.width.length-1) === 'x') {
+            } else if (this.props.width.charAt(this.props.width.length - 1) === 'x') {
                 // Use Pixels
                 const width = this.props.width.slice(0, -2);
                 style[effect].panel.width = width + 'px';
-
             } else {
                 // Defaults
                 style[effect].panel.width = this.props.width + 'px';
             }
         }
         if (this.props && this.props.height) {
-            if (this.props.height.charAt(this.props.height.length-1) === '%') {
+            if (this.props.height.charAt(this.props.height.length - 1) === '%') {
                 // Use Percentage
                 const height = this.props.height.slice(0, -1);
                 style[effect].panel.height = height + 'vh';
 
-            } else if (this.props.height.charAt(this.props.height.length-1) === 'x') {
+            } else if (this.props.height.charAt(this.props.height.length - 1) === 'x') {
                 // Use Pixels
                 const height = this.props.height.slice(0, -2);
                 style[effect].panel.height = height + 'px';
@@ -101,34 +86,60 @@ export default class Modal extends Component {
             }
         }
     }
-   
 
     render() {
         return (
             <div>
                 <div style={this.state.visible ? this.state.style.container : this.state.style.containerHidden}>
-                    <div style={this.state.visible ? {...this.state.style.panel} : this.state.style.panelHidden} className="modalWhite"  onClickAway={() => this.closeModal()}>
-                        {this.props.children}
-                    <div>
-                        <a href="javascript:void(0);" onClick={() => this.props.onClose()} id="closeModal">X</a>
+                    <div style={this.state.visible ? {...this.state.style.panel} : this.state.style.panelHidden}
+                         className="modalWhite">
+                        {this.renderModalHeader()}
+                        {this.props.plant == null ? this.renderPlantCards() : this.renderPlantDetails()}
                     </div>
-            {this.props.plant==null &&
-                    <h1>
-                        Plantes recommandées
-                    </h1> 
-            }
-                {this.props.plant==null &&
-                    this.state.plants.map(plant => <PlantCard key={plant.id} plant={plant} onCardClick={()=>this.props.onCardClick(plant.id)}/>)
-                }
-                {this.props.plant!=null &&
-                    <DetailsPlant id={this.props.plant} onClick={() => this.props.onClick(this.props.plant)}/>
-                    
-                }
-
-                    </div>
-                    <div style={this.state.visible ? this.state.style.mask : this.state.style.maskHidden} onClick={this.props.onClickAway ? this.props.onClickAway : null} />
+                    <div style={this.state.visible ? this.state.style.mask : this.state.style.maskHidden}
+                         onClick={this.props.onClickAway ? this.props.onClickAway : null}/>
                 </div>
             </div>
+        );
+    }
+
+    renderModalHeader() {
+        return (
+            <div className="row">
+                <div className="col-9">
+                    {this.props.plant == null ?
+                        <h1>Plantes recommandées</h1>
+                        :
+                        <h3 onClick={this.props.onClickBack} className="text-left">
+                            <i className="fas fa-angle-double-left"/>
+                        </h3>
+                    }
+                </div>
+                <div className="col-3">
+                    <h3 onClick={this.props.onClose} className="text-right">
+                        <i className="fas fa-times"/>
+                    </h3>
+                </div>
+            </div>
+        );
+    }
+
+    renderPlantCards() {
+        return (
+            <div>
+                {this.state.plants.map(plant =>
+                    <PlantCard key={plant.id} plant={plant}
+                               onClickCard={() => this.props.onClickCard(plant.id)}/>)
+                }
+            </div>
+        );
+    }
+
+    renderPlantDetails() {
+        return (
+            <DetailsPlant id={this.props.plant}
+                          onClickAdd={() => this.props.onClickAdd(this.props.plant)}
+                          onClickDelete={() => this.props.onClickDelete(this.props.plant)}/>
         );
     }
 }
