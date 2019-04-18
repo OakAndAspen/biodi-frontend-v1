@@ -39,13 +39,11 @@ export default class Visualization extends React.Component {
                         isLoaded: true,
                         error
                     });
-                    console.error(error);
                 }
             )
     }
 
     openModal(idPot) {
-        console.log(idPot);
         this.setState({
             currentPot: idPot,
             visible: true,
@@ -89,7 +87,6 @@ export default class Visualization extends React.Component {
     }
 
     closeModalAndDelete() {
-        console.log(this.state.currentPot);
         let data = {
             idContent: null,
             location: this.state.currentPot

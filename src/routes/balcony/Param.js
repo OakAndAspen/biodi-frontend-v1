@@ -53,7 +53,7 @@ export default class Param extends React.Component {
             data: JSON.stringify(data),
             context: this
         }).done(res => {
-            this.props.history.push("/balcony/" + res[1]);
+            this.props.history.push("/balcony/" + res.id);
         }).fail(() => {
             alert("Il y a eu une erreur lors de la création du balcon. Désolés pour le dérangement! Nous faisons de notre mieux.");
         });

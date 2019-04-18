@@ -7,10 +7,6 @@ export default class PlantStickers extends React.Component {
         this.state = {};
     }
 
-    seeDetails(id) {
-        this.props.onClick();
-    }
-
     render() {
         const stylesStick = {
             backgroundColor: 'white',
@@ -20,7 +16,7 @@ export default class PlantStickers extends React.Component {
 
         return (
             <div className={"places " + (this.props.etat != null ? "full" : "hiddenPlaces")} id={this.props.id}
-                 style={stylesStick} onClick={() => this.seeDetails(this.props.id)}>
+                 style={stylesStick} onClick={this.props.onClick}>
             </div>
         );
     }

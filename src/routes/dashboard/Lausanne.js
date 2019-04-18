@@ -45,7 +45,6 @@ export default class Lausanne extends React.Component {
             z.place = i + 1;
             return z;
         });
-        console.log(array);
         return array;
     }
 
