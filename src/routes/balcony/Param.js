@@ -53,7 +53,7 @@ export default class Param extends React.Component {
             data: JSON.stringify(data),
             context: this
         }).done(res => {
-            this.props.history.push("/balcony/" + res[1]);
+            this.props.history.push("/balcony/" + res.id);
         }).fail(() => {
             alert("Il y a eu une erreur lors de la création du balcon. Désolés pour le dérangement! Nous faisons de notre mieux.");
         });
@@ -286,7 +286,7 @@ export default class Param extends React.Component {
                 {options.map(o => {
                     let color = this.state.environment.indexOf(o.value) !== -1 ? "btn-success" : "btn-light";
                     return (
-                        <div className="col-6 col-sm-3 p-3" key={o.value}>
+                        <div className="col-12 col-sm-4 p-3" key={o.value}>
                             <button className={color + " btn w-100 text-dark"}
                                     onClick={() => this.toggleEnvElement(o.value)}>
                                 <span className="display-4 d-block"><i className={o.icon}/></span>
