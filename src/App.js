@@ -17,6 +17,7 @@ class App extends Component {
                         <PrivateRoute exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
                         <PrivateRoute exact path='/dashboard/biodi-vers-city' component={privateRoutes.Biodi}/>
                         <PrivateRoute exact path='/dashboard/birdlife' component={privateRoutes.BirdLife}/>
+                        <PrivateRoute exact path='/dashboard/supply' component={privateRoutes.Supply}/>
                         <PrivateRoute exact path='/dashboard/account' component={privateRoutes.Account}/>
                         <PrivateRoute exact path='/balcony/new' component={privateRoutes.Param}/>
                         <PrivateRoute exact path='/balcony/:id' component={privateRoutes.Visualization}/>
@@ -78,6 +79,10 @@ const privateRoutes = {
     }),
     Biodi: Loadable({
         loader: () => import('./routes/dashboard/Biodi'),
+        loading: Loading,
+    }),
+    Supply: Loadable({
+        loader: () => import('./routes/dashboard/Supply'),
         loading: Loading,
     }),
     BirdLife: Loadable({

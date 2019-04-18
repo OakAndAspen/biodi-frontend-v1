@@ -27,6 +27,11 @@ export default class Nav extends React.Component {
             'icon': 'fas fa-info'
         },
         {
+            'url': '/dashboard/supply',
+            'title': 'Où me fournir?',
+            'icon': 'fas fa-info'
+        },
+        {
             'url': '/dashboard/account',
             'title': 'Mon compte',
             'icon': 'fas fa-user'
