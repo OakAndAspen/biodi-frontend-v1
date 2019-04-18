@@ -26,33 +26,31 @@ export default class Modal extends Component {
         this.getArrange(nextProps.pot);
         this.render();
     }
-    
-    getArrange(pot){
+
+    getArrange(pot) {
         let idArrangement;
-        {(() => {
-        switch(pot) {
-          case 9:
-            idArrangement = 2;
+        switch (pot) {
+            case 9:
+                idArrangement = 2;
                 break;
-          case 10:
-          idArrangement = 4;
+            case 10:
+                idArrangement = 4;
                 break;
-          case 11:
-            idArrangement = 4;
+            case 11:
+                idArrangement = 4;
                 break;
             case 8:
-             idArrangement = 3;
+                idArrangement = 3;
                 break;
-          default:
-           idArrangement = 1;
+            default:
+                idArrangement = 1;
                 break;
         }
-      })()}
         this.getPlants(idArrangement);
     }
 
     getPlants(data) {
-        fetch(Config.apiUrl + '/v1/balconies/' + this.props.currentBalcony + '/contents/'+data)
+        fetch(Config.apiUrl + '/v1/balconies/' + this.props.currentBalcony + '/contents/' + data)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -133,7 +131,7 @@ export default class Modal extends Component {
             <div className="row">
                 <div className="col-9">
                     {this.props.plant == null ?
-                        <h1>Elements recommandées</h1>
+                        <h1>Recommandations</h1>
                         :
                         <h3 onClick={this.props.onClickBack} className="text-left">
                             <i className="fas fa-angle-double-left"/>
@@ -164,7 +162,6 @@ export default class Modal extends Component {
         return (
             <DetailsPlant id={this.props.plant} stickOrNot={this.props.stickOrNot}
                           onClickAdd={() => this.props.onClickAdd(this.props.plant)}
-                            onClickDelete={() => this.props.onClickDelete()}
                           onClickDelete={() => this.props.onClickDelete(this.props.plant)}/>
         );
     }

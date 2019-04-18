@@ -32,14 +32,15 @@ export default class DetailsPlant extends React.Component {
 
     render() {
         if (!this.state.plant) return <h1 className="text-center my-4">...</h1>;
-        
+
         const stylesImg = {
             backgroundImage: 'url(' + this.state.plant.img + ')',
-        }
+        };
+
         return (
             <div id="DetailsPlant">
                 <h2>{this.state.plant.name}</h2>
-                <div className="imgPlant" style={stylesImg} alt={"Photo de " + this.state.plant.name} />
+                <div className="imgPlant" style={stylesImg}/>
                 {this.renderIcons()}
                 <div className="wrapLeft col-sm-6">
                     <h2>Description </h2>
