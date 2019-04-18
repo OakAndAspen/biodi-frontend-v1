@@ -286,7 +286,7 @@ export default class Param extends React.Component {
                 {options.map(o => {
                     let color = this.state.environment.indexOf(o.value) !== -1 ? "btn-success" : "btn-light";
                     return (
-                        <div className="col-6 col-sm-3 p-3" key={o.value}>
+                        <div className="col-12 col-sm-4 p-3" key={o.value}>
                             <button className={color + " btn w-100 text-dark"}
                                     onClick={() => this.toggleEnvElement(o.value)}>
                                 <span className="display-4 d-block"><i className={o.icon}/></span>
