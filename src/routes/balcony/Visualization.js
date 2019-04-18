@@ -249,6 +249,7 @@ export default class Visualization extends React.Component {
                     <p>Pour une meilleure expérience, switchez votre écran en mode paysage si cela est possible</p>
                 </div>
                 <div className="helper" id="ancreHelper">
+                <a href="#balcony"><i class="fas fa-arrow-up"></i></a>
                     <h1>Comment réaliser un balcon ?</h1>
                     <p>Cette section a pour but de vous aider à réaliser le balcon selon vos souhaits, l'objectif étant
                         de le rendre le plus biodivers possible.</p>

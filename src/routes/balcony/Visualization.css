@@ -206,6 +206,18 @@
     margin-top: 2%;
     margin-bottom: 0.3%;
 }
+#Visualization .helper i{
+    font-size: 2em;
+    display: block;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    text-align: center;
+}
+#Visualization .helper a:hover{
+    text-decoration: none;
+}
 
 #Visualization .balconyelement {
     opacity: 0.5;
