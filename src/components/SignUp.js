@@ -47,12 +47,12 @@ export default class SignUp extends React.Component {
 
         let data = {
             username: this.state.userName,
-            first_name: this.state.firstName,
-            last_name: this.state.lastName,
             email: this.state.email,
             password: this.state.password1,
             meta: {
-                neighbourhood: this.props.neighbourhood
+                neighbourhood: this.props.neighbourhood,
+                first_name: this.state.firstName,
+                last_name: this.state.lastName
             }
         };
 
