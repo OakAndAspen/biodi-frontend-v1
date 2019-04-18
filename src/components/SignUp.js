@@ -47,8 +47,8 @@ export default class SignUp extends React.Component {
 
         let data = {
             username: this.state.userName,
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
+            first_name: this.state.firstName,
+            last_name: this.state.lastName,
             email: this.state.email,
             password: this.state.password1,
             meta: {
@@ -172,12 +172,12 @@ export default class SignUp extends React.Component {
                 <h1 className="text-light">En route pour la Biodi-vers-City !</h1>
                 <h3 className="text-light">Bienvenue dans une ville grise, triste, qui a besoin de vous pour être la
                     plus verte !</h3>
-                <p>Félicitations ! En vous inscrivant, vous venez de faire gagner 200 points à votre quartier dans une
-                    compétition entre les cinq quartier de Lausanne pour être le plus bio-divers de la ville.</p>
+                <p>Félicitations ! En vous inscrivant, vous venez de faire gagner 30 points à votre quartier dans une
+                    compétition entre les cinq quartiers de Lausanne pour être le plus bio-divers de la ville.</p>
                 <p>Ici, vous pourrez imaginer vos balcons respectant le plus la biodiversité et vous informer sur
                     comment le construire et l'entretenir. Ce projet est une initiative de BirdLife, qui oeuvre pour la
-                    préservation des espèces naturelles, de plus en plus menacées par notre urbanisation de plus en plus
-                    excessive. Il est temps d’agir, et chaque geste compte. En espérant vous aider à trouver quel geste
+                    préservation des espèces naturelles, de plus en plus menacées par notre urbanisation excessive. Il
+                    est temps d’agir, et chaque geste compte. En espérant vous aider à trouver quel geste
                     réaliser, bonne visite de Biodi-vers-City !</p>
                 <Link className="btn btn-primary w-100 my-3" to="/dashboard">Continuer</Link>
             </div>
