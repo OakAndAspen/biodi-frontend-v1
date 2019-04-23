@@ -4,7 +4,6 @@ import Config from "../Config";
 import $ from "jquery";
 import {Link} from "react-router-dom";
 
-
 export default class SignUp extends React.Component {
 
     constructor(props) {
@@ -16,6 +15,7 @@ export default class SignUp extends React.Component {
             userName: "",
             password1: "",
             password2: "",
+            newsletter: true,
             error: null,
             showMessage: false
         };
@@ -52,7 +52,8 @@ export default class SignUp extends React.Component {
             meta: {
                 neighbourhood: this.props.neighbourhood,
                 first_name: this.state.firstName,
-                last_name: this.state.lastName
+                last_name: this.state.lastName,
+                newsletter: this.state.newsletter ? 1 : 0
             }
         };
 
@@ -83,7 +84,6 @@ export default class SignUp extends React.Component {
             if (res.token) {
                 localStorage.setItem("authKey", res.token);
                 this.setState({showMessage: true});
-                //this.props.history.push("/dashboard");
             }
         });
     }
@@ -146,6 +146,13 @@ export default class SignUp extends React.Component {
                         <input type="password" className="form-control" placeholder="Répéter le mot de passe"
                                value={this.state.password2}
                                onChange={e => this.setState({password2: e.target.value})}/>
+                    </div>
+                    <div className="col-12 py-2">
+                        <input type="checkbox" checked={this.state.newsletter}
+                               onChange={e => this.setState({newsletter: e.target.checked})}/>
+                        <span className="text-light ml-2">
+                            J'accepte de recevoir la newsletter de BirdLife Suisse !
+                        </span>
                     </div>
                 </div>
                 {this.state.error && (

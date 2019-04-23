@@ -10,7 +10,7 @@ class App extends Component {
             <BrowserRouter>
                 <div id='App'>
                     <Switch>
-                        <Route exact path='/' component={publicRoutes.Home}/>
+                        <PublicRoute exact path='/' component={publicRoutes.Home}/>
                         <PublicRoute exact path='/login' component={publicRoutes.Login}/>
                         <Route exact path='/logout' component={privateRoutes.Logout}/>
                         <PrivateRoute exact path='/dashboard' component={privateRoutes.Balconies}/>
