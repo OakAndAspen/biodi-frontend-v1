@@ -30,16 +30,11 @@ export default class Lausanne extends React.Component {
     }
 
     calculateScores(zones) {
-        let array = [];
-        for (let label in zones) {
-            let zone = {
-                label: label,
-                score: 30 * zones[label][1].number_of_users
-                    + 5 * zones[label][2].number_of_balconies
-                    + 3 * zones[label][0].number_of_posts
-            };
-            array.push(zone);
-        }
+        let array = zones.map(z => {
+                z.score = 30 * z.users + 5 * z.balconies + 3 * z.posts;
+            return z;
+        });
+
         array.sort((a, b) => b.score - a.score);
         array = array.map((z, i) => {
             z.place = i + 1;
