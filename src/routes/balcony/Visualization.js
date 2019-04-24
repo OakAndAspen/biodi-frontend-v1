@@ -85,6 +85,16 @@ export default class Visualization extends React.Component {
             })
 
     }
+    returnToModal(id){
+        this.setState({
+            currentPlant:null,
+            currentPot: id,
+            isAlreadyFill:false,
+            visible:false
+        }, () => {
+            this.openModal(id);
+        });
+    }
 
     closeModalAndDelete() {
         let data = {
@@ -130,7 +140,7 @@ export default class Visualization extends React.Component {
                        onClickAdd={(id) => this.closeModalAndAdd(id)}
                        onClickDelete={() => this.closeModalAndDelete()}
                        onClickCard={(id) => this.setState({currentPlant: id})}
-                       onClickBack={() => this.setState({currentPlant: null})}/>
+                       onClickBack={() => this.returnToModal(this.state.currentPot)} />
             </div>
         );
     }
@@ -249,7 +259,7 @@ export default class Visualization extends React.Component {
                     <p>Pour une meilleure expérience, switchez votre écran en mode paysage si cela est possible</p>
                 </div>
                 <div className="helper" id="ancreHelper">
-                <a href="#balcony"><i class="fas fa-arrow-up"></i></a>
+                <a href="#balcony"><i className="fas fa-arrow-up"></i></a>
                     <h1>Comment réaliser un balcon ?</h1>
                     <p>Cette section a pour but de vous aider à réaliser le balcon selon vos souhaits, l'objectif étant
                         de le rendre le plus biodivers possible.</p>
