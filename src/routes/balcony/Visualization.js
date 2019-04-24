@@ -154,8 +154,8 @@ export default class Visualization extends React.Component {
                         <img src={Config.imgFolder + "/icon/information.svg"} className="icons"
                              alt="Plus d'informations" title="Plus d'informations"/>
                     </a>
-                    <img src={Config.imgFolder + "/icon/share.svg"} className="icons"
-                         alt="Partager" title="Partager"/>
+            {/*<img src={Config.imgFolder + "/icon/share.svg"} className="icons"
+                         alt="Partager" title="Partager"/>*/}
                     <img src={Config.imgFolder + "/icon/loading.svg"}
                          className={"icons " + (this.state.isSaved ? "hiddenIco" : "saving")} data-toggle="tooltip"
                          alt="En cours d'enregistrement" title="En cours d'enregistrement"/>
