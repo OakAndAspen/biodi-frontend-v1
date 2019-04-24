@@ -14,7 +14,7 @@
 }
 @media (max-width: 768px) {
     #wrapDash{
-        width: 88%;
+        max-width: 88%;
         min-height: 100vh;
     }
     .Hexagon {
