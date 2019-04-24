@@ -1,41 +1,33 @@
 import React from 'react';
-import Config from "../../Config";
 import DashboardLayout from "../../components/DashboardLayout";
-import {Link} from "react-router-dom";
 
 export default class Supply extends React.Component {
 
     render() {
-        let lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat consequat eros, " +
-            "id gravida leo hendrerit vel. Pellentesque laoreet auctor dapibus. Maecenas purus quam, dignissim " +
-            "eu placerat at, venenatis eu enim. Curabitur facilisis risus vitae elit tincidunt interdum. Sed vel " +
-            "laoreet nisl.";
         let recommendations = [
             {
-                name: "Magasin truc",
-                website: "magasin-truc.ch",
-                address: "Rue du trucmachinbidule 3, 1400 Lausanne",
-                phone: "021 321 32 32",
-                description: lorem
+                name: "L’autre jardin",
+                website: "www.lautrejardin.ch",
+                address: "Au village 28, 1721 Cormérod",
+                phone: "079 301 12 51"
             },
             {
-                name: "Magasin chose",
-                address: "Rue des trucs 45, 1900 Goumoens-le-Jus",
-                phone: "021 321 32 32",
-                description: lorem
+                name: "Pépinière Baudat SA",
+                website: "www.baudat.ch",
+                address: "Ch. de Camarès 1, 1032 Vernand-sur-Lausanne",
+                phone: "021 731 13 66"
             },
             {
-                name: "Magasin truc",
-                website: "magasin-truc.ch",
-                address: "Rue du Machin 5, 1800 Vevey",
-                description: lorem
+                name: "Pépinière de Genolier",
+                website: "www.pepinieredegenolier.ch",
+                address: "Rte de Trélex 29, 1272 Genolier",
+                phone: "022 366 14 80"
             },
             {
-                name: "Magasin truc",
-                website: "magasin-truc.ch",
-                phone: "021 321 32 32",
-                description: lorem
-            },
+                name: "Pépinière du Gros de Vaud",
+                website: "www.pepinieres-foret.ch",
+                address: "Ch. de la Pépinière 4, CP 47, 1040 Echallens"
+            }
         ];
 
         return (
