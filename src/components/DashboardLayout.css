@@ -1,3 +1,24 @@
 #DashboardLayout {
-    background-color: rgba(var(--biodiPastel), 0.5);
+    background-color: rgba(var(--biodiPastel), 1);
+    float: left;
+    width: 100%;
 }
+#wrapDash{
+    max-width: 78%;
+    float: left;
+    height: 100vh;
+}
+.Hexagon{
+    margin-left: 22%;
+    z-index: 99;
+}
+@media (max-width: 768px) {
+    #wrapDash{
+        width: 88%;
+        min-height: 100vh;
+    }
+    .Hexagon {
+	margin-left: 12%;
+}
+}
+

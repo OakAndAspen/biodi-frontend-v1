@@ -8,8 +8,10 @@ export default class DashboardLayout extends React.Component {
             <div className="bg-light">
                 <div id="DashboardLayout">
                     <Nav/>
+                <div id="wrapDash">
                     {this.props.children}
                 </div>
+            </div>
             </div>
         );
     }

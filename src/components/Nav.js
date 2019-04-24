@@ -47,7 +47,6 @@ export default class Nav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            collapsed: true
         };
     }
 
@@ -56,25 +55,26 @@ export default class Nav extends React.Component {
             maxHeight: "70px"
         };
         return (
-            <nav id='Nav' className="d-inline-block d-sm-block">
-                <div className="row">
-                    <div className="col-3 d-md-none p-3 align-items-center">
-                        <button className="btn"
-                                onClick={() => this.setState({collapsed: !this.state.collapsed})}>
+            <nav id='Nav' className="d-inline-block d-sm-block navbar-primary navbar-inverse navbar-expand-md ">
+             <button className="btn navbar-toggler" data-toggle="collapse" data-target="#NavToggle" aria-controls="NavToggle" aria-expanded="false" aria-label="Toggle navigation">
                             <i className="fas fa-bars text-secondary"/>
                         </button>
-                    </div>
-                    <div className="col-9 col-md-12 p-3 text-right">
+                <div className="row collapse navbar-collapse" id="NavToggle">
+                
+                    <div className="col-9 col-md-12 p-3">
                         <Link to="/dashboard">
                             <img src={Config.imgFolder + "/biodi-clair.png"} alt="Biodi-vers-City"
                                  className="img-fluid" style={logoStyle}/>
                         </Link>
                     </div>
-                </div>
-                <ul className={'nav w-100' + this.state.collapsed ? " d-none" : ""} id="NavBarContent">
+                
+                <ul className='nav w-100 navbar-nav mr-auto mt-lg-0' id="NavBarContent">
                     {this.entries.map(t => <NavEntry key={t.url} title={t.title} icon={t.icon} url={t.url}/>)}
                 </ul>
+            </div>
             </nav>
+                    
+
         );
     }
 }
