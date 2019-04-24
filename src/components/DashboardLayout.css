@@ -14,16 +14,13 @@
 }
 @media (max-width: 768px) {
     #wrapDash{
-        max-width: 88%;
+        max-width: 100%;
+        padding-left: 11%;
         min-height: 100vh;
     }
     .Hexagon {
 	margin-left: 12%;
 }
 }
-    @media (max-width: 355px) {
-        #wrapDash {
-	    max-width: 86%;
-}
-}
+    
 

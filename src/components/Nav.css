@@ -11,6 +11,7 @@
 @media (max-width: 768px) {
     #Nav{
         max-width: 85%;
+        position: fixed;
     }
 }
 
