@@ -14,6 +14,12 @@ $.ajaxSetup({
         if (localStorage.authKey) {
             xhr.setRequestHeader('Authorization', "Bearer " + localStorage.authKey);
         }
+    },
+    error: (jqXHR) => {
+        if(jqXHR.status === 403) {
+            localStorage.clear();
+            window.location.reload();
+        }
     }
 });
 

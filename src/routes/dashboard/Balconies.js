@@ -20,8 +20,6 @@ export default class Balconies extends React.Component {
             context: this
         }).done(data => {
             this.setState({balconies: data})
-        }).fail(() => {
-            alert("Il y a eu un souci lors du chargement de vos balcons. Essayez de vous reconnecter.")
         });
     }
 
