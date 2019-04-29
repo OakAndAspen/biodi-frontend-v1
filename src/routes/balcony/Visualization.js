@@ -85,6 +85,7 @@ export default class Visualization extends React.Component {
             })
 
     }
+
     returnToModal(id){
         this.setState({
             currentPlant:null,

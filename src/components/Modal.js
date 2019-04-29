@@ -28,6 +28,7 @@ export default class Modal extends Component {
     }
 
     getArrange(pot) {
+        if(pot) pot = parseInt(pot);
         let idArrangement;
         switch (pot) {
             case 9:
@@ -42,11 +43,14 @@ export default class Modal extends Component {
             case 8:
                 idArrangement = 3;
                 break;
+            case null:
+                idArrangement = null;
+                break;
             default:
                 idArrangement = 1;
                 break;
         }
-        this.getPlants(idArrangement);
+        if (idArrangement) this.getPlants(idArrangement);
     }
 
     getPlants(data) {
@@ -150,9 +154,10 @@ export default class Modal extends Component {
     renderPlantCards() {
         return (
             <div>
-            {this.state.plants.length===0 &&
-                <p>Il n'y a pas de plantes/constructions disponibles pour cet emplacement avec les critères de votre balcon. Restez connectés, de nouvelles plantes seront ajoutées prochainement !</p>
-            }
+                {this.state.plants.length === 0 &&
+                <p>Il n'y a pas de plantes/constructions disponibles pour cet emplacement avec les critères de votre
+                    balcon. Restez connectés, de nouvelles plantes seront ajoutées prochainement !</p>
+                }
                 {this.state.plants.map(plant =>
                     <PlantCard key={plant.id} plant={plant}
                                onClickCard={() => this.props.onClickCard(plant.id)}/>)
