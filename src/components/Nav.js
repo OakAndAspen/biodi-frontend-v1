@@ -44,36 +44,41 @@ export default class Nav extends React.Component {
         }
     ];
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
+    state = {
+        open: false
+    };
 
     render() {
         let logoStyle = {
             maxHeight: "70px"
         };
+
+        let navStyle = {
+            height: "100%",
+            zIndex: "100",
+            position: "fixed",
+            left: "0",
+            backgroundColor: Config.colors.biodiDarkGrey
+        };
+
         return (
-            <nav id='Nav' className="d-inline-block d-sm-block navbar-primary navbar-inverse navbar-expand-md ">
-             <button className="btn navbar-toggler" data-toggle="collapse" data-target="#NavToggle" aria-controls="NavToggle" aria-expanded="false" aria-label="Toggle navigation">
-                            <i className="fas fa-bars text-secondary"/>
-                        </button>
-                <div className="row collapse navbar-collapse" id="NavToggle">
-                
-                    <div className="col-9 col-md-12 p-3">
-                        <Link to="/dashboard">
-                            <img src={Config.imgFolder + "/biodi-clair.png"} alt="Biodi-vers-City"
-                                 className="img-fluid" style={logoStyle}/>
-                        </Link>
-                    </div>
-                
-                <ul className='nav w-100 navbar-nav mr-auto mt-lg-0' id="NavBarContent">
-                    {this.entries.map(t => <NavEntry key={t.url} title={t.title} icon={t.icon} url={t.url}/>)}
-                </ul>
-            </div>
+            <nav id='Nav' style={navStyle}>
+                <div className="w-100 p-3 pointer text-secondary">
+                    <i className="fas fa-bars" onClick={() => this.setState({open: !this.state.open})}/>
+                </div>
+                {this.state.open &&
+                <div>
+                    <Link to="/dashboard">
+                        <img src={Config.imgFolder + "/biodi-clair.png"} alt="Biodi-vers-City"
+                             className="img-fluid m-3" style={logoStyle}/>
+                    </Link>
+                    <ul className='nav w-100 navbar-nav mt-lg-0' id="NavBarContent">
+                        {this.entries.map(t => <NavEntry key={t.url} title={t.title} icon={t.icon} url={t.url}/>)}
+                    </ul>
+                </div>
+                }
             </nav>
-                    
+
 
         );
     }

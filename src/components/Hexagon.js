@@ -7,11 +7,11 @@ import HexaBalcony from "./HexaBalcony";
 export default class Hexagon extends React.Component {
 
     render() {
-        let offset = this.props.column % 2 === 0 ? 0 : 67;
+        let offset = this.props.column % 2 === 0 ? 0 : 80;
         let hexaStyle = {
-            top: (this.props.row - 1) * 136 + offset + "px",
-            left: (this.props.column - 1) * 120  + "px",
-            position: "absolute",
+            top: -((this.props.row - 1) * 160) + offset + "px",
+            left: (this.props.column - 1) * 120 + "px",
+            position: "relative",
             width: "150px",
             height: "150px"
         };
