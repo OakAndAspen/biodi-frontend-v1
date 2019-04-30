@@ -68,8 +68,12 @@ export default class Login extends React.Component {
                         <button type="button" className="btn btn-success w-100 my-2" onClick={this.send}>
                             Connexion
                         </button>
-                        <span className="text-secondary">Pas encore de compte?
+                        <span className="text-secondary">
+                            Pas encore de compte?
                             <Link to="/" className="ml-1">Choisissez votre quartier.</Link>
+                            <br/>
+                            Mot de passe oublié?
+                            <Link to="/password-reset" className="ml-1">Récupérez le par email.</Link>
                         </span>
                     </form>
                 </div>

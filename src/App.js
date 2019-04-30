@@ -12,6 +12,7 @@ class App extends Component {
                     <Switch>
                         <PublicRoute exact path='/' component={publicRoutes.Home}/>
                         <PublicRoute exact path='/login' component={publicRoutes.Login}/>
+                        <PublicRoute exact path='/password-reset' component={publicRoutes.PasswordReset}/>
                         <Route exact path='/logout' component={privateRoutes.Logout}/>
                         <PrivateRoute exact path='/dashboard' component={privateRoutes.Balconies}/>
                         <PrivateRoute exact path='/dashboard/lausanne' component={privateRoutes.Lausanne}/>
@@ -64,6 +65,10 @@ const publicRoutes = {
     }),
     Login: Loadable({
         loader: () => import('./routes/public/Login'),
+        loading: Loading,
+    }),
+    PasswordReset: Loadable({
+        loader: () => import('./routes/public/PasswordReset'),
         loading: Loading,
     })
 };
