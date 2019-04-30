@@ -16,6 +16,11 @@ h1, h2, h3, h4, h5, h5 {
     cursor: pointer;
 }
 
+.small-caps {
+    font-family: "BebasNeue", sans-serif;
+    text-transform: capitalize;
+}
+
 .btn {
     font-family: BebasNeue, sans-serif;
     padding: 8px 9px 5px 9px;

@@ -1,15 +1,11 @@
 import React from 'react';
-import "./DetailsPlant.css";
 import Config from "../Config";
 
 export default class DetailsPlant extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            plant: null
-        };
-    }
+    state = {
+        plant: null
+    };
 
     componentWillReceiveProps() {
         fetch(Config.apiUrl + '/v1/contents/' + this.props.id)
@@ -33,43 +29,82 @@ export default class DetailsPlant extends React.Component {
     render() {
         if (!this.state.plant) return <h1 className="text-center my-4">...</h1>;
 
-        const stylesImg = {
-            backgroundImage: 'url(' + this.state.plant.img + ')',
+        let imgStyle = {
+            height: "300px",
+            width: "100%",
+            backgroundImage: "url(" + this.state.plant.img + ")",
+            backgroundPosition: "center center",
+            backgroundSize: "cover"
         };
 
         return (
-            <div id="DetailsPlant">
-                <h2>{this.state.plant.name}</h2>
-                <div className="imgPlant" style={stylesImg}/>
-                {this.renderIcons()}
-                <div className="wrapLeft col-sm-6">
-                    <h2>Description </h2>
+            <div className="row overflow-auto">
+                <div className="col-12 col-lg-6 d-flex align-items-center">
+                    <div className="w-100">
+                        <h1 className="text-center">{this.state.plant.name}</h1>
+                        {this.renderQuickInfo()}
+                    </div>
+                </div>
+                <div className="col-12 col-lg-6 text-right">
+                    <div style={imgStyle} className="rounded"/>
+                </div>
+                <div className="col-12 col-lg-6 my-3">
+                    <h3>Description </h3>
                     <p>{this.state.plant.description}</p>
                 </div>
-                <div className="wrapRight col-sm-6">
-                    <h2>Conseils pratiques</h2>
+                <div className="col-12 col-lg-6 my-3">
+                    <h3>Conseils pratiques</h3>
                     <p>{this.state.plant.maintain}</p>
                 </div>
-                {this.renderButton()}
+                <div className="col-12">
+                    {this.renderButton()}
+                </div>
             </div>
         );
     }
 
-    renderIcons() {
+    renderQuickInfo() {
+        let iconStyle = {
+            width: "20px",
+            textAlign: "center"
+        };
+
+        let tableStyle = {
+            fontSize: "1.2em"
+        };
+
         return (
-            <p className="wrapIcons">
-                {this.state.plant.initialBudget}/5
-                <img src={Config.imgFolder + "/icon/coin.png"} alt="Argent!" className="iconDetails"/>
-                -&nbsp;
-                {this.state.plant.initialTime}/5
-                <img src={Config.imgFolder + "/icon/time.png"} alt="Temps!" className="iconDetails"/>
-                -&nbsp;
-                {this.state.plant.sunlight}/5
-                <img src={Config.imgFolder + "/icon/sun.png"} alt="Soleil!" className="iconDetails"/>
-                -&nbsp;
-                Favorise : &nbsp;
-                {this.state.plant.favorising}
-            </p>
+            <table className="my-4 w-100" style={tableStyle}>
+                <tbody className="text-dark small-caps">
+                <tr>
+                    <td className="text-right">BUDGET</td>
+                    <td>
+                        {[...Array(5)].map((x, i) =>
+                            <i className={"fas fa-dollar-sign ml-1 " + (this.state.plant.initialBudget > i ?
+                                "text-warning" : "text-secondary")} style={iconStyle}/>
+                        )}
+                    </td>
+                </tr>
+                <tr>
+                    <td className="text-right">TEMPS</td>
+                    <td>
+                        {[...Array(5)].map((x, i) =>
+                            <i className={"fas fa-clock ml-1 " + (this.state.plant.initialTime > i ?
+                                "text-warning" : "text-secondary")} style={iconStyle}/>
+                        )}
+                    </td>
+                </tr>
+                <tr>
+                    <td className="text-right">ENSOLEILLEMENT</td>
+                    <td>
+                        {[...Array(5)].map((x, i) =>
+                            <i className={"fas fa-sun ml-1 " + (this.state.plant.sunlight > i ?
+                                "text-warning" : "text-secondary")} style={iconStyle}/>
+                        )}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         );
     }
 
