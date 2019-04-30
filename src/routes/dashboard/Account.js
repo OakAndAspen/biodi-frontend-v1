@@ -8,8 +8,6 @@ export default class Account extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: "",
-            lastName: "",
             email: "",
             userName: "",
             password1: "",
@@ -35,8 +33,6 @@ export default class Account extends React.Component {
             context: this
         }).done(data => {
             this.setState({
-                firstName: data.first_name,
-                lastName: data.last_name,
                 email: data.email,
                 userName: data.username
             });
@@ -47,8 +43,6 @@ export default class Account extends React.Component {
 
     send() {
         let data = {
-          first_name: this.state.firstName,
-          last_name: this.state.lastName,
           email: this.state.email
         };
 
@@ -89,16 +83,6 @@ export default class Account extends React.Component {
                         <div className="col-12">
                             <h1>Mon compte</h1>
                             <h2>Modifier les informations de base</h2>
-                        </div>
-                        <div className="col-12 col-sm-6 py-2">
-                            <input type="text" className="form-control" placeholder="Prénom"
-                                   value={this.state.firstName}
-                                   onChange={e => this.setState({firstName: e.target.value})}/>
-                        </div>
-                        <div className="col-12 col-sm-6 py-2">
-                            <input type="text" className="form-control" placeholder="Nom"
-                                   value={this.state.lastName}
-                                   onChange={e => this.setState({lastName: e.target.value})}/>
                         </div>
                         <div className="col-12 py-2">
                             <input type="text" className="form-control" placeholder="Adresse email"

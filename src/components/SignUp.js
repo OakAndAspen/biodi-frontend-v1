@@ -9,8 +9,6 @@ export default class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: "",
-            lastName: "",
             email: "",
             userName: "",
             password1: "",
@@ -51,8 +49,6 @@ export default class SignUp extends React.Component {
             password: this.state.password1,
             meta: {
                 neighbourhood: this.props.neighbourhood,
-                first_name: this.state.firstName,
-                last_name: this.state.lastName,
                 newsletter: this.state.newsletter ? 1 : 0
             }
         };
@@ -117,16 +113,6 @@ export default class SignUp extends React.Component {
             <form className="col-12 col-lg-6 mx-auto p-4">
                 <h1 className="text-light text-center">Inscrivez-vous en quelques clics!</h1>
                 <div className="row">
-                    <div className="col-12 col-sm-6 py-2">
-                        <input type="text" className="form-control" placeholder="Prénom"
-                               value={this.state.firstName}
-                               onChange={e => this.setState({firstName: e.target.value})}/>
-                    </div>
-                    <div className="col-12 col-sm-6 py-2">
-                        <input type="text" className="form-control" placeholder="Nom"
-                               value={this.state.lastName}
-                               onChange={e => this.setState({lastName: e.target.value})}/>
-                    </div>
                     <div className="col-12 py-2">
                         <input type="text" className="form-control" placeholder="Adresse email"
                                value={this.state.email}
