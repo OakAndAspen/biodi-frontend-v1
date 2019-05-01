@@ -58,7 +58,8 @@ export default class Nav extends React.Component {
             zIndex: "100",
             position: "fixed",
             left: "0",
-            backgroundColor: Config.colors.biodiDarkGrey
+            backgroundColor: Config.colors.biodiDarkGrey,
+            overflow: "auto"
         };
 
         return (
